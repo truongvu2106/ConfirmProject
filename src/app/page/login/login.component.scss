@@ -1,0 +1,131 @@
+.mc-containter-login{    
+    text-align: center;
+    .mc-box-login{
+        margin-top: 100px;
+        background: #FFF;
+        width: 300px;
+        height: 400px;
+        display: inline-block;
+        text-align: center;  
+        padding-top: 20px;      
+        .mc-box-item{
+            display: inline-block;
+            width: 250px;            
+            padding: 10px 0;
+            &.mc-title{
+                span{                    
+                    float: left;
+                    color: #000;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+            &.mc-user{
+                label{                    
+                    float: left;
+                    color: darkgrey;   
+                    font-size: 15px;                    
+                    width: 100%;
+                    text-align: left;
+                }
+                input{
+                    background: #ddd;
+                    height: 42px;
+                    width: 100%;
+                    border-radius: 6px;
+                    float: left;
+                    border: none;
+                    padding: 2px 5px;
+                }
+            }
+            &.mc-password{
+                label{                    
+                    float: left;
+                    color: darkgrey;   
+                    font-size: 15px;                    
+                    width: 100%;
+                    text-align: left;
+                }
+                input{
+                    background: #ddd;
+                    height: 42px;
+                    width: 100%;
+                    border-radius: 6px;
+                    float: left;
+                    border: none;
+                    padding: 2px 5px;
+                }
+            }
+            &.mc-remember{
+                .chk {
+                    display: inline-block;
+                    position: relative;
+                    cursor: pointer;
+                    padding-top: 4px;
+                    margin-top: 2px;
+                    float: left;
+                    span{                        
+                        margin: -1px 10px;
+                        float: left;
+                    }                    
+                    .chkctrl {
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        left: 0;
+                        top: 0;
+                        opacity: 0;
+                        margin: 0;
+                    }
+                    i {
+                        display: inline-block;
+                        background: #FFFFFF;
+                        border: 1px solid #AEAEAE;
+                        border-radius: 4px;
+                        width: 18px;
+                        height: 18px;
+                        cursor: pointer;
+                        float: left;
+                    }
+                    .chkctrl:checked + i {
+                        border: 1px solid #AEAEAE;
+                    }
+                    .chkctrl:checked + i:after {
+                        content: '';
+                        position: absolute;
+                        top: 7px;
+                        left: 3px;
+                        background: #000;
+                        border-radius: 4px;
+                        width: 12px;
+                        height: 12px;
+                    }                    
+                }
+            }
+            &.mc-button{                
+                input{
+                    background: #aaa;
+                    height: 42px;
+                    width: 100%;
+                    border-radius: 6px;
+                    float: left;
+                    border: none;
+                    padding: 2px 5px;
+                    color: #ddd;
+                }
+            }
+            &.mc-forget{
+                a{
+                    width: 100%;
+                    text-align: left;
+                    margin-bottom: 5px;
+                    float: left;
+                    text-decoration: underline;
+                    
+                }
+            }
+        }
+    }
+}
+
+
