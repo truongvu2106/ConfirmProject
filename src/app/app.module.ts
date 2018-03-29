@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -19,15 +20,16 @@ import { LoginComponent } from './page/login/login.component'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent    
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule    
   ],
   exports: [MatButtonModule, MatCheckboxModule],
   providers: [],
