@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component'
+import { LoginComponent } from './page/login/login.component'
 
 
 @NgModule({
@@ -16,13 +19,17 @@ import { FooterComponent } from './components/footer/footer.component'
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
+  exports: [MatButtonModule, MatCheckboxModule],
   providers: [],
   bootstrap: [AppComponent]
 })
