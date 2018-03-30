@@ -1,0 +1,11 @@
+.mc-sidenav {
+    width: 300px;
+}
+.mc-sidenav-content {
+    background: #FFFFFF;
+    .mat-tab-link {
+        &.active {
+            border-bottom: 3px solid rgba(0, 153, 255, 0.603);
+        }
+    }
+}
