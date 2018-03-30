@@ -4,23 +4,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatTabsModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component'
 import { LoginComponent } from './pages/login/login.component'
-
+import { AccountComponent } from './pages/account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    AccountComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -29,7 +35,11 @@ import { LoginComponent } from './pages/login/login.component'
     HttpModule,
     AppRoutingModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatTabsModule,
+    ReactiveFormsModule
   ],
   exports: [MatButtonModule, MatCheckboxModule],
   providers: [],

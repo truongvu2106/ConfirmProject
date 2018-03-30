@@ -1,0 +1,26 @@
+<div class="mc-account-page">
+  <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav [mode]="mode.value" [disableClose]="true" [opened]="true" class="mc-sidenav">
+        <p>
+          Side bar
+        </p>
+      </mat-sidenav>
+    
+      <mat-sidenav-content class="mc-sidenav-content">
+        <nav mat-tab-nav-bar class="mc-tab-bar">
+          <a mat-tab-link
+              routerLink="/account/myprofile"
+              routerLinkActive="active">My Profile
+          </a>
+          <a mat-tab-link
+              routerLink="/account/merchantdetails"
+              routerLinkActive="active">Merchant detail
+          </a>
+          <a mat-tab-link
+              routerLink="/account/stores"
+              routerLinkActive="active">Stores
+          </a>
+        </nav>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
