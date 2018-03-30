@@ -5,20 +5,20 @@
         </div>
         <div class="mc-box-item mc-user">
             <label>User ID</label>
-            <input type="text" value="" placeholder="SampleID"/>
+            <input type="text" class="form-control" value="" placeholder="SampleID"/>
         </div>
         <div class="mc-box-item mc-password">                
-            <input type="password" value="Password"/>
+            <input type="password" class="form-control" value="Password"/>
         </div>
         <div class="mc-box-item mc-remember">
             <label class="chk">
-                <input type="checkbox" class="chkctrl" [(ngModel)]="selectedAll" (change)="selectAll()">
+                <input type="checkbox" class="chkctrl">
                 <i class="icon"></i>
                 <span>Remember my User ID</span>
             </label>
         </div>
         <div class="mc-box-item mc-button">
-           <input type="button" value="Sign On"/>
+           <input type="button" class="btn btn-primary" value="Sign On"/>
         </div>
         <div class="mc-box-item mc-forget">
             <a href="/">Forgot User ID?</a>

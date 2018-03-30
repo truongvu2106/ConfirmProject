@@ -2,14 +2,13 @@
 .mc-navbar {
     margin-bottom: 0;
     background-color: $color-bg-header;
-    border-radius: 0;
+    border:none;
     letter-spacing: 1.5px;
     .navbar-brand {
         color: #fff;        
         display: table-cell;
-        height: 70px;
-        font-family: ProximaNova-Light;
-        font-size: 17px;
+        height: 70px;       
+        font-size: 19px;
         line-height: 20px;
         span{            
             display: inline-block;
@@ -75,7 +74,8 @@
                     padding: 0 30px;
                     display: table-cell;
                     height: 25px;
-                    vertical-align: middle;           
+                    vertical-align: middle;  
+                    font-size: 13px;         
                 }
                 &:last-child{
                     a{
