@@ -1,5 +1,13 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {
+  MatIconModule,
+  MatSidenavModule,
+  MatTabsModule
+} from '@angular/material';
 
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -28,8 +36,12 @@ const routes: Routes = [
   { path: '**', redirectTo: 'login' }
 ];
 
-@NgModule({  
-  imports: [RouterModule.forRoot(routes)],
+@NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule],
   declarations: [
     MerchantDetailsComponent,

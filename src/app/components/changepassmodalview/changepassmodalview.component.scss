@@ -1,0 +1,20 @@
+.toolmodal{
+    overflow: auto;
+    button{
+        background-color: transparent;
+        border:none;
+        float: right;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+    }
+    
+}
+.modalcontent{
+    input{
+        background-color: #eee;
+    }
+    button.btn{
+        width: 100%;
+    }
+}

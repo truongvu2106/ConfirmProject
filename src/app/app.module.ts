@@ -9,17 +9,21 @@ import {
   MatCheckboxModule,
   MatIconModule,
   MatSidenavModule,
-  MatTabsModule
+  MatTabsModule,
+  MatDialogModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component'
 import { AccountComponent } from './pages/account/account.component';
+import { ChangePassModalViewComponent } from './components/changepassmodalview/changepassmodalview.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import { AccountComponent } from './pages/account/account.component';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    AccountComponent
+    AccountComponent,
+    ChangePassModalViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -38,12 +43,23 @@ import { AccountComponent } from './pages/account/account.component';
     AppRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatDialogModule,
     MatIconModule,
     MatSidenavModule,
     MatTabsModule,
     ReactiveFormsModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule],
+  entryComponents:[
+    ChangePassModalViewComponent
+  ],
+  exports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatTabsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
