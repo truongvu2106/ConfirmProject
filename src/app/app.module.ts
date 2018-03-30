@@ -20,7 +20,7 @@ import { LoginComponent } from './page/login/login.component'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent    
+    LoginComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -29,7 +29,7 @@ import { LoginComponent } from './page/login/login.component'
     HttpModule,
     AppRoutingModule,
     MatButtonModule,
-    MatCheckboxModule    
+    MatCheckboxModule
   ],
   exports: [MatButtonModule, MatCheckboxModule],
   providers: [],
