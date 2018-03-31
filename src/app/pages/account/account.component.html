@@ -1,44 +1,48 @@
 <div class="mc-account-page">
   <mat-sidenav-container class="example-container">
       <mat-sidenav #sidenav [mode]="mode.value" [disableClose]="true" [opened]="true" class="mc-sidenav">
-        <div>
-          <div class="profile-card">
-            <div class="text-center form-group">
-              <img src="" class="img-circle avatar"/>
-            </div>
-            <div class="text-center form-group">
-              Starbucks
-            </div>
-            <div class="text-center form-group">
-              <button class="btn btn-primary form-control">New promotion</button>
-            </div>
-            <div>
-              <label>Promotions</label>
-                <ul class="list-group borderlesslist">
-                  <li class="list-group-item"><a>Ongoing</a></li>
-                  <li class="list-group-item"><a>Pending</a><span class="badge">32</span></li>
-                  <li class="list-group-item"><a>Past</a></li>
-                </ul>
-            </div>
-            <label> My Account </label>
+        <div class="profile-card">
+          <div class="form-group">
+            <img src="" class="img-circle avatar"/>
           </div>
+          <div class="name">
+            <span>Starbucks</span>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary form-control btn-promotion">New promotion</button>
+          </div>
+        </div>
+        <div>
+          <ul class="list-group borderlesslist">
+            <li class="list-group-item menu-group-item"><label>Promotions</label>
+              <ul class="list-group borderlesslist">
+                <li class="list-group-item"><a>Ongoing</a></li>
+                <li class="list-group-item"><a>Pending</a><span class="badge">32</span></li>
+                <li class="list-group-item"><a>Past</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item menu-group-item active"><label> My Account </label></li>
+          </ul>
         </div>
       </mat-sidenav>
       <mat-sidenav-content class="mc-sidenav-content">
-        <nav mat-tab-nav-bar class="mc-tab-bar">
-          <a mat-tab-link
-              routerLink="/account/myprofile"
-              routerLinkActive="active">My Profile
-          </a>
-          <a mat-tab-link
-              routerLink="/account/merchantdetails"
-              routerLinkActive="active">Merchant detail
-          </a>
-          <a mat-tab-link
-              routerLink="/account/stores"
-              routerLinkActive="active">Stores
-          </a>
-        </nav>
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+              <a class="nav-link"
+                routerLink="/account/myprofile"
+                routerLinkActive="active"><span>My Profile</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                routerLink="/account/merchantdetails"
+                routerLinkActive="active"><span>Merchant detail</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                routerLink="/account/stores"
+                routerLinkActive="active"><span>Stores</span></a>
+            </li>
+          </ul>
         <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>

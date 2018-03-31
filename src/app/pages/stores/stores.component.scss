@@ -1,0 +1,12 @@
+.store-container {
+    background-color: #f8f8f8;
+    .mc-table {
+        margin: 30px;
+        width: calc(100% - 60px);
+        td {
+            background-color: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 10px; 
+        }
+    }
+}

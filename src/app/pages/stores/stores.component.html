@@ -1,3 +1,21 @@
-<p>
-  stores works!
-</p>
+<div class="store-container">
+  <table class="table mc-table">
+    <caption>{{stores.length}} stores</caption>
+    <thead>
+      <tr>
+        <th>Store name</th>
+        <th>Country</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let store of stores">
+        <td>
+          {{store.storeName}}
+        </td>
+        <td>{{store.country}}</td>
+        <td>{{store.city}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

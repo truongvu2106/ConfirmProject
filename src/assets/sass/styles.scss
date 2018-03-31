@@ -1,3 +1,4 @@
+$fa-font-path: "~font-awesome/fonts";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import 'colors';
 
@@ -60,7 +61,8 @@ a, a:link,a:active, span{
 }
 
 body {    
-    font-family: Interstate_Light,sans-serif;
+    // font-family: Interstate_Light,sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #eff3f6;
 }
 .container-fix{    

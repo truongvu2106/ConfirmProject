@@ -1,51 +1,111 @@
 <div class="merchantdetail">
   <div class="bannermerchantdetail" >
     <div class="itembannermerchantdetail">
-      <label>Merchant group</label>
+      <label class="mc-label">Merchant group</label>
       SampleGroup
     </div>
     <div class="itembannermerchantdetail">
-      <label>Merchant Name</label>
+      <label class="mc-label">Merchant Name</label>
       Merchant1
     </div>
     <div class="clearboth"></div>
   </div><!-- end bannerprofile -->
-  <div class="merchantcat merchantsection" *ngIf="true">
-    <label>Merchant category</label>
-    <span>Restaurants, Travel</span>
-    <span class="catico">
-      <mat-icon>plan</mat-icon>
-      <mat-icon>plan</mat-icon>
-    </span>
-  </div>
-  <div class="infoopt merchantsection" *ngIf="true">
-    <h3>option information</h3>
-    <div class="row">
-      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-        <label>Country</label>
-        Singapore
+  <!-- start View Merchant -->  
+  <ng-container *ngIf="isMerchantdetailsViewShow">
+    <div class="merchantcat merchantsection">
+      <div class="ico">
+        <span class="catico restaurantico"></span>
+        <span class="catico travelico"></span>
       </div>
-      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-        <label>City</label>
-        Singapore
+      <label class="mc-label">Merchant category</label>
+      <span>Restaurants, Travel</span>
+    </div>
+    <div class="infoopt merchantsection">
+      <h3>option information</h3>
+      <div class="row">
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">Country</label>
+          Singapore
+        </div>
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">City</label>
+          Singapore
+        </div>
+      </div>
+      <div class="row">
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">Merchant description</label>
+          -
+        </div>
+      </div>
+      <div class="row">
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">Address</label>
+          8 Marina View<br>
+          Tower 1, Asia Square, Level 1
+        </div>
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">Zip code</label>
+          018960
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-        <label>Merchant description</label>
-        -
+  </ng-container>
+  <!-- end View Merchant -->    
+  <!-- start Edit Merchant -->
+  <ng-container *ngIf="!isMerchantdetailsViewShow">
+    <div class="merchantcat merchantsection">
+      <label class="mc-label">Merchant category</label>
+      <div class="row list-categories">
+        <div class="col-sm-4 col-item" *ngFor="let category of categories">
+          <div class="item">
+            <div class="checkbox">
+              <input type="checkbox" id="category" name="category" value="{{category.value}}">
+              <label for="category" id="categoryLabel" aria-label="not here">{{category.name}}</label>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-        <label>Address</label>
-        8 Marina View<br>
-        Tower 1, Asia Square, Level 1
+    <div class="infoopt merchantsection">
+      <h3>option information</h3>
+      <div class="row">
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">Country</label>
+          <input type="text" class="form-control" [(ngModel)]="merchant.country">
+        </div>
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">City</label>
+          <input type="text" class="form-control" [(ngModel)]="merchant.city">
+        </div>
       </div>
-      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-        <label>Zip code</label>
-        018960
+      <div class="row">
+        <div class="iteminfo col-sm-8 col-xs-12">
+          <label class="mc-label">Merchant description</label>
+          <textarea class="form-control" [(ngModel)]="merchant.description"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">Address Line 1</label>
+          <input type="text" class="form-control" [(ngModel)]="merchant.address">
+        </div>
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+            <label class="mc-label">Address Line 2</label>
+            <input type="text" class="form-control" [(ngModel)]="merchant.address">
+          </div>
+        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+          <label class="mc-label">Zip code</label>
+          <input type="text" class="form-control" [(ngModel)]="merchant.zipCode">
+        </div>
       </div>
     </div>
+  </ng-container>
+  <!-- end Edit Merchant -->
+  <div class="formtool">
+    <button class="circlebtn editbtn btn btn-primary" (click)="changeViewUpdateMerchant()" *ngIf="isMerchantdetailsViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <a href="javascript:;" *ngIf="!isMerchantdetailsViewShow" (click)="changeViewUpdateMerchant()">Cancel</a>
+    <button class="circlebtn finishbtn " (click)="updateMerchant()" *ngIf="!isMerchantdetailsViewShow">
+    </button>
   </div>
 </div>

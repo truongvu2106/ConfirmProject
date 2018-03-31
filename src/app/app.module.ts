@@ -39,7 +39,8 @@ import { ForgotPasswordComponent } from './pages/login/forgot-password.component
     AccountComponent,
     ChangePassModalViewComponent,
     ForgotUserComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,   
+    ChangePassModalViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
