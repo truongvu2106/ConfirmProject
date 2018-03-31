@@ -1,0 +1,10 @@
+{
+    "userID":"SampleID",
+    "status":"Active",
+    "entitlementRole":"Country User",
+    "firstName":"SampleName",
+    "lastName":"SampleName",
+    "designation":"SampleText",
+    "email":"sample@sample.com",
+    "mobileNo":"98765432"
+}

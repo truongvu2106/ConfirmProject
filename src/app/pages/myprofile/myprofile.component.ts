@@ -16,7 +16,7 @@ export class MyProfileComponent implements OnInit {
   isProfileViewShow = true;
   
   // datas master
-  datas: Array<any>;
+  userProfile: any = {};
 
   // text MS error load json
   errorMessage: string;
@@ -41,29 +41,21 @@ export class MyProfileComponent implements OnInit {
   }
 
   onload = (): void => {
-    this.dataService.getData('assets/datas/myprofile.json').subscribe(
+    this.dataService.getData('assets/data/myprofile.json').subscribe(
       data => {
-        // data master
-        this.datas = data;
+        this.userProfile = data;
       },
       error => this.errorMessage = <any>error,
-      () => this.loadData(this.datas)
+      () => this.loadData(this.userProfile)
     );
   }
 
   loadData(json:any){
-    this.userID = json['userID'];
-    this.status = json['status'];
-    this.entitlementRole = json['entitlementRole'];
-    this.firstName = json['firstName'];
-    this.lastName = json['lastName'];
-    this.designation = json['designation'];
-    this.email = json['email'];
-    this.mobileNo = json['mobileNo'];
+    this.userID = json;
   }
 
   changeViewUpdateProfile(){
-    if(!this.isProfileViewShow) this.loadData(this.datas);
+    if(!this.isProfileViewShow) this.loadData(this.userProfile);
     this.isProfileViewShow = !this.isProfileViewShow ;  
   }
 
@@ -80,8 +72,5 @@ export class MyProfileComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
     });
-  }
-  cancelEditProfile() {
-    this.isProfileViewShow = true;
   }
 }

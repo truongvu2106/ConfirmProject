@@ -1,19 +1,19 @@
-<div class="profile">
-  <div class="bannerprofile" >
+<div class="profile" *ngIf="userProfile">
+  <div class="bannerprofile">
     <div class="itembannerprofile">
       <label>user id</label>
-      SampleID
+      {{userProfile.userID}}
     </div>
     <div class="itembannerprofile">
       <label>status</label>
-      <span>Active</span>
+      <span>{{userProfile.status}}</span>
     </div>
     <div class="itembannerprofile">
       <label>entitlement role</label>
-      Country User
+      {{userProfile.entitlementRole}}
     </div>
     <div class="actionprofile">
-      <a href="javascript:;" (click)="openDialog()" >Change password</a>
+      <a href="javascript:;"(click)="openDialog()" >Change password</a>
     </div>
     <div class="clearboth"></div>
   </div><!-- end bannerprofile -->
@@ -21,27 +21,27 @@
     <div class="row">
       <div class="h3 iteminfo col-md-4 col-sm-6 col-xs-12">
         <label>first name</label>
-        SampleName
+        {{userProfile.firstName}}
       </div>
       <div class="h3 iteminfo col-md-4 col-sm-6 col-xs-12">
         <label>last name</label>
-        SampleName
+        {{userProfile.lastName}}
       </div>
     </div>
     <div class="row">
       <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
         <label>Designation</label>
-        SampleText
+        {{userProfile.designation}}
       </div>
     </div>
     <div class="row">
       <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
         <label>email</label>
-        <a href="">sample@sample.com</a> 
+        <a href="">{{userProfile.email}}</a> 
       </div>
       <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
         <label>Mobile no.</label>
-        98765432
+        {{userProfile.mobileNo}}
       </div>
     </div>
   </div><!-- view info profile -->
@@ -50,37 +50,34 @@
     <div class="row">
       <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
         <label class="text-input-label">first name</label>
-        <input type="text" class="form-control" value="SampleName">
+        <input type="text" class="form-control" [(ngModel)]="userProfile.firstName">
       </div>
       <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
         <label class="text-input-label">last name</label>
-        <input type="text" class="form-control" value="SampleName">
+        <input type="text" class="form-control" [(ngModel)]="userProfile.lastName">
       </div>
     </div>
     <div class="row">
       <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
         <label class="text-input-label">Designation</label>
-        <input type="text" class="form-control" value="SampleText">
+        <input type="text" class="form-control" [(ngModel)]="userProfile.designation">
       </div>
     </div>
     <div class="row">
       <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
         <label class="text-input-label">email</label>
-        <input type="text" class="form-control" value="sample@sample.com">
+        <input type="text" class="form-control" [(ngModel)]="userProfile.email">
       </div>
       <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
         <label class="text-input-label">Mobile no.</label>
-        <input type="text" class="form-control" value="98765432"> 
+        <input type="text" class="form-control" [(ngModel)]="userProfile.mobileNo"> 
       </div>
     </div>
   </div><!-- edit info -->
-  <div class="text-right mc-control-group">
-    <button mat-icon-button (click)="showEditProfile()" *ngIf="isProfileViewShow">
-      <mat-icon>edit</mat-icon>
-    </button>
-    <a href="javascript:;" (click)="cancelEditProfile()" *ngIf="!isProfileViewShow">Cancel</a>
-    <button mat-icon-button (click)="updateProfile()" *ngIf="!isProfileViewShow">
-      <mat-icon>check</mat-icon>
+  <div class="formtool">
+    <button class="circlebtn editbtn btn btn-primary" (click)="changeViewUpdateProfile()" *ngIf="isProfileViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <a href="javascript:;" *ngIf="!isProfileViewShow" (click)="changeViewUpdateProfile()">Cancel</a>
+    <button class="circlebtn finishbtn " (click)="updateProfile()" *ngIf="!isProfileViewShow">
     </button>
   </div>
 </div>
