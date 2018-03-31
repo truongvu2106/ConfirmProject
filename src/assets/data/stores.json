@@ -1,0 +1,21 @@
+{
+    "stores": [
+        {
+            "storeName": "Sample store name",
+            "country": "Singapore",
+            "city": "Singapore"
+        }, {
+            "storeName": "Sample store name",
+            "country": "Singapore",
+            "city": "Singapore"
+        }, {
+            "storeName": "Sample store name",
+            "country": "Singapore",
+            "city": "Singapore"
+        }, {
+            "storeName": "Sample store name",
+            "country": "Singapore",
+            "city": "Singapore"
+        }
+    ]
+}
