@@ -1,15 +1,36 @@
 .mc-sidenav {
-    width: 300px;
-    padding: 50px 20px;
+    width: 250px;
+    box-shadow: 0px 0px 12px #ccc;
     .profile-card {
+        padding: 50px 20px;
+        text-align: center;
         .avatar {
             height: 100px;
             width: 100px;
         }
+        .name {
+            margin-bottom: 30px;
+        }
+        .btn-promotion {
+            height: 42px;
+            line-height: 30px;
+        }
     }
     .borderlesslist {
+        .menu-group-item {
+            padding-top: 0;
+            padding-bottom: 0;
+            label {
+                color: #535353;
+            }
+            &.active {
+                border-left: 5px solid #056bae;
+                background-color: #FFFFFF;
+            }
+        }
         .list-group-item {
             border: none;
+            border-radius: 0;
             a {
                 margin-right: 5px;
             }
@@ -26,9 +47,27 @@
 }
 .mc-sidenav-content {
     background: #FFFFFF;
-    .mat-tab-link {
-        &.active {
-            border-bottom: 3px solid rgba(0, 153, 255, 0.603);
+    min-height: 600px;
+    .nav-justified {
+        li {
+            a {
+                border-radius: 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 13px;
+                line-height: 40px;
+                span {
+                    border-right: 1px solid #888888;
+                    display: block;
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+                &.active {
+                    border-bottom: 5px solid #056bae;
+                    color: #414141;
+                }
+            }
         }
     }
 }

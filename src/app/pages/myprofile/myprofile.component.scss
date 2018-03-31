@@ -12,6 +12,7 @@
 }
 .profile{
     background-color: #f8f8f8;
+    padding-bottom: 50px;
     .bannerprofile{
         background-color: #002a54;
         padding: 45px;     
@@ -22,7 +23,8 @@
             border-left: 1px solid #888;
             padding: 8px 90px;
             &:first-child{
-                border-left: none;  
+                border-left: none;
+                padding-left: 0;
             }
             label{
                 @include fixlabel;

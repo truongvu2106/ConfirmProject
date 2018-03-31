@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 import { ChangePassModalViewComponent } from '../../components/changepassmodalview/changepassmodalview.component';
 
@@ -15,21 +15,11 @@ export class MyProfileComponent implements OnInit {
   //change view  and update profile
   isProfileViewShow = true;
   
-  // datas master
+  // user profile
   userProfile: any = {};
 
   // text MS error load json
   errorMessage: string;
-
-  //data myprofile
-  userID: String;
-  status: String;
-  entitlementRole: String;
-  firstName: String;
-  lastName: String;
-  designation: String;
-  email: String;
-  mobileNo: String;
 
   constructor(
     public dialog: MatDialog,
@@ -45,22 +35,16 @@ export class MyProfileComponent implements OnInit {
       data => {
         this.userProfile = data;
       },
-      error => this.errorMessage = <any>error,
-      () => this.loadData(this.userProfile)
+      error => this.errorMessage = <any>error
     );
   }
 
-  loadData(json:any){
-    this.userID = json;
-  }
-
-  changeViewUpdateProfile(){
-    if(!this.isProfileViewShow) this.loadData(this.userProfile);
-    this.isProfileViewShow = !this.isProfileViewShow ;  
+  changeViewUpdateProfile() {
+    this.isProfileViewShow = !this.isProfileViewShow;  
   }
 
   updateProfile(){
-    this.isProfileViewShow = !this.isProfileViewShow ;
+    this.isProfileViewShow = !this.isProfileViewShow;
   }
 
   openDialog(): void {

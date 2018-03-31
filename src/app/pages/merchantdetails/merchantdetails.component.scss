@@ -12,9 +12,10 @@
 }
 .merchantdetail{
     background-color: #f8f8f8;
+    padding-bottom: 50px;
     .bannermerchantdetail{
         background-color: #002a54;
-        padding: 45px;     
+        padding: 45px;
         .itembannermerchantdetail{
             font-size: 28px;
             color: #fff;
@@ -22,7 +23,8 @@
             border-left: 1px solid #888;
             padding: 8px 90px;
             &:first-child{
-                border-left: none;  
+                border-left: none;
+                padding-left: 0;
             }
             label{
                 @include fixlabel;
@@ -41,9 +43,27 @@
         margin: 45px; 
         margin-bottom: 0;      
         padding: 45px;
-        span.catico{
+        .ico{
             float: right;
+            span.catico{
+                width: 58px;
+                height: 58px;
+                margin-left: 20px;
+                border: 1px solid #bbb;
+                border-radius: 50%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 70%;
+                display: inline-block;
+            }
+            span.restaurantico{
+                background-image: url('../../../assets/img/Restaurants@2x.png');
+            }
+            span.travelico{
+                background-image: url('../../../assets/img/Flights@2x.png');
+            }
         }
+        
     }
     .infoopt{
         margin: 45px;
@@ -71,6 +91,66 @@
             }
             input[type="text"]{
                 background-color: #eee;
+            }
+        }
+    }
+}
+
+.formtool{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    overflow: auto;
+    a{
+        text-decoration: underline;
+        margin-right: 25px;
+        display: block;
+        float: left;
+        transform: translateY(60%);
+    }
+    button.circlebtn{
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        min-width:55px;
+        font-size: 20px;
+    }
+    button.finishbtn{
+        box-shadow: 1px 2px 5px #ccc;
+        background-color: #fff;
+        border: 0;
+        margin-right: 10px;
+        &:before{
+            content:"";
+            width: 10px;
+            height: 3px;
+            background-color: #056DAE;
+            display: block;
+            transform: rotate(45deg);
+            position: relative;
+            top: 18px;
+            left: 7px; 
+        }
+        &:after{
+            content:"";
+            width: 3px;
+            height: 25px;        
+            background-color: #056DAE; 
+            -ms-transform: rotate(45deg); /* IE 9 */
+            -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+            transform: rotate(45deg);
+            display: block;
+            position: relative;
+            bottom: 0px;
+            left: 50%;
+        }
+        &:hover{
+            background-color: #002A54;
+            &:before{
+                background-color:#fff;
+            }
+            &::after{
+                background-color:#fff;
             }
         }
     }
