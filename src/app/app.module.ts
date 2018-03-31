@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component'
 import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component'
+import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RegisterComponent } from './pages/register/register.component'
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ManageMerchantComponent
   ],
   imports: [
     BrowserAnimationsModule,
