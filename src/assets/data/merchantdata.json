@@ -1,0 +1,24 @@
+{
+    "categories": [{
+        "value": "restaurants",
+        "name": "Restaurants"
+    }, {
+        "value": "bars",
+        "name": "Bars"
+    }, {
+        "value": "hotels",
+        "name": "Hotels"
+    }, {
+        "value": "travel",
+        "name": "Travel"
+    }, {
+        "value": "shopping",
+        "name": "Shopping"
+    }, {
+        "value": "lifestyle",
+        "name": "Lifestyle"
+    }],
+    "merchant": {
+
+    }
+}

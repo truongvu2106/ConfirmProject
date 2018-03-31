@@ -11,7 +11,8 @@ export class MerchantDetailsComponent implements OnInit {
 
   // change view  and update merchant details
   isMerchantdetailsViewShow = true;
-  
+  // list merchant categories
+  categories: any[] = [];
   // merchant details
   merchant: any = {};
 
@@ -27,16 +28,13 @@ export class MerchantDetailsComponent implements OnInit {
   }
 
   onload(): void {
-    this.dataService.getData('assets/data/myprofile.json').subscribe(
+    this.dataService.getData('assets/data/merchantdata.json').subscribe(
       data => {
-        this.merchant = data;
+        this.merchant = data.merchant;
+        this.categories = data.categories || [];
       },
       error => this.errorMessage = <any>error
     );
-  }
-
-  loadData(json:any) {
-    this.merchant = json;
   }
 
   changeViewUpdateMerchant() {

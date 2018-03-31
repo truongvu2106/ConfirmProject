@@ -26,7 +26,7 @@
                 border-left: none;
                 padding-left: 0;
             }
-            label{
+            .mc-label {
                 @include fixlabel;
             }
         }
@@ -35,7 +35,7 @@
         background-color: #fff;
         border: 1px solid #f0f0f0;       
         color: #333;
-        label{
+        .mc-label {
             @include fixlabel; 
         }
     }
@@ -63,7 +63,17 @@
                 background-image: url('../../../assets/img/Flights@2x.png');
             }
         }
-        
+        .list-categories {
+            .col-item {
+                padding: 10px 25px;
+                .item {
+                    border-bottom: 1px solid #c3c3c3;
+                    .checkbox {
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
     }
     .infoopt{
         margin: 45px;
