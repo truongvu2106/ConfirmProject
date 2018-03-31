@@ -78,7 +78,7 @@
     <button mat-icon-button (click)="showEditProfile()" *ngIf="isProfileViewShow">
       <mat-icon>edit</mat-icon>
     </button>
-    <a href="javascript:;" *ngIf="!isProfileViewShow">Cancel</a>
+    <a href="javascript:;" (click)="cancelEditProfile()" *ngIf="!isProfileViewShow">Cancel</a>
     <button mat-icon-button (click)="updateProfile()" *ngIf="!isProfileViewShow">
       <mat-icon>check</mat-icon>
     </button>
