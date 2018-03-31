@@ -1,0 +1,86 @@
+<div class="profile">
+  <div class="bannerprofile" >
+    <div class="itembannerprofile">
+      <label>user id</label>
+      SampleID
+    </div>
+    <div class="itembannerprofile">
+      <label>status</label>
+      <span>Active</span>
+    </div>
+    <div class="itembannerprofile">
+      <label>entitlement role</label>
+      Country User
+    </div>
+    <div class="actionprofile">
+      <a href="javascript:;" (click)="openDialog()" >Change password</a>
+    </div>
+    <div class="clearboth"></div>
+  </div><!-- end bannerprofile -->
+  <div class="infoprofile" *ngIf="isProfileViewShow">
+    <div class="row">
+      <div class="h3 iteminfo col-md-4 col-sm-6 col-xs-12">
+        <label>first name</label>
+        SampleName
+      </div>
+      <div class="h3 iteminfo col-md-4 col-sm-6 col-xs-12">
+        <label>last name</label>
+        SampleName
+      </div>
+    </div>
+    <div class="row">
+      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+        <label>Designation</label>
+        SampleText
+      </div>
+    </div>
+    <div class="row">
+      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+        <label>email</label>
+        <a href="">sample@sample.com</a> 
+      </div>
+      <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+        <label>Mobile no.</label>
+        98765432
+      </div>
+    </div>
+  </div><!-- view info profile -->
+  
+  <div class="infoprofile" *ngIf="!isProfileViewShow">
+    <div class="row">
+      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <label class="text-input-label">first name</label>
+        <input type="text" class="form-control" value="SampleName">
+      </div>
+      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <label class="text-input-label">last name</label>
+        <input type="text" class="form-control" value="SampleName">
+      </div>
+    </div>
+    <div class="row">
+      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <label class="text-input-label">Designation</label>
+        <input type="text" class="form-control" value="SampleText">
+      </div>
+    </div>
+    <div class="row">
+      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <label class="text-input-label">email</label>
+        <input type="text" class="form-control" value="sample@sample.com">
+      </div>
+      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <label class="text-input-label">Mobile no.</label>
+        <input type="text" class="form-control" value="98765432"> 
+      </div>
+    </div>
+  </div><!-- edit info -->
+  <div class="text-right mc-control-group">
+    <button mat-icon-button (click)="showEditProfile()" *ngIf="isProfileViewShow">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <a href="javascript:;" (click)="cancelEditProfile()" *ngIf="!isProfileViewShow">Cancel</a>
+    <button mat-icon-button (click)="updateProfile()" *ngIf="!isProfileViewShow">
+      <mat-icon>check</mat-icon>
+    </button>
+  </div>
+</div>

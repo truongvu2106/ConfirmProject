@@ -6,15 +6,15 @@
     .mc-box-login{
         margin-top: 100px;
         background: #FFF;
-        width: 300px;
-        height: 430px;
+        width: 350px;
+        height: 470px;
         display: inline-block;
         text-align: center;  
         padding-top: 20px;
         border-radius: 1px;
         .mc-box-item{
             display: inline-block;
-            width: 250px;            
+            width: 300px;            
             padding: 10px 0;
             &.mc-title{
                 span{                    
@@ -76,6 +76,7 @@
                     span{                        
                         margin: -1px 10px;
                         float: left;
+                        color:#056DAE;
                     }                    
                     .chkctrl {
                         position: absolute;
@@ -125,7 +126,7 @@
                 a{
                     width: 100%;
                     text-align: left;
-                    margin-bottom: 5px;
+                    margin-top: 15px;
                     float: left;
                     text-decoration: underline;
                     color: #337ab7;

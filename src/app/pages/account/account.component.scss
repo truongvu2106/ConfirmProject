@@ -1,0 +1,34 @@
+.mc-sidenav {
+    width: 300px;
+    padding: 50px 20px;
+    .profile-card {
+        .avatar {
+            height: 60px;
+            width: 60px;
+        }
+    }
+    .borderlesslist {
+        .list-group-item {
+            border: none;
+            a {
+                margin-right: 5px;
+            }
+            .badge {
+                background: #d60100;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                padding: 4px 3px;
+                float: none;
+            }
+        }
+    }
+}
+.mc-sidenav-content {
+    background: #FFFFFF;
+    .mat-tab-link {
+        &.active {
+            border-bottom: 3px solid rgba(0, 153, 255, 0.603);
+        }
+    }
+}

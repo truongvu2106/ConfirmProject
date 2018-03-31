@@ -4,17 +4,28 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatTabsModule,
+  MatDialogModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component'
 import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component'
 import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { AccountComponent } from './pages/account/account.component';
+import { ChangePassModalViewComponent } from './components/changepassmodalview/changepassmodalview.component';
+import { ForgotUserComponent } from './pages/login/forgot-user.component';
+import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
 
 
 @NgModule({
@@ -24,7 +35,11 @@ import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    ManageMerchantComponent
+    ManageMerchantComponent,
+    AccountComponent,
+    ChangePassModalViewComponent,
+    ForgotUserComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -33,9 +48,24 @@ import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant
     HttpModule,
     AppRoutingModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatTabsModule,
+    ReactiveFormsModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule],
+  entryComponents:[
+    ChangePassModalViewComponent
+  ],
+  exports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatTabsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

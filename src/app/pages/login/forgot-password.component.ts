@@ -4,11 +4,11 @@ import { Router } from "@angular/router";
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-forgot-user',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss']
 })
-export class LoginComponent implements OnInit { 
+export class ForgotPasswordComponent implements OnInit { 
   isFocusPasword:boolean;
   constructor(
    

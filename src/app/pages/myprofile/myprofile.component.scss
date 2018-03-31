@@ -1,0 +1,83 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.clearboth{
+    clear: both;
+}
+@mixin fixlabel{
+    text-transform: uppercase;
+    color:#888;
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 2px;
+    padding-bottom: 15px;
+}
+.profile{
+    background-color: #f8f8f8;
+    .bannerprofile{
+        background-color: #002a54;
+        padding: 45px;     
+        .itembannerprofile{
+            font-size: 28px;
+            color: #fff;
+            float: left;
+            border-left: 1px solid #888;
+            padding: 8px 90px;
+            &:first-child{
+                border-left: none;  
+            }
+            label{
+                @include fixlabel;
+            }
+            span{
+                border-radius: 3px;
+                background-color: #fff;
+                font-size: 12px;
+                color:#484848;
+                text-align: center;
+                font-weight: bold;
+                padding: 5px 15px;
+            }
+        }
+        .actionprofile{
+            float: right;
+            margin-top: 65px;
+            a{
+                text-decoration: underline;
+                color: #eee;
+            }
+        }
+    }
+    .infoprofile{
+        margin: 45px;
+        background-color: #fff;
+        border: 1px solid #f0f0f0;
+        padding: 45px;
+        color: #333;
+        .iteminfo{
+            margin-bottom: 30px;
+            .h3{
+                    font-size: 25px;
+                }
+            label{
+                @include fixlabel; 
+            }
+        }
+        .itemeditinfo{
+            margin-bottom: 30px;
+            .text-input-label{
+                font-size: 13px;
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }
+            input[type="text"]{
+                background-color: #eee;
+            }
+        }
+    }
+    .mc-control-group {
+        margin: 20px 45px;
+    }
+}
