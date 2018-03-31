@@ -32,20 +32,37 @@
             }
         }
     }
-    .infoprofile{
-        margin: 45px;
+    .merchantsection{
         background-color: #fff;
-        border: 1px solid #f0f0f0;
-        padding: 45px;
+        border: 1px solid #f0f0f0;       
         color: #333;
+        label{
+            @include fixlabel; 
+        }
+    }
+    .merchantcat{
+        margin: 45px; 
+        margin-bottom: 0;      
+        padding: 45px;
+        span.catico{
+            float: right;
+        }
+    }
+    .infoopt{
+        margin: 45px;
+        margin-top: 5px;
+        padding: 0 45px;
+        h3{
+            color: #a4a4a4;
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 15px 0;
+            border-bottom: 1px solid #c7c7c7;
+            margin-bottom: 45px;
+            font-weight: bold;
+        }
         .iteminfo{
             margin-bottom: 30px;
-            .h3{
-                    font-size: 25px;
-                }
-            label{
-                @include fixlabel; 
-            }
         }
         .itemeditinfo{
             margin-bottom: 30px;

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
@@ -15,6 +17,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { MerchantDetailsComponent } from './pages/merchantdetails/merchantdetails.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { MyProfileComponent } from './pages/myprofile/myprofile.component';
+
 
 // import { HomeComponent } from './page/home/home.component';
 
@@ -33,13 +36,14 @@ const routes: Routes = [
       { path: 'stores', component: StoresComponent }
     ]
   },
-  { path: '**', redirectTo: 'login' }
+  { path: '**', redirectTo: 'account' }
 ];
 
 @NgModule({
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    FormsModule,
     MatIconModule,
     RouterModule.forRoot(routes)],
   exports: [RouterModule],
