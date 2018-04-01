@@ -1,24 +1,30 @@
 {
     "categories": [{
-        "value": "restaurants",
+        "value": "Restaurants",
         "name": "Restaurants"
     }, {
-        "value": "bars",
+        "value": "Bars",
         "name": "Bars"
     }, {
-        "value": "hotels",
+        "value": "Hotels",
         "name": "Hotels"
     }, {
-        "value": "travel",
+        "value": "Travel",
         "name": "Travel"
     }, {
-        "value": "shopping",
+        "value": "Shopping",
         "name": "Shopping"
     }, {
-        "value": "lifestyle",
+        "value": "Lifestyle",
         "name": "Lifestyle"
     }],
     "merchant": {
-
+        "categories": ["Restaurants", "Travel"],
+        "country": "Singapore",
+        "city": "Singapore",
+        "Description": "Singapore",
+        "addressLine1": "8 Marina View",
+        "addressLine2": "Tower 1, Asia Square, Level 1",
+        "zipCode": "018960"
     }
 }

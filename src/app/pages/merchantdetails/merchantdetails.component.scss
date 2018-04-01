@@ -8,20 +8,20 @@
     font-weight: bold;
     display: block;
     letter-spacing: 2px;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
 }
 .merchantdetail{
     background-color: #f8f8f8;
     padding-bottom: 50px;
     .bannermerchantdetail{
         background-color: #002a54;
-        padding: 45px;
+        padding: 40px;
         .itembannermerchantdetail{
             font-size: 28px;
             color: #fff;
             float: left;
             border-left: 1px solid #888;
-            padding: 8px 90px;
+            padding: 8px 85px;
             &:first-child{
                 border-left: none;
                 padding-left: 0;

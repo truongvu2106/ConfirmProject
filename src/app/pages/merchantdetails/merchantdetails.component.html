@@ -18,35 +18,35 @@
         <span class="catico travelico"></span>
       </div>
       <label class="mc-label">Merchant category</label>
-      <span>Restaurants, Travel</span>
+      <span>{{merchant.categories.join(', ')}}</span>
     </div>
     <div class="infoopt merchantsection">
       <h3>option information</h3>
       <div class="row">
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">Country</label>
-          Singapore
+          {{merchant.country}}
         </div>
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">City</label>
-          Singapore
+          {{merchant.city}}
         </div>
       </div>
       <div class="row">
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">Merchant description</label>
-          -
+          {{merchant.description || '-'}}
         </div>
       </div>
       <div class="row">
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">Address</label>
-          8 Marina View<br>
-          Tower 1, Asia Square, Level 1
+          {{merchant.addressLine1}}<br>
+          {{merchant.addressLine2}}
         </div>
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">Zip code</label>
-          018960
+          {{merchant.zipCode}}
         </div>
       </div>
     </div>
@@ -82,17 +82,17 @@
       <div class="row">
         <div class="iteminfo col-sm-8 col-xs-12">
           <label class="mc-label">Merchant description</label>
-          <textarea class="form-control" [(ngModel)]="merchant.description"></textarea>
+          <textarea class="form-control" [(ngModel)]="merchant.description" rows="3" placeholder="Merchant Description"></textarea>
         </div>
       </div>
       <div class="row">
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">Address Line 1</label>
-          <input type="text" class="form-control" [(ngModel)]="merchant.address">
+          <input type="text" class="form-control" [(ngModel)]="merchant.addressLine1">
         </div>
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
             <label class="mc-label">Address Line 2</label>
-            <input type="text" class="form-control" [(ngModel)]="merchant.address">
+            <input type="text" class="form-control" [(ngModel)]="merchant.addressLine2">
           </div>
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">Zip code</label>
