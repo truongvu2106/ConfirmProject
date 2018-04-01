@@ -1,5 +1,5 @@
 <div class="store-container">
-  <table class="table mc-table">
+  <table class="table no-bordered mc-table">
     <caption>{{stores.length}} stores</caption>
     <thead>
       <tr>
@@ -11,10 +11,22 @@
     <tbody>
       <tr *ngFor="let store of stores">
         <td>
-          {{store.storeName}}
+          <div class="td">
+            <span>
+              {{store.storeName}}
+            </span>
+          </div>
         </td>
-        <td>{{store.country}}</td>
-        <td>{{store.city}}</td>
+        <td><div class="td">
+            <span>
+              {{store.country}}
+            </span></div></td>
+        <td>
+          <div class="td">
+            <span>
+              {{store.city}}
+            </span>
+          </div></td>
       </tr>
     </tbody>
   </table>

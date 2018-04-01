@@ -1,5 +1,5 @@
 <div class="toolmodal">
-  <button>
+  <button (click)="onCloseCancel()">
     <mat-icon>close</mat-icon>
   </button>
 </div>
@@ -7,27 +7,34 @@
   Change Password
 </h3>
 <div class="modalcontent">
-  <div class="row">
-    <div class="form-group col-xs-12">
-      <label>Enter your current password</label>
-      <input type="password" class="form-control" value="SampleName">
+  <form (ngSubmit)="onChangePass(formChangePass)" #formChangePass="ngForm">
+    <div class="row">
+      <div class="form-group col-xs-12 input-group-lg">
+        <label>Enter your current password</label>
+        <input type="password" name="currentPassword" ngModel #txtcurrentPassword="ngModel" class="form-control" placeholder="SampleName" required >
+        <p *ngIf = "txtcurrentPassword.touched && txtcurrentPassword.errors?.required">Current password is required</p>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="form-group col-xs-12">
-      <label> Set your new password</label>
-      <input type="password" class="form-control" value="SampleName">
+    <div class="row">
+      <div class="form-group col-xs-12 input-group-lg">
+        <label> Set your new password</label>
+        <input type="password" name="newPassword" ngModel #newPassword="ngModel" class="form-control" placeholder="SampleName" required>
+        <p *ngIf = "newPassword.touched && newPassword.errors?.required">New password is required</p>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="form-group col-xs-12">
-      <label>Confirm password</label>
-      <input type="password" class="form-control" value="SampleName">
+    <div class="row">
+      <div class="form-group col-xs-12 input-group-lg">
+        <label>Confirm password</label>
+        <input [class.inputerr]="confirmPassword.dirty && !confirmPassword.errors?.required && confirmPassword.value != newPassword.value" type="password" name="confirmPassword" ngModel #confirmPassword="ngModel" class="form-control" placeholder="SampleName" required>
+        <p *ngIf = "confirmPassword.touched && confirmPassword.errors?.required">Confirm password is required</p>
+        <p *ngIf = "confirmPassword.dirty && !confirmPassword.errors?.required && confirmPassword.value != newPassword.value">Confirm password does not match new password</p>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="form-group col-xs-12">
-      <button type="button" class="btn btn-primary">Change</button>
+    <div class="row">
+      <div class="form-group col-xs-12">
+        <button class="btn btn-primary btn-lg">Change</button>
+      </div>
     </div>
-  </div>
+  </form>
+  
 </div>
