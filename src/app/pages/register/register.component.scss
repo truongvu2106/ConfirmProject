@@ -1,19 +1,18 @@
 .mc-containter-register{    
     text-align: center;
-    height:100vh;
+    height:136vh;
     .mc-box-left-register{
         background: url(../../../assets/img/hotair_balloons.jpg);
         background-size: 100% 100%;
         float: left;
-        width: 60%;
+        width: 59%;
         height: 100%;
         .mc-description{
             width: 70%;
-            margin: 170px 150px;
+            margin: 206px 137px;
             h3{
-                color: #ddd;
-                text-align: left;
-                opacity: 0.8;
+                color: #fff;
+                text-align: left;                
                 
             }
             h1{
@@ -26,23 +25,24 @@
     }
     .mc-box-register{
         background: #FFF;
-        width: 40%;
+        width: 41%;
         height: 100%;
         float: right;
         text-align: center;  
         padding-top: 20px;        
         .mc-box-item{
             display: inline-block;
-            width: 70%;            
-            padding: 15px 0;
+            width: 335px;
             &.mc-title{
+                margin-top:150px;
                 span{                    
                     float: left;
                     color: #000;
-                    font-size: 20px;                    
+                    font-size: 25px;              
                 }
             }
             &.mc-user{
+                padding-top: 35px;
                 label{                    
                     float: left;
                     color: #333;   
@@ -50,6 +50,7 @@
                     width: 100%;
                     text-align: left;
                     font-size:12px;
+                    margin-bottom: 5px;
                 }
                 input{
                     background: #eee;
@@ -58,6 +59,8 @@
                     float: left;
                     border-color: #fff;
                     box-shadow: none;
+                    font-size: 16px;
+                    padding: 0px 20px;
                     &:focus{
                         box-shadow: none;
                         border-color: #056DAE;
@@ -72,6 +75,7 @@
                     width: 100%;
                     text-align: left;
                     font-size:12px;
+                    margin-bottom: 5px;
                 }
                 input{
                     background: #eee;
@@ -80,6 +84,8 @@
                     float: left;
                     border-color: #fff;
                     box-shadow: none;
+                    font-size: 16px;
+                    padding: 0px 20px;
                     &:focus{
                         box-shadow: none;
                         border-color: #056DAE;
@@ -135,7 +141,8 @@
                     }                    
                 }
             }
-            &.mc-button{                
+            &.mc-button{
+                margin-top: 20px;
                 input{                    
                     height: 50px;
                     width: 100%;
@@ -154,6 +161,15 @@
                     text-decoration: underline;
                     color: #337ab7;
                 }
+            }
+            .mc-error{
+                text-align: left;
+                color:#d80d0c;
+                float: left;
+                font-size: 11px;
+                font-weight: bold;
+                width: 100%;
+                height: 20px;
             }
         }
     }

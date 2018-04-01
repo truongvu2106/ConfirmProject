@@ -3,16 +3,16 @@
     margin-bottom: 0;
     background-color: $color-bg-header;
     border:none;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.4px;
     .navbar-brand {
         color: #fff;        
         display: table-cell;
         height: 70px;       
-        font-size: 19px;
+        font-size: 26px;
         line-height: 20px;
         span{            
             display: inline-block;
-            padding: 0 20px;
+            padding: 0 32px 0 16px;
             height: 70px;
             img{
                 padding-top: 13px; 
@@ -55,6 +55,8 @@
                     &:last-child{
                         a{
                             padding-right: 20px;
+                            padding-top: 6px;
+                            font-size: 11px;
                         }
                     }                
                 }
@@ -71,15 +73,17 @@
                 float: left;
                 a {
                     color: #FFF;
-                    padding: 0 30px;
+                    padding: 0 42px;
                     display: table-cell;
                     height: 25px;
                     vertical-align: middle;  
-                    font-size: 13px;         
+                    font-size: 11px; 
+                    font-weight: bold;        
                 }
                 &:last-child{
                     a{
-                        padding-right: 30px;
+                        padding-right: 19px;
+                        font-size: 11px;
                     }
                 }            
             }

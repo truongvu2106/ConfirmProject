@@ -9,7 +9,7 @@
             <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" (focus)="isFocusNewPassword=true;CheckInfo('password')" (blur)="isFocusNewPassword=false;CheckInfo('password')" (keyup)="CheckInfo('password')" value="" placeholder="Set your new password" [ngStyle]="{'border-color':errorpassword!=''?'red':''}"/>
             <span *ngIf="!submitted" class="mc-error">{{errorpassword}}</span>                
         </div>
-        <div class="mc-box-item mc-password">
+        <div class="mc-box-item mc-confirm">
                 <label [ngStyle]="{'opacity':(isFocusConfirm || errorconfirm=='')?'1':'0'}">Confirm password</label>
                 <input type="text" name="confirmpassword" id="confirmpassword" class="form-control" [(ngModel)]="confirmpassword" (focus)="isFocusConfirm=true;CheckInfo('confirm')" (blur)="isFocusConfirm=false;CheckInfo('confirm')" (keyup)="CheckInfo('confirm')" value="" placeholder="Confirm password" [ngStyle]="{'border-color':errorconfirm!=''?'red':''}"/>
                 <span *ngIf="!submitted" class="mc-error">{{errorconfirm}}</span>              
