@@ -1,11 +1,12 @@
 <div class="store-container">
   <table class="table no-bordered mc-table">
-    <caption>{{stores.length}} stores</caption>
+    <caption><p>{{stores.length}} stores</p></caption>
     <thead>
       <tr>
         <th>Store name</th>
         <th>Country</th>
         <th>City</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -17,16 +18,26 @@
             </span>
           </div>
         </td>
-        <td><div class="td">
+        <td>
+          <div class="td">
             <span>
               {{store.country}}
-            </span></div></td>
+            </span>
+          </div>
+        </td>
         <td>
           <div class="td">
             <span>
               {{store.city}}
             </span>
-          </div></td>
+          </div>
+        </td>
+        <td>
+          <div class="td group-action">
+            <a><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a><i class="fa fa-trash" aria-hidden="true"></i></a>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
