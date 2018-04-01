@@ -1,21 +1,53 @@
 {
     "stores": [
         {
+            "storeId": "store1",
             "storeName": "Sample store name",
             "country": "Singapore",
-            "city": "Singapore"
+            "city": "Singapore",
+            "area":"",
+            "addressLine1":"",
+            "addressLine2":"",
+            "zipCode":"",
+            "countryCode":"+65",
+            "areaCode":"01",
+            "contactNo":""
         }, {
+            "storeId": "store2",
             "storeName": "Sample store name",
             "country": "Singapore",
-            "city": "Singapore"
+            "city": "Singapore",
+            "area":"",
+            "addressLine1":"",
+            "addressLine2":"",
+            "zipCode":"",
+            "countryCode":"+65",
+            "areaCode":"01",
+            "contactNo":""
         }, {
+            "storeId": "store3",
             "storeName": "Sample store name",
             "country": "Singapore",
-            "city": "Singapore"
+            "city": "Singapore",
+            "area":"",
+            "addressLine1":"",
+            "addressLine2":"",
+            "zipCode":"",
+            "countryCode":"+65",
+            "areaCode":"01",
+            "contactNo":""
         }, {
+            "storeId": "store4",
             "storeName": "Sample store name",
             "country": "Singapore",
-            "city": "Singapore"
+            "city": "Singapore",
+            "area":"",
+            "addressLine1":"",
+            "addressLine2":"",
+            "zipCode":"",
+            "countryCode":"+65",
+            "areaCode":"01",
+            "contactNo":""
         }
     ]
 }

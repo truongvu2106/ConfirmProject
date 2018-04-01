@@ -22,7 +22,7 @@ import { MyProfileComponent } from './pages/myprofile/myprofile.component';
 import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
 import { ResetComponent } from './pages/login/reset.component';
-
+import { StoreInfoComponent } from './pages/storeinfo/storeinfo.component';
 
 // import { HomeComponent } from './page/home/home.component';
 
@@ -46,6 +46,8 @@ const routes: Routes = [
       { path: 'stores', component: StoresComponent }
     ]
   },
+  { path: 'store-detail', component: StoreInfoComponent },
+  { path: 'store-detail/:idStore', component: StoreInfoComponent },
   { path: '**', redirectTo: 'account' }
 ];
 

@@ -34,7 +34,7 @@
         </td>
         <td>
           <div class="td group-action">
-            <a><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a [routerLink]="['/store-detail',  store.storeId]"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             <a><i class="fa fa-trash" aria-hidden="true"></i></a>
           </div>
         </td>
@@ -42,6 +42,6 @@
     </tbody>
   </table>
   <div class="text-right control">
-    <button class="btn btn-primary">Add  New Store</button>
+    <a class="btn btn-primary" routerLink="/store-detail">Add  New Store</a>
   </div>
 </div>
