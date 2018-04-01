@@ -27,11 +27,12 @@
                 border-left: 5px solid #056bae;
                 background-color: #FFFFFF;
             }
+
         }
         .list-group-item {
             border: none;
             border-radius: 0;
-            a {
+            label {
                 margin-right: 5px;
             }
             .badge {
@@ -50,22 +51,24 @@
     min-height: 600px;
     .nav-justified {
         li {
+            &:last-child a span {
+                border-right: none;
+            }
             a {
                 border-radius: 0;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                font-size: 13px;
+                font-size: 14px;
                 line-height: 40px;
+                padding: 15px 0;
                 span {
                     border-right: 1px solid #888888;
                     display: block;
-                    &:last-child {
-                        border-right: none;
-                    }
                 }
-                &.active {
+                &.active, &:hover, &:focus {
                     border-bottom: 5px solid #056bae;
                     color: #414141;
+                    background-color: #FFFFFF;
                 }
             }
         }
