@@ -1,21 +1,47 @@
 <div class="store-container">
-  <table class="table mc-table">
-    <caption>{{stores.length}} stores</caption>
+  <table class="table no-bordered mc-table">
+    <caption><p>{{stores.length}} stores</p></caption>
     <thead>
       <tr>
         <th>Store name</th>
         <th>Country</th>
         <th>City</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let store of stores">
         <td>
-          {{store.storeName}}
+          <div class="td">
+            <span>
+              {{store.storeName}}
+            </span>
+          </div>
         </td>
-        <td>{{store.country}}</td>
-        <td>{{store.city}}</td>
+        <td>
+          <div class="td">
+            <span>
+              {{store.country}}
+            </span>
+          </div>
+        </td>
+        <td>
+          <div class="td">
+            <span>
+              {{store.city}}
+            </span>
+          </div>
+        </td>
+        <td>
+          <div class="td group-action">
+            <a><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a><i class="fa fa-trash" aria-hidden="true"></i></a>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
+  <div class="text-right control">
+    <button class="btn btn-primary">Add  New Store</button>
+  </div>
 </div>

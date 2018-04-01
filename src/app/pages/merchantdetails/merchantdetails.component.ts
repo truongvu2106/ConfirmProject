@@ -13,6 +13,8 @@ export class MerchantDetailsComponent implements OnInit {
   isMerchantdetailsViewShow = true;
   // list merchant categories
   categories: any[] = [];
+  countries: any[] = [];
+  cities: any[] = [];
   // merchant details
   merchant: any = {};
 
@@ -31,7 +33,15 @@ export class MerchantDetailsComponent implements OnInit {
     this.dataService.getData('assets/data/merchantdata.json').subscribe(
       data => {
         this.merchant = data.merchant;
-        this.categories = data.categories || [];
+        this.categories = [];
+        data.categories.forEach((item) => {
+          item.isChecked = this.merchant.categories.findIndex(
+                          (cate) => {
+                            return item.value === cate;}) > -1;
+          this.categories.push(item);
+        });
+        this.countries = data.countries || [];
+        this.cities = this.countries[0].cities || [];
       },
       error => this.errorMessage = <any>error
     );
