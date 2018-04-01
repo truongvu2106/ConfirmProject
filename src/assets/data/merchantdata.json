@@ -1,23 +1,35 @@
 {
     "categories": [{
         "value": "Restaurants",
-        "name": "Restaurants"
+        "name": "Restaurants",
+        "icon": "fa-cutlery"
     }, {
         "value": "Bars",
-        "name": "Bars"
+        "name": "Bars",
+        "icon": "fa-glass"
     }, {
         "value": "Hotels",
-        "name": "Hotels"
+        "name": "Hotels",
+        "icon": "fa-bed"
     }, {
         "value": "Travel",
-        "name": "Travel"
+        "name": "Travel",
+        "icon": "fa-plane"
     }, {
         "value": "Shopping",
-        "name": "Shopping"
+        "name": "Shopping",
+        "icon": "fa-shopping-bag"
     }, {
         "value": "Lifestyle",
-        "name": "Lifestyle"
+        "name": "Lifestyle",
+        "icon": "fa-flag-o"
     }],
+    "countries": [
+        {
+            "name": "Singapore",
+            "cities": [ "Singapore" ]
+        }
+    ],
     "merchant": {
         "categories": ["Restaurants", "Travel"],
         "country": "Singapore",

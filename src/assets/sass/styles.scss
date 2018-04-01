@@ -72,3 +72,50 @@ body {
 article{
     min-height: 890px;
 }
+
+.form-control {
+    background-color: #eee;
+    height: 50px;
+    border: 1px solid #fff;
+    box-shadow: none;
+    border-radius: 6px;
+    transition: border-color ease-in-out 0ms;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
+
+textarea.form-control {
+    box-shadow: 0 0 0 1px #fff;
+    border: 1px solid transparent;
+    transition: box-shadow ease-in-out 225ms;
+    -webkit-appearance: textarea;
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+select.form-control {
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    background-position: right 10px center;
+    background-size: auto 20%;
+    padding-right: 42px;
+    -webkit-appearance: menulist;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+}
