@@ -26,6 +26,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { ChangePassModalViewComponent } from './components/changepassmodalview/changepassmodalview.component';
 import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
+import { ResetComponent } from './pages/login/reset.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ForgotPasswordComponent } from './pages/login/forgot-password.component
     ChangePassModalViewComponent,
     ForgotUserComponent,
     ForgotPasswordComponent,   
-    ChangePassModalViewComponent
+    ChangePassModalViewComponent,
+    ResetComponent
   ],
   imports: [
     BrowserAnimationsModule,

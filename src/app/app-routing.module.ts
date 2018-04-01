@@ -21,6 +21,7 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { MyProfileComponent } from './pages/myprofile/myprofile.component';
 import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
+import { ResetComponent } from './pages/login/reset.component';
 
 
 // import { HomeComponent } from './page/home/home.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'manage-merchant', component: ManageMerchantComponent },
   { path: 'forgot-user', component: ForgotUserComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetComponent },
   { path: '**', redirectTo: 'home' },
   {
     path: 'account', component: AccountComponent,

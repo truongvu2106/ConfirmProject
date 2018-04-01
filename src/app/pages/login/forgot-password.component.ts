@@ -9,7 +9,10 @@ import * as _ from 'lodash';
   styleUrls: ['./forgot-password.component.scss']
 })
 export class ForgotPasswordComponent implements OnInit { 
-  isFocusPasword:boolean;
+  isFocusUser:boolean;
+  submitted =false;
+  userid="";
+  error="";
   constructor(
    
   ) {}
@@ -24,7 +27,18 @@ export class ForgotPasswordComponent implements OnInit {
   // load data services
   onload = (): void => {    
   }  
-  Focus(){
-    this.isFocusPasword=true;
+  Submit = (): void =>{
+    
+    if (this.userid==""){
+      this.submitted =false;
+      this.error="Input is not null";
+    }
+    else if (this.userid=="Sample@sample.com"){
+      this.submitted =false;
+      this.error="'Sample@sample.com' is not a valid email address";
+    }
+    else{
+      this.submitted =true;
+    }
   }
 }

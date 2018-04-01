@@ -9,7 +9,9 @@ import * as _ from 'lodash';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit { 
-
+  isFocusUserId=false;
+  isFocusPassword=false;
+  isFocusConfirm=false;
   constructor(
    
   ) {}

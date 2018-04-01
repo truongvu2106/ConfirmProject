@@ -10,14 +10,16 @@
                 <span>Registration</span>
             </div>
             <div class="mc-box-item mc-user">
-                <label>User ID</label>
-                <input type="text" class="form-control" value="" placeholder="SampleID"/>
+                <label [ngStyle]="{'opacity':(isFocusUserId)?'1':'0'}">User ID</label>
+                <input type="text" (focus)="isFocusUserId=true" (blur)="isFocusUserId=false" class="form-control" value="" placeholder="SampleID"/>
             </div>
-            <div class="mc-box-item mc-password">                
-                <input type="password" class="form-control" placeholder="Set your password"/>
+            <div class="mc-box-item mc-password">
+                <label [ngStyle]="{'opacity':(isFocusPassword)?'1':'0'}">Set your password</label>              
+                <input type="password" (focus)="isFocusPassword=true" (blur)="isFocusPassword=false" class="form-control" placeholder="Set your password"/>
             </div>
-            <div class="mc-box-item mc-password">                
-                    <input type="password" class="form-control" placeholder="Confirm password"/>
+            <div class="mc-box-item mc-password">
+                <label [ngStyle]="{'opacity':(isFocusConfirm)?'1':'0'}">Confirm password</label>
+                <input type="password" (focus)="isFocusConfirm=true" (blur)="isFocusConfirm=false" class="form-control" placeholder="Confirm password"/>
             </div>
             <div class="mc-box-item mc-agree">
                     <label class="chk">

@@ -31,14 +31,14 @@
                     }
                 }
             }
-            &.mc-user{
+            &.mc-password{
                 label{                    
                     float: left;
                     color: #333;   
-                    font-size: 16px;
+                    font-size: 16px;                    
                     width: 100%;
                     text-align: left;
-                    margin-top: 40px;
+                    font-size: 12px;
                 }
                 input{
                     background: #eee;
@@ -70,45 +70,9 @@
                     float: left;
                     text-decoration: underline;
                     color: #337ab7;
-                    margin-top: 115px;
-                }
-                
-            }
-            &.mc-back{
-                a{
-                    width: 100%;
-                    text-align: center;
-                    margin-bottom: 5px;
-                    float: left;
-                    text-decoration: underline;
-                    color: #337ab7;
-                    margin-top: 155px;
+                    margin-top: 80px;
                 }                
-            }
-            .mc-icon-success{
-                width: 100%;
-                text-align: center;
-                margin-top: 30px;
-                span{
-                    display: inline-block;
-                    height: 80px;
-                    width: 80px;
-                    border: 1px solid #337ab7;
-                    border-radius: 50%;
-                    i{
-                        height: 80px;
-                        width: 80px;
-                        display: table-cell;
-                        color: #337ab7;
-                        vertical-align: middle;
-                        font-size: 30px;
-
-                    }
-                }
-            }
-            .mc-title-success{
-                margin-top: 10px;
-            }
+            }            
             .mc-error{
                 text-align: left;
                 color: red;
