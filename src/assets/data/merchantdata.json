@@ -24,12 +24,6 @@
         "name": "Lifestyle",
         "icon": "fa-flag-o"
     }],
-    "countries": [
-        {
-            "name": "Singapore",
-            "cities": [ "Singapore" ]
-        }
-    ],
     "merchant": {
         "categories": ["Restaurants", "Travel"],
         "country": "Singapore",

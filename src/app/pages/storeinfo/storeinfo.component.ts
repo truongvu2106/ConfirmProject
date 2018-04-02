@@ -19,14 +19,14 @@ export class StoreInfoComponent implements OnInit {
   isCreate: boolean;
 
   //this store
-  store: any[]  = [];
+  store: any = {};
 
   // text MS error load json
   errorMessage: string;
 
   //list city
-  listCity: any = {};
-  listCountry: any ={};
+  listCity: any[] = [];
+  listCountry: any[] = [];
 
   constructor(
     private router: ActivatedRoute,
@@ -37,7 +37,6 @@ export class StoreInfoComponent implements OnInit {
       if (!this.idStore) {
         this.isCreate = true;
       }
-      console.log(this.idStore)
     });
   }
 
@@ -52,24 +51,15 @@ export class StoreInfoComponent implements OnInit {
           return item.storeId = this.idStore;
         }) || {};
       },
-      error => this.errorMessage = <any>error,
-      //() => console.log(this.store)
-    );
-
-    this.dataService.getData('assets/data/city.json').subscribe(
-      data => {
-        this.listCity = data.city;
-      },
-      error => this.errorMessage = <any>error,
-      //() => console.log(this.store)
+      error => this.errorMessage = <any>error
     );
 
     this.dataService.getData('assets/data/country.json').subscribe(
       data => {
-        this.listCountry = data.country;
+        this.listCountry = data.countries || [];
+        this.listCity = this.listCountry[0].cities || [];
       },
-      error => this.errorMessage = <any>error,
-      //() => console.log(this.store)
+      error => this.errorMessage = <any>error
     );
   }
   

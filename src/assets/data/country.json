@@ -1,16 +1,8 @@
 {
-    "country":[
+    "countries": [
         {
-            "idCountry":"name1",
-            "nameCountry":"Singapore"
-        },
-        {
-            "idCountry":"name2",
-            "nameCountry":"Singapore"
-        },
-        {
-            "idCountry":"name3",
-            "nameCountry":"Singapore"
+            "countryName": "Singapore",
+            "cities": [ "Singapore" ]
         }
     ]
     

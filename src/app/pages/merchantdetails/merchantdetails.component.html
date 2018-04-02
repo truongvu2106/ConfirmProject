@@ -74,12 +74,14 @@
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">Country</label>
           <select class="form-control" role="listbox" [(ngModel)]="merchant.country">
-              <option *ngFor="let country of countries" [value]="country.name"> {{ country.name }} </option>
+              <option disabled>Country</option>
+              <option *ngFor="let country of countries" [value]="country.countryName"> {{ country.countryName }} </option>
           </select>
         </div>
         <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
           <label class="mc-label">City</label>
           <select class="form-control" role="listbox" [(ngModel)]="merchant.city">
+              <option disabled>City</option>
               <option *ngFor="let city of cities" [value]="city"> {{ city }} </option>
           </select>
         </div>

@@ -31,14 +31,15 @@
             <div class="col-md-6">
               <label>Country</label>
               <select [ngModel]="store.country" class="form-control" >
-                <option [value]="country">Singapore</option>
+                  <option disabled>Country</option>
+                <option [value]="country.countryName" *ngFor="let country of listCountry"> {{ country.countryName }}</option>
               </select>
             </div>
             <div class="col-md-6">
                 <label>City</label>
                 <select [ngModel]="store.city" class="form-control">
                   <option disabled>City</option>
-                  <option [value]="Singapore">Singapore</option>
+                  <option [value]="city" *ngFor="let city of listCity"> {{ city }}</option>
                 </select>
             </div>
           </div>

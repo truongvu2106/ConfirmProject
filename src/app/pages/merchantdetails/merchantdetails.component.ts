@@ -40,6 +40,11 @@ export class MerchantDetailsComponent implements OnInit {
                             return item.value === cate;}) > -1;
           this.categories.push(item);
         });
+      },
+      error => this.errorMessage = <any>error
+    );
+    this.dataService.getData('assets/data/country.json').subscribe(
+      data => {
         this.countries = data.countries || [];
         this.cities = this.countries[0].cities || [];
       },
