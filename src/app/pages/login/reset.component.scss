@@ -2,9 +2,9 @@
     text-align: center;
     background: url(../../../assets/img/hotair_balloons_sky.jpg);
     background-size: 100% 100%;
-    height:137vh;
+    height:100vh;
     .mc-box-login{
-        margin-top: 165px;
+        margin-top: 100px;
         background: #FFF;
         width: 350px;
         height: 470px;
@@ -13,11 +13,12 @@
         border-radius: 1px;
         .mc-box-item{
             display: inline-block;
-            width: 310px;
-            &.mc-title{                
+            width: 300px;            
+            padding: 10px 0;
+            &.mc-title{
                 span{                    
                     float: left;
-                    color: #383434;
+                    color: #000;
                     font-size: 20px;
                     &:first-child{
                         width: 100%;
@@ -38,29 +39,6 @@
                     width: 100%;
                     text-align: left;
                     font-size: 12px;
-                    margin-top: 30px;
-                }
-                input{
-                    background: #eee;
-                    height: 50px;
-                    width: 100%;                    
-                    float: left;
-                    border-color: #fff;
-                    box-shadow: none;
-                    &:focus{
-                        box-shadow: none;
-                        border-color: #056DAE;
-                    }                    
-                }
-            }
-            &.mc-confirm{
-                label{                    
-                    float: left;
-                    color: #333;   
-                    font-size: 16px;                    
-                    width: 100%;
-                    text-align: left;
-                    font-size: 12px;                    
                 }
                 input{
                     background: #eee;
@@ -90,19 +68,16 @@
                     text-align: center;
                     margin-bottom: 5px;
                     float: left;
-                    text-decoration: none;
+                    text-decoration: underline;
                     color: #337ab7;
-                    margin-top: 90px;
-                    font-size: 15px;
+                    margin-top: 80px;
                 }                
             }            
             .mc-error{
                 text-align: left;
                 color: red;
                 float: left;
-                font-size: 11px;
-                width: 100%;
-                height: 20px;
+                font-size: 13px;
             }
         }
     }

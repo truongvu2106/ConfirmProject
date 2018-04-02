@@ -1,0 +1,167 @@
+.clearboth{
+    clear: both;
+}
+@mixin fixlabel{
+    text-transform: uppercase;
+    color:#888;
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 2px;
+    padding-bottom: 12px;
+}
+.merchantdetail{
+    background-color: #f8f8f8;
+    padding-bottom: 50px;
+    .bannermerchantdetail{
+        background-color: #002a54;
+        padding: 40px;
+        .itembannermerchantdetail{
+            font-size: 28px;
+            color: #fff;
+            float: left;
+            border-left: 1px solid #888;
+            padding: 8px 85px;
+            &:first-child{
+                border-left: none;
+                padding-left: 0;
+            }
+            .mc-label {
+                @include fixlabel;
+            }
+        }
+    }
+    .merchantsection{
+        background-color: #fff;
+        border: 1px solid #f0f0f0;       
+        color: #333;
+        .mc-label {
+            @include fixlabel; 
+        }
+    }
+    .merchantcat{
+        margin: 45px; 
+        margin-bottom: 0;      
+        padding: 45px;
+        .ico{
+            float: right;
+            span.catico{
+                width: 58px;
+                height: 58px;
+                margin-left: 20px;
+                border: 1px solid #bbb;
+                border-radius: 50%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 70%;
+                display: inline-block;
+            }
+            span.restaurantico{
+                background-image: url('../../../assets/img/Restaurants@2x.png');
+            }
+            span.travelico{
+                background-image: url('../../../assets/img/Flights@2x.png');
+            }
+        }
+        .list-categories {
+            .col-item {
+                padding: 10px 25px;
+                .item {
+                    border-bottom: 1px solid #c3c3c3;
+                    .checkbox {
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .infoopt{
+        margin: 45px;
+        margin-top: 5px;
+        padding: 0 45px;
+        h3{
+            color: #a4a4a4;
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 15px 0;
+            border-bottom: 1px solid #c7c7c7;
+            margin-bottom: 45px;
+            font-weight: bold;
+        }
+        .iteminfo{
+            margin-bottom: 30px;
+        }
+        .itemeditinfo{
+            margin-bottom: 30px;
+            .text-input-label{
+                font-size: 13px;
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }
+            input[type="text"]{
+                background-color: #eee;
+            }
+        }
+    }
+}
+
+.formtool{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    overflow: auto;
+    a{
+        text-decoration: underline;
+        margin-right: 25px;
+        display: block;
+        float: left;
+        transform: translateY(60%);
+    }
+    button.circlebtn{
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        min-width:55px;
+        font-size: 20px;
+    }
+    button.finishbtn{
+        box-shadow: 1px 2px 5px #ccc;
+        background-color: #fff;
+        border: 0;
+        margin-right: 10px;
+        &:before{
+            content:"";
+            width: 10px;
+            height: 3px;
+            background-color: #056DAE;
+            display: block;
+            transform: rotate(45deg);
+            position: relative;
+            top: 18px;
+            left: 7px; 
+        }
+        &:after{
+            content:"";
+            width: 3px;
+            height: 25px;        
+            background-color: #056DAE; 
+            -ms-transform: rotate(45deg); /* IE 9 */
+            -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+            transform: rotate(45deg);
+            display: block;
+            position: relative;
+            bottom: 0px;
+            left: 50%;
+        }
+        &:hover{
+            background-color: #002A54;
+            &:before{
+                background-color:#fff;
+            }
+            &::after{
+                background-color:#fff;
+            }
+        }
+    }
+}

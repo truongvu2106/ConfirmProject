@@ -119,3 +119,43 @@ select.form-control {
     text-align: start;
     margin: 0em;
 }
+
+/**
+css material
+**/
+.mc-full-width{
+    width:100%;
+}
+.mat-form-field-label{
+    top: 2.28125em;
+    left:1em !important;
+}
+.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label, .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    -webkit-transform: translateY(-2.28125em) scale(.75) perspective(100px) translateZ(.001px) translateX(-1.4em);
+    transform: translateY(-2.28125em) scale(.75) perspective(100px) translateZ(.001px) translateX(-1.4em);
+    -ms-transform: translateY(-2.28125em) scale(.75) translateX(-1.4em);
+}
+.mat-form-field-underline{
+    height: 0px!important;
+    width: 0%!important;
+}
+.mat-form-field-subscript-wrapper {    
+    margin-top: 0em !important;
+}
+.mat-checkbox{
+    float: left;
+}
+.mat-checkbox-frame {   
+    border-width: 0.09em !important;
+    border-radius: 5px !important;   
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #286090;
+    border-width: 0.09em !important;
+    border-radius: 5px !important;
+    border-color: #056DAE !important;
+}
+.mat-form-field-invalid .mat-form-field-label {
+    color: #333;
+}

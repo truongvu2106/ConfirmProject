@@ -10,7 +10,8 @@ import {
   MatIconModule,
   MatSidenavModule,
   MatTabsModule,
-  MatDialogModule
+  MatDialogModule,
+  MatInputModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,9 +25,7 @@ import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant
 import { FooterComponent } from './components/footer/footer.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ChangePassModalViewComponent } from './components/changepassmodalview/changepassmodalview.component';
-import { ForgotUserComponent } from './pages/login/forgot-user.component';
-import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
-import { ResetComponent } from './pages/login/reset.component';
+import { ManageDetailComponent } from './pages/manage-detail/managedetail.component';
 
 
 @NgModule({
@@ -38,11 +37,9 @@ import { ResetComponent } from './pages/login/reset.component';
     RegisterComponent,
     ManageMerchantComponent,
     AccountComponent,
-    ChangePassModalViewComponent,
-    ForgotUserComponent,
-    ForgotPasswordComponent,   
-    ChangePassModalViewComponent,
-    ResetComponent
+    ChangePassModalViewComponent,   
+    ChangePassModalViewComponent,    
+    ManageDetailComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -56,7 +53,8 @@ import { ResetComponent } from './pages/login/reset.component';
     MatIconModule,
     MatSidenavModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,    
   ],
   entryComponents:[
     ChangePassModalViewComponent
@@ -67,7 +65,8 @@ import { ResetComponent } from './pages/login/reset.component';
     MatDialogModule,
     MatIconModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatInputModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

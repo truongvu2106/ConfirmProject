@@ -19,9 +19,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { MerchantDetailsComponent } from './pages/merchantdetails/merchantdetails.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { MyProfileComponent } from './pages/myprofile/myprofile.component';
-import { ForgotUserComponent } from './pages/login/forgot-user.component';
-import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
-import { ResetComponent } from './pages/login/reset.component';
+import { ManageDetailComponent } from './pages/manage-detail/managedetail.component';
 
 
 // import { HomeComponent } from './page/home/home.component';
@@ -30,9 +28,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'manage-merchant', component: ManageMerchantComponent },
-  { path: 'forgot-user', component: ForgotUserComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'reset-password', component: ResetComponent },
   { path: '**', redirectTo: 'home' },
   {
     path: 'account', component: AccountComponent,
@@ -46,6 +41,7 @@ const routes: Routes = [
       { path: 'stores', component: StoresComponent }
     ]
   },
+  { path: 'manage-detail', component: ManageDetailComponent },
   { path: '**', redirectTo: 'account' }
 ];
 
