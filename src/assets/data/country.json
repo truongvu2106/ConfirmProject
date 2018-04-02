@@ -1,0 +1,9 @@
+{
+    "countries": [
+        {
+            "countryName": "Singapore",
+            "cities": [ "Singapore" ]
+        }
+    ]
+    
+}

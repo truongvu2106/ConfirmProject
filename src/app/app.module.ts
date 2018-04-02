@@ -26,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ChangePassModalViewComponent } from './components/changepassmodalview/changepassmodalview.component';
 import { ManageDetailComponent } from './pages/manage-detail/managedetail.component';
+import { StoreInfoComponent } from './pages/storeinfo/storeinfo.component';
 
 
 @NgModule({
@@ -39,7 +40,9 @@ import { ManageDetailComponent } from './pages/manage-detail/managedetail.compon
     AccountComponent,
     ChangePassModalViewComponent,   
     ChangePassModalViewComponent,    
-    ManageDetailComponent
+    ManageDetailComponent,      
+    ChangePassModalViewComponent,    
+    StoreInfoComponent
   ],
   imports: [
     BrowserAnimationsModule,

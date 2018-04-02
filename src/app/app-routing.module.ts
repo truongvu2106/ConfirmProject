@@ -21,6 +21,7 @@ import { StoresComponent } from './pages/stores/stores.component';
 import { MyProfileComponent } from './pages/myprofile/myprofile.component';
 import { ManageDetailComponent } from './pages/manage-detail/managedetail.component';
 
+import { StoreInfoComponent } from './pages/storeinfo/storeinfo.component';
 
 // import { HomeComponent } from './page/home/home.component';
 
@@ -42,6 +43,8 @@ const routes: Routes = [
     ]
   },
   { path: 'manage-detail', component: ManageDetailComponent },
+  { path: 'store-detail', component: StoreInfoComponent },
+  { path: 'store-detail/:idStore', component: StoreInfoComponent },
   { path: '**', redirectTo: 'account' }
 ];
 

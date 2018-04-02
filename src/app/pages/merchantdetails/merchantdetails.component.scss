@@ -42,7 +42,7 @@
     .merchantcat{
         margin: 45px; 
         margin-bottom: 0;      
-        padding: 45px;
+        padding: 30px 45px;
         .ico{
             float: right;
             span.catico{
@@ -68,9 +68,6 @@
                 padding: 10px 25px;
                 .item {
                     border-bottom: 1px solid #c3c3c3;
-                    .checkbox {
-                        padding-left: 20px;
-                    }
                 }
             }
         }

@@ -1,0 +1,105 @@
+<div class="storeinfo">
+  <div class="bannerstoreinfo" *ngIf="!isCreate">
+      <label>{{store.city}}</label>
+      <span class="glyphicon glyphicon-menu-left" routerLink="/account/stores"></span>{{store.storeName}}
+  </div><!-- end bannerprofile -->
+  <div class="banneraddstoreinfo" *ngIf="isCreate">
+      Add New Store
+  </div>
+
+  <div class="contentstoreinfo">
+    <div class="row storeinfotab">
+      <div class="col-md-offset-4 col-md-4">
+        <div class="btn-group btn-group-justified btn-group-lg" role="group">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn" (click)="showStoreDetail = true" [class.active]="showStoreDetail">Store Details</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn" (click)="showStoreDetail = false" [class.active]="!showStoreDetail">Language Variants</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row storedetail">
+      <div class="col-md-offset-3 col-md-6">
+        <div class="form-group">
+            <label>Store Name</label>
+            <input type="text" placeholder="Store Name" class="form-control" [(ngModel)]="store.storeName">
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Country</label>
+              <select [ngModel]="store.country" class="form-control" >
+                  <option disabled>Country</option>
+                <option [value]="country.countryName" *ngFor="let country of listCountry"> {{ country.countryName }}</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+                <label>City</label>
+                <select [ngModel]="store.city" class="form-control">
+                  <option disabled>City</option>
+                  <option [value]="city" *ngFor="let city of listCity"> {{ city }}</option>
+                </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label>Area</label>
+            <input type="text" [ngModel]="store.area" class="form-control" placeholder="Area" >
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Address Line 1</label>
+              <input type="text" class="form-control" [(ngModel)]="store.addrressLine1" placeholder="Address Line 1">
+            </div>
+            <div class="col-md-6">
+                <label>Address Line 2</label>
+                <input type="text" class="form-control" [(ngModel)]="store.addrressLine2" placeholder="Address Line 2">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <label>Zip code</label>
+              <input type="text" class="form-control" [(ngModel)]="store.zipCode" placeholder="Zip code">
+            </div>
+          </div>
+        </div>
+        <h3>option information</h3>
+        <div class="form-group">
+            <div class="row">
+              <div class="col-md-2">
+                <label>Country Code</label>
+                <input type="text" class="form-control" [(ngModel)]="store.countryCode">
+              </div>
+              <div class="col-md-2 fix-margin">
+                <label>Area Code</label>
+                <input type="text" class="form-control" [(ngModel)]="store.areaCode">
+              </div>
+              <div class="col-md-8">
+                <label>Merchant Contact No.</label>
+                <input type="text" placeholder="Merchant Contact No." class="form-control" [(ngModel)]="store.contactNo" >
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- contentstoreinfo -->
+  
+  <div class="storeinfofoot">
+      <a routerLink="/account/stores" >Cancel</a>
+      <button class="finishbtn btn btn-lg" *ngIf="!isCreate">
+        Update
+      </button>
+      <button class="finishbtn btn btn-lg" *ngIf="isCreate">
+        Done
+      </button>
+  </div>
+  <!-- storeinfofoot -->
+
+</div>
