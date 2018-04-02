@@ -246,6 +246,109 @@
             }
         }
     }
+    .mc-box-reset{
+        margin-top: 165px;
+        background: #FFF;
+        width: 350px;
+        height: 470px;
+        display: inline-block;
+        text-align: center;       
+        border-radius: 1px;
+        .mc-box-item{
+            display: inline-block;
+            width: 310px;
+            &.mc-title{                
+                span{                    
+                    float: left;
+                    color: #383434;
+                    font-size: 20px;
+                    &:first-child{
+                        width: 100%;
+                        float: left;
+                        text-align: left;
+                        margin-bottom: 5px;
+                    }
+                    a{
+                        color: #000;
+                    }
+                }
+            }
+            &.mc-password{
+                label{                    
+                    float: left;
+                    color: #333;   
+                    font-size: 16px;                    
+                    width: 100%;
+                    text-align: left;
+                    font-size: 12px;
+                    margin-top: 30px;
+                }
+                input{
+                    background: #eee;
+                    height: 50px;
+                    width: 100%;                    
+                    float: left;
+                    border-color: #fff;
+                    box-shadow: none;
+                    &:focus{
+                        box-shadow: none;
+                        border-color: #056DAE;
+                    }                    
+                }
+            }
+            &.mc-confirm{
+                label{                    
+                    float: left;
+                    color: #333;   
+                    font-size: 16px;                    
+                    width: 100%;
+                    text-align: left;
+                    font-size: 12px;                    
+                }
+                input{
+                    background: #eee;
+                    height: 50px;
+                    width: 100%;                    
+                    float: left;
+                    border-color: #fff;
+                    box-shadow: none;
+                    &:focus{
+                        box-shadow: none;
+                        border-color: #056DAE;
+                    }                    
+                }
+            }
+            &.mc-button{                
+                input{                    
+                    height: 50px;
+                    width: 100%;
+                    float: left;
+                    font-weight: bold;
+                    margin-top: 20px;
+                }
+            }
+            &.mc-cancel{
+                a{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 5px;
+                    float: left;
+                    text-decoration: none;
+                    color: #337ab7;
+                    margin-top: 90px;
+                    font-size: 15px;
+                }                
+            }            
+            .mc-error{
+                text-align: left;
+                color: red;
+                float: left;
+                font-size: 11px;
+                width: 100%;
+                height: 20px;
+            }
+        }
+    }
 }
 .mat-input-element{
     background: #eee;
