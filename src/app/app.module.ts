@@ -27,7 +27,7 @@ import { ChangePassModalViewComponent } from './components/changepassmodalview/c
 import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
 import { ResetComponent } from './pages/login/reset.component';
-import { StoreInfoComponent } from './pages/storeinfo/storeinfo.component';
+import { StoreInfoComponent } from './pages/account/storeinfo/storeinfo.component';
 
 
 @NgModule({
