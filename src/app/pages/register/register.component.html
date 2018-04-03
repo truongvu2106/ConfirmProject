@@ -1,38 +1,50 @@
-<div class="mc-containter-register">
-        <div class="mc-box-left-register">
+<mat-sidenav-container class="mc-containter-register">
+        <mat-sidenav-content class="mc-sidenav-content" [ngStyle]="{'margin-right':'450px'}">
+            <div class="mc-box-register-left">
             <div class="mc-description">
                 <h3>Good moning, [user's name] from [merchant name]</h3>
                 <h1>Welcome to Company Merchant Portal</h1>
             </div>
-        </div>    
-        <div class="mc-box-register">
+            </div>
+        </mat-sidenav-content>
+        <mat-sidenav #sidenav [mode]="mode.value" [disableClose]="true" [opened]="true" class="mc-sidenav">
+            <div class="mc-box-register-right">
             <div class="mc-box-item mc-title">
                 <span>Registration</span>
             </div>
             <div class="mc-box-item mc-user">
-                <label>User ID</label>
-                <input type="text" (focus)="isFocusUserId=true;CheckInfo('userid')" [(ngModel)]="userid" (blur)="isFocusUserId=false;CheckInfo('userid')" class="form-control" value="" placeholder="SampleID" [ngStyle]="{'border-color':erroruserid!=''?'red':''}"/>
-                <span *ngIf="!submitted" class="mc-error">{{erroruserid}}</span>
+                <mat-form-field class="mc-full-width">
+                    <input matInput placeholder="User ID" [formControl]="userId"
+                            >                
+                    <mat-error *ngIf="userId.hasError('required')">
+                      User ID is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
             </div>
             <div class="mc-box-item mc-password">
-                <label [ngStyle]="{'opacity':(isFocusPassword || password!='')?'1':'0'}">Set your password</label>              
-                <input type="password" [(ngModel)]="password" (focus)="isFocusPassword=true;CheckInfo('password')" (blur)="isFocusPassword=false;CheckInfo('password')" class="form-control" placeholder="Set your password" [ngStyle]="{'border-color':errorpassword!=''?'red':''}"/>
-                <span *ngIf="!submitted" class="mc-error">{{errorpassword}}</span>  
+                <mat-form-field class="mc-full-width">
+                    <input matInput placeholder="Password" [type]="password" [formControl]="password"
+                    >
+                    <mat-error *ngIf="password.hasError('required')">
+                        Password is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>  
             </div>
             <div class="mc-box-item mc-password">
-                <label [ngStyle]="{'opacity':(isFocusConfirm || confirmpassword!='')?'1':'0'}">Confirm password</label>
-                <input type="password" [(ngModel)]="confirmpassword" (focus)="isFocusConfirm=true;CheckInfo('conffirm')" (blur)="isFocusConfirm=false;CheckInfo('conffirm')" class="form-control" placeholder="Confirm password" [ngStyle]="{'border-color':errorconfirm!=''?'red':''}"/>
-                <span *ngIf="!submitted" class="mc-error">{{errorconfirm}}</span>  
+                <mat-form-field class="mc-full-width">
+                    <input matInput placeholder="Confirm Password" [type]="password" [formControl]="confirmpassword"
+                    >
+                    <mat-error *ngIf="confirmpassword.hasError('required')">
+                        Password is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>  
             </div>
             <div class="mc-box-item mc-agree">
-                    <label class="chk">
-                        <input type="checkbox" class="chkctrl" (change)="CheckAgree()">
-                        <i class="icon"></i>
-                        <span [ngStyle]="{'color':isAgree?'#333':'#056DAE'}">I agree to the <a href="">Terms &amp; Conditions</a></span>
-                    </label>
-                </div>
+                    <mat-checkbox>I agree to the <a href="">Terms &amp; Conditions</a></mat-checkbox>                    
+            </div>
             <div class="mc-box-item mc-button">
                <input type="button" class="btn btn-dark" value="Register"/>
-            </div>            
-        </div>
-    </div>
+            </div>
+            </div>         
+        </mat-sidenav>
+    </mat-sidenav-container>

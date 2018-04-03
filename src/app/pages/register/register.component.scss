@@ -1,175 +1,180 @@
 .mc-containter-register{    
     text-align: center;
     height:136vh;
-    .mc-box-left-register{
-        background: url(../../../assets/img/hotair_balloons.jpg);
-        background-size: 100% 100%;
-        float: left;
-        width: 59%;
-        height: 100%;
-        .mc-description{
-            width: 70%;
-            margin: 206px 137px;
-            h3{
-                color: #fff;
-                text-align: left;                
-                
-            }
-            h1{
-                color: #ddd;
-                font-size: 40px;
-                text-align: left;
-                margin-top: 20px;
+    .mc-sidenav-content{             
+        .mc-box-register-left{
+            background: url(../../../assets/img/hotair_balloons.jpg) no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            .mc-description{
+                width: 70%;
+                margin: 206px 137px;
+                h3{
+                    color: #fff;
+                    text-align: left;
+                    font-size: 17px;              
+                }
+                h1{
+                    color: #ddd;
+                    font-size: 45px;
+                    text-align: left;
+                    margin-top: 28px;
+                }
             }
         }
     }
-    .mc-box-register{
-        background: #FFF;
-        width: 41%;
-        height: 100%;
-        float: right;
-        text-align: center;  
-        padding-top: 20px;        
-        .mc-box-item{
-            display: inline-block;
-            width: 335px;
-            &.mc-title{
-                margin-top:150px;
-                span{                    
-                    float: left;
-                    color: #000;
-                    font-size: 25px;              
-                }
-            }
-            &.mc-user{
-                padding-top: 35px;
-                label{                    
-                    float: left;
-                    color: #333;   
-                    font-size: 16px;
-                    width: 100%;
-                    text-align: left;
-                    font-size:12px;
-                    margin-bottom: 5px;
-                }
-                input{
-                    background: #eee;
-                    height: 50px;
-                    width: 100%;                    
-                    float: left;
-                    border-color: #fff;
-                    box-shadow: none;
-                    font-size: 16px;
-                    padding: 0px 20px;
-                    &:focus{
-                        box-shadow: none;
-                        border-color: #056DAE;
-                    }                    
-                }
-            }
-            &.mc-password{
-                label{                    
-                    float: left;
-                    color: #333;   
-                    font-size: 16px;                    
-                    width: 100%;
-                    text-align: left;
-                    font-size:12px;
-                    margin-bottom: 5px;
-                }
-                input{
-                    background: #eee;
-                    height: 50px;
-                    width: 100%;                    
-                    float: left;
-                    border-color: #fff;
-                    box-shadow: none;
-                    font-size: 16px;
-                    padding: 0px 20px;
-                    &:focus{
-                        box-shadow: none;
-                        border-color: #056DAE;
-                    }                    
-                }
-            }
-            &.mc-agree{
-                .chk {                    
-                    position: relative;
-                    cursor: pointer;
-                    padding-top: 4px;
-                    margin-top: 2px;
-                    margin-left: 1px;
-                    float: left;
-                    span{                        
-                        margin: -1px 10px;
+    .mc-sidenav{
+        right: 0;
+        width: 550px;
+        .mc-box-register-right{
+            background: #FFF;
+            height: 100%;
+            width: 100%;
+            text-align: center;  
+            padding-top: 20px;        
+            .mc-box-item{
+                display: inline-block;
+                width: 335px;
+                &.mc-title{
+                    margin-top:150px;
+                    span{                    
                         float: left;
-                    }                    
-                    .chkctrl {
-                        position: absolute;
-                        width: 0;
-                        height: 0;
-                        left: 0;
-                        top: 0;
-                        opacity: 0;
-                        margin: 0;
+                        color: #000;
+                        font-size: 25px;              
                     }
-                    i {
-                        
-                        background: #FFFFFF;
-                        border: 1px solid #056DAE;
-                        border-radius: 6px;
-                        width: 20px;
-                        height: 20px;
+                }
+                &.mc-user{
+                    padding-top: 35px;
+                    label{                    
+                        float: left;
+                        color: #333;   
+                        font-size: 16px;
+                        width: 100%;
+                        text-align: left;
+                        font-size:12px;
+                        margin-bottom: 5px;
+                    }
+                    input{
+                        background: #eee;
+                        height: 50px;
+                        width: 100%;                    
+                        float: left;
+                        border-color: #fff;
+                        box-shadow: none;
+                        font-size: 16px;
+                        padding: 0px 20px;
+                        &:focus{
+                            box-shadow: none;
+                            border-color: #056DAE;
+                        }                    
+                    }
+                }
+                &.mc-password{
+                    label{                    
+                        float: left;
+                        color: #333;   
+                        font-size: 16px;                    
+                        width: 100%;
+                        text-align: left;
+                        font-size:12px;
+                        margin-bottom: 5px;
+                    }
+                    input{
+                        background: #eee;
+                        height: 50px;
+                        width: 100%;                    
+                        float: left;
+                        border-color: #fff;
+                        box-shadow: none;
+                        font-size: 16px;
+                        padding: 0px 20px;
+                        &:focus{
+                            box-shadow: none;
+                            border-color: #056DAE;
+                        }                    
+                    }
+                }
+                &.mc-agree{
+                    .chk {                    
+                        position: relative;
                         cursor: pointer;
-                        float: left;                        
+                        padding-top: 4px;
+                        margin-top: 2px;
+                        margin-left: 1px;
+                        float: left;
+                        span{                        
+                            margin: -1px 10px;
+                            float: left;
+                        }                    
+                        .chkctrl {
+                            position: absolute;
+                            width: 0;
+                            height: 0;
+                            left: 0;
+                            top: 0;
+                            opacity: 0;
+                            margin: 0;
+                        }
+                        i {
+                            
+                            background: #FFFFFF;
+                            border: 1px solid #056DAE;
+                            border-radius: 6px;
+                            width: 20px;
+                            height: 20px;
+                            cursor: pointer;
+                            float: left;                        
+                        }
+                        .chkctrl:checked + i {
+                            border: 1px solid #056DAE;
+                        }
+                        .chkctrl:checked + i:after {
+                            content: "";
+                            background: #2980b9;
+                            background-image: url(../../../assets/img/tick.svg);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            top: 4px;
+                            left: 0px;
+                            border-radius: 6px;
+                            width: 20px;
+                            height: 20px;
+                        }                    
                     }
-                    .chkctrl:checked + i {
-                        border: 1px solid #056DAE;
+                }
+                &.mc-button{
+                    margin-top: 20px;
+                    input{                    
+                        height: 50px;
+                        width: 100%;
+                        float: left;
+                        font-weight: bold;
+                        background:#545b62;
+                        color: #ddd;
                     }
-                    .chkctrl:checked + i:after {
-                        content: "";
-                        background: #2980b9;
-                        background-image: url(../../../assets/img/tick.svg);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        position: absolute;
-                        top: 4px;
-                        left: 0px;
-                        border-radius: 6px;
-                        width: 20px;
-                        height: 20px;
-                    }                    
                 }
-            }
-            &.mc-button{
-                margin-top: 20px;
-                input{                    
-                    height: 50px;
-                    width: 100%;
-                    float: left;
-                    font-weight: bold;
-                    background:#545b62;
-                    color: #ddd;
+                &.mc-forget{
+                    a{
+                        width: 100%;
+                        text-align: left;
+                        margin-bottom: 5px;
+                        float: left;
+                        text-decoration: underline;
+                        color: #337ab7;
+                    }
                 }
-            }
-            &.mc-forget{
-                a{
-                    width: 100%;
+                .mc-error{
                     text-align: left;
-                    margin-bottom: 5px;
+                    color:#d80d0c;
                     float: left;
-                    text-decoration: underline;
-                    color: #337ab7;
+                    font-size: 11px;
+                    font-weight: bold;
+                    width: 100%;
+                    height: 20px;
                 }
-            }
-            .mc-error{
-                text-align: left;
-                color:#d80d0c;
-                float: left;
-                font-size: 11px;
-                font-weight: bold;
-                width: 100%;
-                height: 20px;
             }
         }
     }
