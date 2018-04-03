@@ -66,6 +66,7 @@ body {
     font-family: Interstate_Light,sans-serif,Arial,sans-serif;
     background-color: #eff3f6;
     letter-spacing: 1px;
+    color: #696969;
 }
 .container-fix {    
     margin: 0 auto;    
@@ -129,10 +130,17 @@ textarea.mat-input-element {
 }
 
 .mat-checkbox {
+    .mat-checkbox-label {
+        color: #696969;
+        font-weight: 400;
+    }
     .mat-checkbox-frame {
         border-radius: 6px;
     }
     &.mat-checkbox-checked {
+        .mat-checkbox-label {
+            color: #056DAE;
+        }
         .mat-checkbox-background {
             border-radius: 6px;
             background: #056DAE;
