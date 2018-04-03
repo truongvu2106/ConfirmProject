@@ -23,7 +23,7 @@
             </div>
             <div class="mc-box-item mc-password">
                 <mat-form-field class="mc-full-width">
-                    <input matInput placeholder="Password" [type]="password" [formControl]="password"
+                    <input matInput placeholder="Set your password" [type]="password" [formControl]="password"
                     >
                     <mat-error *ngIf="password.hasError('required')">
                         Password is <strong>required</strong>
@@ -32,7 +32,7 @@
             </div>
             <div class="mc-box-item mc-password">
                 <mat-form-field class="mc-full-width">
-                    <input matInput placeholder="Confirm Password" [type]="password" [formControl]="confirmpassword"
+                    <input matInput placeholder="Confirm password" [type]="password" [formControl]="confirmpassword"
                     >
                     <mat-error *ngIf="confirmpassword.hasError('required')">
                         Password is <strong>required</strong>
