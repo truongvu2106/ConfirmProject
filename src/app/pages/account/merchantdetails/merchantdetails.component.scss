@@ -57,16 +57,17 @@
                 display: inline-block;
             }
             span.restaurantico{
-                background-image: url('../../../assets/img/Restaurants@2x.png');
+                background-image: url('../../../../assets/img/Restaurants@2x.png');
             }
             span.travelico{
-                background-image: url('../../../assets/img/Flights@2x.png');
+                background-image: url('../../../../assets/img/Flights@2x.png');
             }
         }
         .list-categories {
             .col-item {
                 padding: 10px 25px;
                 .item {
+                    padding: 10px 25px;
                     border-bottom: 1px solid #c3c3c3;
                 }
             }

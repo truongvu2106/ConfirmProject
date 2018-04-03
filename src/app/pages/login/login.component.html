@@ -1,150 +1,152 @@
-
 <div class="mc-containter-login">
-    <!-- login box -->
-    <div class="mc-box-login" *ngIf="isBox === 1">
-        <div class="mc-box-item mc-title">
-            <span>Sign On</span>
-        </div>
-        <div class="mc-box-item mc-user">
-            <mat-form-field class="mc-full-width">
-                <input matInput placeholder="User ID" [formControl]="userIdFormControl"
-                       [errorStateMatcher]="matcher" >                
-                <mat-error *ngIf="userIdFormControl.hasError('required')">
-                  User ID is <strong>required</strong>
-                </mat-error>
-              </mat-form-field>
-        </div>
-        <div class="mc-box-item mc-password">
-            <mat-form-field class="mc-full-width">
-                <input matInput placeholder="Password" [type]="password" [formControl]="passwordFormControl"
-                [errorStateMatcher]="matcher">
-                <mat-error *ngIf="passwordFormControl.hasError('required')">
-                    Password is <strong>required</strong>
-                  </mat-error>
-              </mat-form-field>
-        </div>
-        <div class="mc-box-item mc-remember">            
-                <mat-checkbox>Remember my User ID</mat-checkbox>            
-        </div>
-        <div class="mc-box-item mc-button">
-           <input type="button" class="btn btn-primary" value="Sign On"/>
-        </div>
-        <div class="mc-box-item mc-forget">
-            <a href="javascript:;" (click)="isBox = 2">Forgot User ID?</a>
-            <a href="javascript:;" (click)="isBox = 3">Forgot Password?</a>
-        </div>
-    </div>
-
-    <!-- forgot user -->
-    <div class="mc-box-forgot" *ngIf="isBox === 2">
-        <form>
+        <!-- login box -->
+        <form [formGroup]="form" (ngSubmit)="SignOn()">
+        <div class="mc-box-login" *ngIf="isBox === 1">
             <div class="mc-box-item mc-title">
-                <span><a  href="javascript:;" (click)="isBox = 1"><i class="fa fa-angle-left"></i></a></span>
-                <span>Forgot User ID</span>
+                <span>Sign On</span>
             </div>
-            <div class="mc-box-item mc-user" *ngIf="submittedId!=1">
+            <div class="mc-box-item mc-user">
                 <mat-form-field class="mc-full-width">
-                    <input matInput placeholder="Enter your email address" [formControl]="emailFormControl" [ngModel]="emailUser"
-                        [errorStateMatcher]="matcher" >                
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                        Please enter a valid email address
+                    <input matInput placeholder="User ID" [formControl]="userId"
+                            >                
+                    <mat-error *ngIf="userId.hasError('required')">
+                      User ID is <strong>required</strong>
                     </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                        Email is <strong>required</strong>
-                    </mat-error>
-                    <mat-error *ngIf="submittedId==0">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                </mat-form-field>               
-            </div>        
-            <div class="mc-box-item mc-button" *ngIf="submittedId!=1">
-            <input type="button" class="btn btn-primary" (click)="SubmitId()" value="Submit"/>
+                  </mat-form-field>
             </div>
-            <div class="mc-box-item mc-cancel" *ngIf="!submittedId">
-                <a href="jaasript:;" (click)="isBox = 1">Cancel</a>
-            </div>            
-            <div class="mc-box-item" *ngIf="submittedId==1">
-                <div class="mc-icon-success">
-                    <span><i class="fa fa-check"></i></span>
-                </div>
-                <div class="mc-title-success">
-                    <span>Your user ID has been sent to <br/> <b>{{emailUser}}</b></span>
-                </div>
+            <div class="mc-box-item mc-password">
+                <mat-form-field class="mc-full-width">
+                    <input matInput placeholder="Password" [type]="password" [formControl]="password"
+                    >
+                    <mat-error *ngIf="password.hasError('required')">
+                        Password is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
             </div>
-            <div class="mc-box-item mc-back-pw" *ngIf="submittedId==1">
-                    <a  href="javascript:;" (click)="isBox = 1">Back to Sign On</a>
-                </div>
-        </form>
-    </div>
-
-    <!-- forgot pass -->
-    <div class="mc-box-forgot" *ngIf="isBox === 3">
-        <div class="mc-box-item mc-title">
-            <span><a routerLink="/login"><i class="fa fa-angle-left"></i></a></span>
-            <span>Forgot Password</span>
+            <div class="mc-box-item mc-remember">            
+                    <mat-checkbox>Remember my User ID</mat-checkbox>            
+            </div>
+            <div class="mc-box-item mc-button">
+               <input type="submit" class="btn btn-primary" value="Sign On"/>        
+            </div>
+            <div class="mc-box-item mc-forget">
+                <a href="javascript:;" (click)="isBox = 2">Forgot User ID?</a>
+                <a href="javascript:;" (click)="isBox = 3">Forgot Password?</a>
+            </div>
         </div>
-        <div class="mc-box-item mc-user" *ngIf="submittedPw!=1">
-                <mat-form-field class="mc-full-width">
-                        <input matInput placeholder="Enter your email address" [formControl]="emailFormControl" [ngModel]="emailPw"
+        </form>
+        <!-- forgot user -->
+        <form [formGroup]="formUserId" (ngSubmit)="SubmitId()">
+        <div class="mc-box-forgot" *ngIf="isBox === 2">
+            <form>
+                <div class="mc-box-item mc-title">
+                    <span><a  href="javascript:;" (click)="isBox = 1"><i class="fa fa-angle-left"></i></a></span>
+                    <span>Forgot User ID</span>
+                </div>
+                <div class="mc-box-item mc-user" *ngIf="submittedId!=1">
+                    <mat-form-field class="mc-full-width">
+                        <input matInput placeholder="Enter your email address" [formControl]="emailUser"
                             [errorStateMatcher]="matcher" >                
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        <mat-error *ngIf="emailUser.hasError('email') && !emailUser.hasError('required')">
                             Please enter a valid email address
                         </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                        <mat-error *ngIf="emailUser.hasError('required')">
                             Email is <strong>required</strong>
                         </mat-error>
-                        <mat-error *ngIf="submittedPw==0">
+                        <mat-error *ngIf="submittedId==0">
                                 Email is <strong>required</strong>
                             </mat-error>
-                    </mat-form-field>                   
-            </div>        
-            <div class="mc-box-item mc-button" *ngIf="submittedPw!=1">
-            <input type="button" class="btn btn-primary" (click)="SubmitPw()" value="Submit"/>
+                    </mat-form-field>               
+                </div>        
+                <div class="mc-box-item mc-button" *ngIf="submittedId!=1">
+                <input type="submit" class="btn btn-primary" (click)="SubmitId()" value="Submit"/>
+                </div>
+                <div class="mc-box-item mc-cancel" *ngIf="submittedId!=1">
+                    <a href="jaasript:;" (click)="isBox = 1">Cancel</a>
+                </div>            
+                <div class="mc-box-item" *ngIf="submittedId==1">
+                    <div class="mc-icon-success">
+                        <span><i class="fa fa-check"></i></span>
+                    </div>
+                    <div class="mc-title-success">
+                        <span>Your user ID has been sent to <br/> <b>{{emailUser.value}}</b></span>
+                    </div>
+                </div>
+                <div class="mc-box-item mc-back-pw" *ngIf="submittedId==1">
+                        <a  href="javascript:;" (click)="isBox = 1">Back to Sign On</a>
+                    </div>
+            </form>
+        </div>
+        </form>
+        <form [formGroup]="formPassword" (ngSubmit)="SubmitPw()"></form>
+        <!-- forgot pass -->
+        <div class="mc-box-forgot" *ngIf="isBox === 3">
+            <div class="mc-box-item mc-title">
+                <span><a routerLink="/login"><i class="fa fa-angle-left"></i></a></span>
+                <span>Forgot Password</span>
             </div>
-            <div class="mc-box-item mc-cancel" *ngIf="submittedPw!=1">
+            <div class="mc-box-item mc-user" *ngIf="submittedPw!=1">
+                    <mat-form-field class="mc-full-width">
+                            <input matInput placeholder="Enter your email address" [formControl]="emailPw"
+                                [errorStateMatcher]="matcher" >                
+                            <mat-error *ngIf="emailPw.hasError('email') && !emailPw.hasError('required')">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="emailPw.hasError('required')">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                            <mat-error *ngIf="submittedPw==0">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                        </mat-form-field>                   
+                </div>        
+                <div class="mc-box-item mc-button" *ngIf="submittedPw!=1">
+                <input type="submit" class="btn btn-primary" (click)="SubmitPw()" value="Submit"/>
+                </div>
+                <div class="mc-box-item mc-cancel" *ngIf="submittedPw!=1">
+                    <a href="javascript:;" (click)="isBox = 1">Cancel</a>
+                </div>            
+                <div class="mc-box-item" *ngIf="submittedPw==1">
+                    <div class="mc-icon-success">
+                        <span><i class="fa fa-check"></i></span>
+                    </div>
+                    <div class="mc-title-success">
+                        <span>A link to reset password has been sent to <br/> <b>{{emailPw.value}}</b></span>
+                    </div>
+                </div>
+                <div class="mc-box-item mc-back" *ngIf="submittedPw==1">
+                        <a href="javascript:;" (click)="isBox = 1">Back to Sign On</a>
+                    </div>
+        </div>
+        <!--Reset-->
+        <div class="mc-box-reset" *ngIf="isBox === 4">
+            <div class="mc-box-item mc-title">
+                <span><a href="javascript:;" (click)="isBox = 1"><i class="fa fa-angle-left"></i></a></span>
+                <span>Reset Password</span>
+            </div>
+            <div class="mc-box-item mc-password">
+                <mat-form-field class="mc-full-width">
+                    <input matInput placeholder="Set you new password" [type]="password" [formControl]="passwordFormControl"
+                        [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mc-box-item mc-password">
+                <mat-form-field class="mc-full-width">
+                    <input matInput placeholder="Confirm password" [type]="password" [formControl]="passwordFormControl"
+                        [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>            
+            </div>
+            <div class="mc-box-item mc-button">
+                <input type="button" [ngStyle]="{'background-color':isInfo?'#337ab7':'#545b62','border-color':isInfo?'#337ab7':'#545b62'}" class="btn btn-primary" (click)="Submit()" value="Submit"/>
+            </div>
+            <div class="mc-box-item mc-cancel">
                 <a href="javascript:;" (click)="isBox = 1">Cancel</a>
-            </div>            
-            <div class="mc-box-item" *ngIf="submittedPw==1">
-                <div class="mc-icon-success">
-                    <span><i class="fa fa-check"></i></span>
-                </div>
-                <div class="mc-title-success">
-                    <span>A link to reset password has been sent to <br/> <b>{{emailPw}}</b></span>
-                </div>
-            </div>
-            <div class="mc-box-item mc-back" *ngIf="submittedPw==1">
-                    <a href="javascript:;" (click)="isBox = 1">Back to Sign On</a>
-                </div>
+            </div>        
+        </div>
     </div>
-    <!--Reset-->
-    <div class="mc-box-reset" *ngIf="isBox === 4">
-        <div class="mc-box-item mc-title">
-            <span><a href="javascript:;" (click)="isBox = 1"><i class="fa fa-angle-left"></i></a></span>
-            <span>Reset Password</span>
-        </div>
-        <div class="mc-box-item mc-password">
-            <mat-form-field class="mc-full-width">
-                <input matInput placeholder="Set you new password" [type]="password" [formControl]="passwordFormControl"
-                    [errorStateMatcher]="matcher">
-                <mat-error *ngIf="passwordFormControl.hasError('required')">
-                    Password is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
-        </div>
-        <div class="mc-box-item mc-password">
-            <mat-form-field class="mc-full-width">
-                <input matInput placeholder="Confirm password" [type]="password" [formControl]="passwordFormControl"
-                    [errorStateMatcher]="matcher">
-                <mat-error *ngIf="passwordFormControl.hasError('required')">
-                    Password is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>            
-        </div>
-        <div class="mc-box-item mc-button">
-            <input type="button" [ngStyle]="{'background-color':isInfo?'#337ab7':'#545b62','border-color':isInfo?'#337ab7':'#545b62'}" class="btn btn-primary" (click)="Submit()" value="Submit"/>
-        </div>
-        <div class="mc-box-item mc-cancel">
-            <a href="javascript:;" (click)="isBox = 1">Cancel</a>
-        </div>        
-    </div>
-</div>

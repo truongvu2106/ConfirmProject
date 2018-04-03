@@ -5,14 +5,41 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
+  MatAutocompleteModule,
   MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
   MatCheckboxModule,
-  MatIconModule,
-  MatSidenavModule,
-  MatTabsModule,
+  MatChipsModule,
+  MatDatepickerModule,
   MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
   MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
 } from '@angular/material';
+
+import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,8 +53,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ChangePassModalViewComponent } from './components/changepassmodalview/changepassmodalview.component';
 import { ManageDetailComponent } from './pages/manage-detail/managedetail.component';
-import { StoreInfoComponent } from './pages/storeinfo/storeinfo.component';
-
+import { StoreInfoComponent } from './pages/account/storeinfo/storeinfo.component';
 
 @NgModule({
   declarations: [
@@ -50,26 +76,80 @@ import { StoreInfoComponent } from './pages/storeinfo/storeinfo.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    MatAutocompleteModule,
     MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
     MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
     MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
     MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
     MatTabsModule,
     ReactiveFormsModule,
     MatInputModule,    
+    MatToolbarModule,
+    MatTooltipModule,
+    ReactiveFormsModule
   ],
   entryComponents:[
     ChangePassModalViewComponent
   ],
   exports: [
+    MatAutocompleteModule,
     MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
     MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
     MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
     MatSidenavModule,
     MatTabsModule,
-    MatInputModule    
+    MatInputModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

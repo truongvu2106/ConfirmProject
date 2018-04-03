@@ -1,7 +1,7 @@
 .mc-containter-login{    
     text-align: center;
     background: url(../../../assets/img/hotair_balloons_sky.jpg);
-    background-size: 100% 100%;
+    background-size: cover;
     height:137vh;
     .mc-box-login{
         margin-top: 165px;
@@ -85,8 +85,7 @@
                     }                    
                 }
             }
-            &.mc-button{
-                padding-top: 10px;           
+            &.mc-button{                     
                 input{                    
                     height: 50px;
                     width: 100%;
@@ -196,7 +195,7 @@
                     float: left;
                     text-decoration: underline;
                     color: #337ab7;
-                    margin-top: 163px;
+                    margin-top: 135px;
                     font-size: 15px;
                 }                
             }
@@ -208,7 +207,7 @@
                     float: left;
                     text-decoration: underline;
                     color: #337ab7;
-                    margin-top: 163px;
+                    margin-top: 135px;
                     font-size: 15px;
                 }                
             }
@@ -364,5 +363,9 @@
         box-shadow: none;
         border:1px solid #056DAE;
     } 
+}
+.mc-btn-disable{
+    background: #545b62;
+    color: #ddd;
 }
 

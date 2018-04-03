@@ -2,9 +2,10 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import 'colors';
 
+
 /* =Reset default browser CSS.
 -------------------------------------------------------------- */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {border: 0;font-family: inherit;font-size: 100%;font-style: inherit;font-weight: inherit;margin: 0;outline: 0;padding: 0;vertical-align: middle;}
+// html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {border: 0;font-family: inherit;font-size: 100%;font-style: inherit;font-weight: inherit;margin: 0;outline: 0;padding: 0;vertical-align: middle;}
 :focus {outline: 0;}
 
 ol, ul {list-style: none;}
@@ -60,120 +61,89 @@ a, a:link,a:active, span{
     outline: none;
 }
 
-body {    
-    // font-family: Interstate_Light,sans-serif;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    font-family: Interstate_Light,sans-serif,Arial,sans-serif;
     background-color: #eff3f6;
     letter-spacing: 1px;
+    color: #696969;
 }
-.container-fix{    
+.container-fix {    
     margin: 0 auto;    
 }
-article{
+article {
     min-height: 890px;
 }
 
-.form-control {
-    background-color: #eee;
-    height: 50px;
-    border: 1px solid #fff;
-    box-shadow: none;
-    border-radius: 6px;
-    transition: border-color ease-in-out 0ms;
-    font-size: 16px;
-    display: block;
-    width: 100%;
-    &:focus{
+.mat-form-field {
+    .mat-form-field-label.mat-form-field-empty {
+        padding: 15px;
+    }
+    .mat-form-field-underline {
+        height: 0px;
+        background: transparent;
+        .mat-form-field-ripple {
+            background: transparent;
+        }
+    }
+}
+.mat-form-field.mat-focused {
+    .mat-select, .mat-input-element {
         border: 1px solid #056DAE;
     }
+    .mat-form-field-label {
+        padding: 0;
+        &.mat-form-field-empty {
+            padding: 0;
+        }
+    }
 }
-
-textarea.form-control {
-    box-shadow: 0 0 0 1px #fff;
-    border: 1px solid transparent;
-    transition: box-shadow ease-in-out 225ms;
-    -webkit-appearance: textarea;
-    -webkit-rtl-ordering: logical;
-    flex-direction: column;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-select.form-control {
+.mat-select {
     background-color: #eee;
     height: 50px;
-    border: 0px;
-    box-shadow: 0 0 0 transparent;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<%3Fxml%20version%3D"1.0"%20encoding%3D"UTF-8"%20standalone%3D"no"%3F>%0A<svg%20width%3D"15px"%20height%3D"8px"%20viewBox%3D"0%200%2015%208"%20version%3D"1.1"%20xmlns%3D"http%3A//www.w3.org/2000/svg"%20xmlns%3Axlink%3D"http%3A//www.w3.org/1999/xlink"%20xmlns%3Asketch%3D"http%3A//www.bohemiancoding.com/sketch/ns">%0A%20%20%20%20<%21--%20Generator%3A%20Sketch%203.4.1%20%2815681%29%20-%20http%3A//www.bohemiancoding.com/sketch%20-->%0A%20%20%20%20<title>Chevron</title>%0A%20%20%20%20<desc>Created%20with%20Sketch.</desc>%0A%20%20%20%20<defs></defs>%0A%20%20%20%20<g%20id%3D"Toolkit"%20stroke%3D"none"%20stroke-width%3D"1"%20fill%3D"none"%20fill-rule%3D"evenodd"%20sketch%3Atype%3D"MSPage">%0A%20%20%20%20%20%20%20%20<g%20id%3D"Dropdowns"%20sketch%3Atype%3D"MSArtboardGroup"%20transform%3D"translate%28-878.000000%2C%20-122.000000%29"%20fill%3D"%23056DAE">%0A%20%20%20%20%20%20%20%20%20%20%20%20<g%20id%3D"Dropdown-Grey"%20sketch%3Atype%3D"MSLayerGroup"%20transform%3D"translate%28570.000000%2C%20101.000000%29">%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20<g%20id%3D"Dropdown-Default"%20sketch%3Atype%3D"MSShapeGroup">%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20<path%20d%3D"M312%2C32%20L312%2C29.6917048%20L316.989689%2C25.0246591%20L312%2C20.3577556%20L312%2C18%20L318.461538%2C24.1555486%20L318.461538%2C25.8443093%20L312%2C32"%20id%3D"Chevron"%20transform%3D"translate%28315.230769%2C%2025.000000%29%20rotate%28-270.000000%29%20translate%28-315.230769%2C%20-25.000000%29%20"></path>%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20</g>%0A</svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: auto 20%;
-    padding-right: 42px;
-    transition: border-color ease-in-out 225ms;
-    font-size: 15px;
-}
-
-.checkbox {
-    overflow: hidden;
-    position: relative;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    label {
-        padding: 0 0 0 31px;
-        display: block;
-        margin: 0;
-        cursor: pointer;
-        min-height: 26px;
-        &:before {
-            content: "";
-            display: inline-block;
-            border: 1px solid;
-            height: 20px;
-            width: 20px;
-            position: relative;
-            margin: 0 10px 0 -31px;
-            top: 4px;
-            background-color: transparent;
-            border-radius: 6px;
-        }
+    border-radius: 6px;
+    padding: 15px;
+    .mat-select-value {
+        line-height: 19px;
     }
-    input[type=checkbox] {
-        vertical-align: middle;
-        margin-top: 1px;
-        margin-right: 15px;
-        display: inline-block;
-        -webkit-appearance: checkbox;
-        position: absolute;
-        top: 0;
-        opacity: .01;
-        margin-left: -20px;
-        &:checked+label {
-            color: #056DAE;
-            &:before {
-                background-repeat: no-repeat;
-                background-position: center;
-                background-color: #056DAE;
-                border: none;
-            }
-        }
-    }
-
-    input:checked+label:before {
-        background-image: none;
+    .mat-select-arrow {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<%3Fxml%20version%3D"1.0"%20encoding%3D"UTF-8"%20standalone%3D"no"%3F>%0A<svg%20width%3D"15px"%20height%3D"8px"%20viewBox%3D"0%200%2015%208"%20version%3D"1.1"%20xmlns%3D"http%3A//www.w3.org/2000/svg"%20xmlns%3Axlink%3D"http%3A//www.w3.org/1999/xlink"%20xmlns%3Asketch%3D"http%3A//www.bohemiancoding.com/sketch/ns">%0A%20%20%20%20<%21--%20Generator%3A%20Sketch%203.4.1%20%2815681%29%20-%20http%3A//www.bohemiancoding.com/sketch%20-->%0A%20%20%20%20<title>Chevron</title>%0A%20%20%20%20<desc>Created%20with%20Sketch.</desc>%0A%20%20%20%20<defs></defs>%0A%20%20%20%20<g%20id%3D"Toolkit"%20stroke%3D"none"%20stroke-width%3D"1"%20fill%3D"none"%20fill-rule%3D"evenodd"%20sketch%3Atype%3D"MSPage">%0A%20%20%20%20%20%20%20%20<g%20id%3D"Dropdowns"%20sketch%3Atype%3D"MSArtboardGroup"%20transform%3D"translate%28-878.000000%2C%20-122.000000%29"%20fill%3D"%23056DAE">%0A%20%20%20%20%20%20%20%20%20%20%20%20<g%20id%3D"Dropdown-Grey"%20sketch%3Atype%3D"MSLayerGroup"%20transform%3D"translate%28570.000000%2C%20101.000000%29">%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20<g%20id%3D"Dropdown-Default"%20sketch%3Atype%3D"MSShapeGroup">%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20<path%20d%3D"M312%2C32%20L312%2C29.6917048%20L316.989689%2C25.0246591%20L312%2C20.3577556%20L312%2C18%20L318.461538%2C24.1555486%20L318.461538%2C25.8443093%20L312%2C32"%20id%3D"Chevron"%20transform%3D"translate%28315.230769%2C%2025.000000%29%20rotate%28-270.000000%29%20translate%28-315.230769%2C%20-25.000000%29%20"></path>%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20%20%20%20%20</g>%0A%20%20%20%20</g>%0A</svg>');
         background-repeat: no-repeat;
+        background-position: right 2px center;
+        height: 20px;
+        width: 20px;
+        border: none;
     }
 }
 
-.checkbox input:checked+label:before {
-    content: "\f00c";
-    font-family: FontAwesome;
-    font-size: 14px;
-    color: #fff;
-    padding-left: 3px;
+input.mat-input-element {
+    background-color: #eee;
+    height: 50px;
+    border-radius: 6px;   
+}
+
+textarea.mat-input-element {
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.mat-checkbox {
+    .mat-checkbox-label {
+        color: #696969;
+        font-weight: 400;
+    }
+    .mat-checkbox-frame {
+        border-radius: 6px;
+    }
+    &.mat-checkbox-checked {
+        .mat-checkbox-label {
+            color: #056DAE;
+        }
+        .mat-checkbox-background {
+            border-radius: 6px;
+            background: #056DAE;
+        }
+    }
 }
 
 /**
@@ -181,15 +151,6 @@ css material
 **/
 .mc-full-width{
     width:100%;
-}
-.mat-form-field-label{
-    top: 2.28125em;
-    left:1em !important;
-}
-.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label, .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
-    -webkit-transform: translateY(-2.28125em) scale(.75) perspective(100px) translateZ(.001px) translateX(-1.4em);
-    transform: translateY(-2.28125em) scale(.75) perspective(100px) translateZ(.001px) translateX(-1.4em);
-    -ms-transform: translateY(-2.28125em) scale(.75) translateX(-1.4em);
 }
 .mat-form-field-underline{
     height: 0px!important;
@@ -214,4 +175,7 @@ css material
 }
 .mat-form-field-invalid .mat-form-field-label {
     color: #333;
+}
+.mat-form-field-invalid .mat-input-element{
+    border:1px solid #f44336 !important;
 }

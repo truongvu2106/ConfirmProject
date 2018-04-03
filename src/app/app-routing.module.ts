@@ -6,9 +6,38 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
-  MatIconModule,
-  MatSidenavModule,
-  MatTabsModule
+  MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule
 } from '@angular/material';
 
 import { LoginComponent } from './pages/login/login.component';
@@ -16,12 +45,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant.component';
 
 import { AccountComponent } from './pages/account/account.component';
-import { MerchantDetailsComponent } from './pages/merchantdetails/merchantdetails.component';
-import { StoresComponent } from './pages/stores/stores.component';
-import { MyProfileComponent } from './pages/myprofile/myprofile.component';
+
 import { ManageDetailComponent } from './pages/manage-detail/managedetail.component';
 
-import { StoreInfoComponent } from './pages/storeinfo/storeinfo.component';
+import { MerchantDetailsComponent } from './pages/account/merchantdetails/merchantdetails.component';
+import { StoresComponent } from './pages/account/stores/stores.component';
+import { MyProfileComponent } from './pages/account/myprofile/myprofile.component';
+import { StoreInfoComponent } from './pages/account/storeinfo/storeinfo.component';
 
 // import { HomeComponent } from './page/home/home.component';
 
@@ -53,7 +83,38 @@ const routes: Routes = [
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
     RouterModule.forRoot(routes)],
   exports: [RouterModule],
   declarations: [

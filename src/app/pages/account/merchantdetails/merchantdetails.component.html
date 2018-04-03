@@ -60,10 +60,9 @@
         <div class="col-sm-4 col-item" *ngFor="let category of categories;">
           <div class="item">
             <span class="pull-right fa-lg"><i class="fa" [ngClass]="category.icon"></i></span>
-            <div class="checkbox">
-              <input type="checkbox" id="{{'category' + category.value }}" name="category" value="{{category.value}}" [checked]="category.isChecked">
-              <label for="{{'category' + category.value }}" id="categoryLabel" aria-label="not here">{{category.name}}</label>
-            </div>
+            <mat-checkbox value="{{category.value}}" id="{{'category' + category.value }}" [checked]="category.isChecked">
+              {{ category.name }}
+            </mat-checkbox>
           </div>
         </div>
       </div>
@@ -71,40 +70,36 @@
     <div class="infoopt merchantsection">
       <h3>option information</h3>
       <div class="row">
-        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-          <label class="mc-label">Country</label>
-          <select class="form-control" role="listbox" [(ngModel)]="merchant.country">
-              <option disabled>Country</option>
-              <option *ngFor="let country of countries" [value]="country.countryName"> {{ country.countryName }} </option>
-          </select>
-        </div>
-        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-          <label class="mc-label">City</label>
-          <select class="form-control" role="listbox" [(ngModel)]="merchant.city">
-              <option disabled>City</option>
-              <option *ngFor="let city of cities" [value]="city"> {{ city }} </option>
-          </select>
-        </div>
+        <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+          <mat-select placeholder="Country" [(ngModel)]="merchant.country">
+            <mat-option *ngFor="let country of countries" [value]="country.countryName">
+              {{ country.countryName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+          <mat-select placeholder="City" [(ngModel)]="merchant.country">
+            <mat-option *ngFor="let city of cities" [value]="city">
+              {{ city }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="row">
-        <div class="iteminfo col-sm-8 col-xs-12">
-          <label class="mc-label">Merchant description</label>
-          <textarea class="form-control" [(ngModel)]="merchant.description" rows="3" placeholder="Merchant Description"></textarea>
-        </div>
+        <mat-form-field class="col-sm-8 col-xs-12">
+          <textarea matInput [(ngModel)]="merchant.description" placeholder="Merchant Description" rows="3"></textarea>
+        </mat-form-field >
       </div>
       <div class="row">
-        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-          <label class="mc-label">Address Line 1</label>
-          <input type="text" class="form-control" [(ngModel)]="merchant.addressLine1">
-        </div>
-        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-            <label class="mc-label">Address Line 2</label>
-            <input type="text" class="form-control" [(ngModel)]="merchant.addressLine2">
-          </div>
-        <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
-          <label class="mc-label">Zip code</label>
-          <input type="text" class="form-control" [(ngModel)]="merchant.zipCode">
-        </div>
+        <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+          <input matInput placeholder="Address Line 1" [(ngModel)]="merchant.addressLine1">
+        </mat-form-field>
+        <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+          <input matInput placeholder="Address Line 2" [(ngModel)]="merchant.addressLine2">
+        </mat-form-field>
+        <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+          <input matInput placeholder="Zip code" [(ngModel)]="merchant.zipCode">
+        </mat-form-field>
       </div>
     </div>
   </ng-container>
