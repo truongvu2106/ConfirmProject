@@ -2,13 +2,10 @@
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from "@angular/core";
 import { ComponentFixture, TestBed, async } from "@angular/core/testing";
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { MaterialModule } from "@angular/material";
 import { By } from "@angular/platform-browser";
 import { Store, StoreModule } from "@ngrx/store";
-import { go } from "@ngrx/router-store";
 
 // reducers
-import { reducer } from "../../app.reducers";
 
 // models
 import { User } from "../../core/models/user";
@@ -35,9 +32,7 @@ describe("SignInComponent", () => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        StoreModule.provideStore(reducer)
+        ReactiveFormsModule
       ],
       declarations: [
         SignInComponent

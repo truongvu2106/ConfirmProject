@@ -1,0 +1,101 @@
+.store-container {
+    background-color: #f8f8f8;
+    padding-bottom: 50px;
+    .mc-table {
+        width: 100%;
+        background-color: #f8f8f8;
+        caption {
+            background: #ffffff;
+            padding: 40px 40px 20px 40px;
+            p {
+                font-size: 26px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 20px;
+                color: #444;
+            }
+        }
+        thead {
+            background-color: #fff;
+            th {
+                padding: 30px;
+                font-weight: 600;
+                &:first-child {
+                    padding-left: 50px;
+                }
+                &:last-child {
+                    padding-right: 30px;
+                }
+            }
+        }
+        tr {
+            padding: 20px;
+        }
+        td {
+            padding: 10px 0;
+            border: none;
+            width: 270px;            
+            .td {
+                margin: 10px 0;
+                padding: 34px 10px;
+                background-color: #fff;
+                border-top: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                height: 95px;
+                span {
+                    padding: 12px 15px;
+                    border-left: 1px solid #ddd;
+                }
+            }
+            &:first-child {
+                width: calc(100% - 660px);
+                .td {
+                    margin-left: 30px;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    border-left: 1px solid #ddd;
+                    span {
+                        border: none;
+                    }
+                }
+            }
+            &:last-child {
+                width: 120px;
+                .td {
+                    margin-right: 30px;
+                    padding-right: 20px;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    border-right: 1px solid #ddd;
+                }
+            }
+            .group-action {
+                width: 120px;
+                white-space: nowrap;
+                text-align: left;
+                a {
+                    width: 40px;
+                    display: none;
+                    padding: 0 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+        tr:hover {
+            .group-action {
+                a { 
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .control {
+        padding: 20px 30px;
+        .btn {
+            height: 46px;
+            line-height: 32px;
+            border-radius: 5px;
+            width: 200px;
+            font-size: 16px;
+        }
+    }
+}

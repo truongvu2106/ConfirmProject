@@ -5,7 +5,10 @@ import { Routes, RouterModule } from "@angular/router";
 import { AuthenticatedGuard } from "../shared/authenticated.guard";
 
 // components
-import { MyAccountComponent } from "./my-account/my-account.component";
+import { AccountComponent } from "./account/account.component";
+import { MyProfileComponent } from "./account/myprofile/myprofile.component";
+import { MerchantDetailsComponent } from "./account/merchantdetails/merchantdetails.component";
+import { StoresComponent } from "./account/stores/stores.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignOutComponent } from "./sign-out/sign-out.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
@@ -15,7 +18,16 @@ const routes: Routes = [
   {
     canActivate: [AuthenticatedGuard],
     path: "my-account",
-    component: MyAccountComponent
+    component: AccountComponent,
+    children: [{
+      path: '',
+      redirectTo: 'myprofile',
+      pathMatch: 'full'
+    },
+    { path: 'myprofile', component: MyProfileComponent },
+    { path: 'merchantdetails', component: MerchantDetailsComponent },
+    { path: 'stores', component: StoresComponent }
+  ]
   },
   {
     path: "sign-in",

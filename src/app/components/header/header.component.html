@@ -16,8 +16,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->        
         <div class="navbar-collapse" id="bs-quartz-navbar-collapse">
             <ul class="navbar-right">              
-                <li><a routerLink="/login" routerLinkActive="active"> Login </a></li>
-              </ul>
+              <li *ngIf="!(isAuthenticated | async)"><a routerLink="/users/sign-in"> Login </a></li>
+              <li *ngIf="isAuthenticated | async"><a href="javascript:;" (click)="signOut()" > Logout </a></li>
+            </ul>
         </div><!-- /.navbar-collapse -->
       </div>      
     </div><!-- /.container-fluid -->

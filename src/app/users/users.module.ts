@@ -8,16 +8,46 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 // @angular/material
 import {
+  MatAutocompleteModule,
   MatButtonModule,
+  MatButtonToggleModule,
   MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatGridListModule,
   MatIconModule,
   MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
   MatProgressSpinnerModule,
-  MatMenuModule
-} from "@angular/material";
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
+} from '@angular/material';
 
 // components
-import { MyAccountComponent } from "./my-account/my-account.component";
+import { AccountComponent } from "./account/account.component";
+import { MyProfileComponent } from "./account/myprofile/myprofile.component";
+import { MerchantDetailsComponent } from "./account/merchantdetails/merchantdetails.component";
+import { StoresComponent } from "./account/stores/stores.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignOutComponent } from "./sign-out/sign-out.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
@@ -27,7 +57,10 @@ import { UsersRoutingModule } from "./users-routing.module";
 
 // components constant
 const components = [
-  MyAccountComponent,
+  AccountComponent,
+  MyProfileComponent,
+  MerchantDetailsComponent,
+  StoresComponent,
   SignInComponent,
   SignUpComponent,
   SignOutComponent
@@ -38,12 +71,39 @@ const components = [
     CommonModule,
     FlexLayoutModule,
     FormsModule,
+    MatAutocompleteModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
     MatIconModule,
     MatInputModule,
-    MatProgressSpinnerModule,
+    MatListModule,
     MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
     ReactiveFormsModule,
     RouterModule,
     UsersRoutingModule
