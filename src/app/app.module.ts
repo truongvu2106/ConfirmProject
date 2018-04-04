@@ -56,12 +56,10 @@ import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component'
 import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant.component'
 import { FooterComponent } from './components/footer/footer.component';
-import { AccountComponent } from './pages/account/account.component';
 import { ChangePassModalViewComponent } from './components/changepassmodalview/changepassmodalview.component';
 import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
 import { ResetComponent } from './pages/login/reset.component';
-import { StoreInfoComponent } from './pages/account/storeinfo/storeinfo.component';
 
 // routing
 import { AppRoutingModule, routes } from "./app-routing.module";
@@ -90,13 +88,11 @@ import { UserService } from "./core/services/user.service";
     LoginComponent,
     RegisterComponent,
     ManageMerchantComponent,
-    AccountComponent,
     ChangePassModalViewComponent,
     ForgotUserComponent,
     ForgotPasswordComponent,   
     ChangePassModalViewComponent,
     ResetComponent,
-    StoreInfoComponent,
     NotFoundComponent
   ],
   imports: [

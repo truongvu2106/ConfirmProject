@@ -48,14 +48,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant.component';
 
-import { AccountComponent } from './pages/account/account.component';
-import { MerchantDetailsComponent } from './pages/account/merchantdetails/merchantdetails.component';
-import { StoresComponent } from './pages/account/stores/stores.component';
-import { MyProfileComponent } from './pages/account/myprofile/myprofile.component';
 import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
 import { ResetComponent } from './pages/login/reset.component';
-import { StoreInfoComponent } from './pages/account/storeinfo/storeinfo.component';
 export const routes: Routes = [
   {
     path: "users",
@@ -114,11 +109,6 @@ export const routes: Routes = [
     MatToolbarModule,
     MatTooltipModule,
     RouterModule.forRoot(routes)
-  ],
-  declarations: [
-    MerchantDetailsComponent,
-    StoresComponent,
-    MyProfileComponent
   ]
 
 })
