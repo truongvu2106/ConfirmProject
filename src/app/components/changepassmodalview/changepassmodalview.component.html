@@ -1,5 +1,5 @@
 <div class="toolmodal">
-  <button (click)="onCloseCancel()">
+  <button (click)="onCloseCancel()" mat-icon-button>
     <mat-icon>close</mat-icon>
   </button>
 </div>
@@ -7,32 +7,32 @@
   Change Password
 </h3>
 <div class="modalcontent">
-  <form (ngSubmit)="onChangePass(formChangePass)" #formChangePass="ngForm">
+  <form (ngSubmit)="onChangePass()" [formGroup] = "changePasswordForm">
     <div class="row">
-      <div class="form-group col-xs-12 input-group-lg">
-        <label>Enter your current password</label>
-        <input type="password" name="currentPassword" ngModel #txtcurrentPassword="ngModel" class="form-control" placeholder="SampleName" required >
-        <p *ngIf = "txtcurrentPassword.touched && txtcurrentPassword.errors?.required">Current password is required</p>
-      </div>
+      <mat-form-field hideRequiredMarker class="col-xs-12">
+        <input type="password" formControlName ="currentPassword" matInput placeholder="Enter your current password" required >
+        <mat-error *ngIf="changePasswordForm.invalid" >{{getErrorMessage(changePasswordForm.controls.currentPassword)}}</mat-error>
+      </mat-form-field>
     </div>
     <div class="row">
-      <div class="form-group col-xs-12 input-group-lg">
-        <label> Set your new password</label>
-        <input type="password" name="newPassword" ngModel #newPassword="ngModel" class="form-control" placeholder="SampleName" required>
-        <p *ngIf = "newPassword.touched && newPassword.errors?.required">New password is required</p>
-      </div>
+      <mat-form-field hideRequiredMarker class="col-xs-12">
+        <input type="password" formControlName="newPassword" matInput placeholder="Set your new password" required >
+        <mat-error *ngIf="changePasswordForm.invalid" >{{getErrorMessage(changePasswordForm.controls.newPassword)}}</mat-error>
+      </mat-form-field>
     </div>
     <div class="row">
-      <div class="form-group col-xs-12 input-group-lg">
-        <label>Confirm password</label>
-        <input [class.inputerr]="confirmPassword.dirty && !confirmPassword.errors?.required && confirmPassword.value != newPassword.value" type="password" name="confirmPassword" ngModel #confirmPassword="ngModel" class="form-control" placeholder="SampleName" required>
-        <p *ngIf = "confirmPassword.touched && confirmPassword.errors?.required">Confirm password is required</p>
-        <p *ngIf = "confirmPassword.dirty && !confirmPassword.errors?.required && confirmPassword.value != newPassword.value">Confirm password does not match new password</p>
-      </div>
+      <mat-form-field hideRequiredMarker class="col-xs-12">
+        <input type="password" formControlName="confirmPassword" matInput placeholder="Confirm password" required >
+        <mat-error *ngIf="changePasswordForm.invalid" >{{getErrorMessage(changePasswordForm.controls.confirmPassword)}}</mat-error>
+      </mat-form-field>
+      <!-- <label></label>
+      <input [class.inputerr]="confirmPassword.dirty && !confirmPassword.errors?.required && confirmPassword.value != newPassword.value" type="password" name="confirmPassword" ngModel #confirmPassword="ngModel" class="form-control" placeholder="SampleName" required>
+      <p *ngIf = "confirmPassword.touched && confirmPassword.errors?.required">Confirm password is required</p>
+      <p *ngIf = "confirmPassword.dirty && !confirmPassword.errors?.required && confirmPassword.value != newPassword.value">Confirm password does not match new password</p> -->
     </div>
     <div class="row">
       <div class="form-group col-xs-12">
-        <button class="btn btn-primary btn-lg">Change</button>
+        <button  mat-raised-button class="btn btn-primary btn-lg">Change</button>
       </div>
     </div>
   </form>

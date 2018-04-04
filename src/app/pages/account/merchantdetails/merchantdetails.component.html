@@ -2,11 +2,11 @@
   <div class="bannermerchantdetail" >
     <div class="itembannermerchantdetail">
       <label class="mc-label">Merchant group</label>
-      SampleGroup
+      {{merchant.group}}
     </div>
     <div class="itembannermerchantdetail">
       <label class="mc-label">Merchant Name</label>
-      Merchant1
+      {{machant.name}}
     </div>
     <div class="clearboth"></div>
   </div><!-- end bannerprofile -->
@@ -59,7 +59,7 @@
       <div class="row list-categories">
         <div class="col-sm-4 col-item" *ngFor="let category of categories;">
           <div class="item">
-            <span class="pull-right fa-lg"><i class="fa" [ngClass]="category.icon"></i></span>
+            <span class="pull-right fa-lg"><i class="catico" [ngClass]="category.icon"></i></span>
             <mat-checkbox value="{{category.value}}" id="{{'category' + category.value }}" [checked]="category.isChecked">
               {{ category.name }}
             </mat-checkbox>

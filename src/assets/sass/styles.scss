@@ -62,6 +62,10 @@ a, a:link,a:active, span{
     outline: none;
 }
 
+label {
+    max-width: inherit;
+}
+
 body {
     font-family: Interstate_Light,sans-serif,Arial,sans-serif;
     background-color: #eff3f6;
@@ -146,4 +150,8 @@ textarea.mat-input-element {
             background: #056DAE;
         }
     }
+}
+
+.mat-focused ::ng-deep .mat-form-field-label{
+    color: currentColor;
 }

@@ -38,6 +38,19 @@
         .mc-label {
             @include fixlabel; 
         }
+        .mat-checkbox ::ng-deep .mat-checkbox-layout{
+            margin-bottom: 0;
+        }
+        .mat-checkbox ::ng-deep .mat-checkbox-frame{
+            border-width:1px;
+        }
+        .mat-checkbox ::ng-deep .mat-checkbox-label{
+            font-weight: normal;
+            line-height: 60px;
+        }
+        .mat-checkbox.mat-checkbox-checked::ng-deep .mat-checkbox-label{
+            color: #337ab7;
+        }
     }
     .merchantcat{
         margin: 45px; 
@@ -67,7 +80,7 @@
             .col-item {
                 padding: 10px 25px;
                 .item {
-                    padding: 10px 25px;
+                    padding: 10px 0px;
                     border-bottom: 1px solid #c3c3c3;
                 }
             }
@@ -161,5 +174,31 @@
                 background-color:#fff;
             }
         }
+    }
+}
+.catico{
+    width: 58px;
+    height: 58px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    display: inline-block;
+    &.restaurantico{
+        background-image: url('../../../../assets/img/Restaurants@2x.png');
+    }
+    &.barico{
+        background-image: url('../../../../assets/img/Bars@2x.png');
+    }
+    &.hotelsico{
+        background-image: url('../../../../assets/img/Hotels@2x.png');
+    }
+    &.travelico{
+        background-image: url('../../../../assets/img/Flights@2x.png');
+    }
+    &.shoppingico{
+        background-image: url('../../../../assets/img/Shopping@2x.png');
+    }
+    &.lifestyleico{
+        background-image: url('../../../../assets/img/Activities@2x.png');
     }
 }

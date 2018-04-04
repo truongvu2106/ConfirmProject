@@ -40,6 +40,7 @@ export class MyProfileComponent implements OnInit {
   }
 
   changeViewUpdateProfile() {
+    this.onload();
     this.isProfileViewShow = !this.isProfileViewShow;  
   }
 
@@ -50,7 +51,7 @@ export class MyProfileComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(ChangePassModalViewComponent, {
       width: '400px',
-      data: 'data here'
+      autoFocus: false
     });
 
     dialogRef.afterClosed().subscribe(result => {

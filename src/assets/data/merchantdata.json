@@ -2,27 +2,27 @@
     "categories": [{
         "value": "Restaurants",
         "name": "Restaurants",
-        "icon": "fa-cutlery"
+        "icon": "restaurantico"
     }, {
         "value": "Bars",
         "name": "Bars",
-        "icon": "fa-glass"
+        "icon": "barico"
     }, {
         "value": "Hotels",
         "name": "Hotels",
-        "icon": "fa-bed"
+        "icon": "hotelsico"
     }, {
         "value": "Travel",
         "name": "Travel",
-        "icon": "fa-plane"
+        "icon": "travelico"
     }, {
         "value": "Shopping",
         "name": "Shopping",
-        "icon": "fa-shopping-bag"
+        "icon": "shoppingico"
     }, {
         "value": "Lifestyle",
         "name": "Lifestyle",
-        "icon": "fa-flag-o"
+        "icon": "lifestyleico"
     }],
     "merchant": {
         "categories": ["Restaurants", "Travel"],
@@ -31,6 +31,8 @@
         "Description": "Singapore",
         "addressLine1": "8 Marina View",
         "addressLine2": "Tower 1, Asia Square, Level 1",
-        "zipCode": "018960"
+        "zipCode": "018960",
+        "group":"SampleGroup",
+        "name":"Merchant1"
     }
 }

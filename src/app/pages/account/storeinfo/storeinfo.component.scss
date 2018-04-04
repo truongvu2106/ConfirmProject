@@ -61,6 +61,8 @@
         }
         .storedetail{
             padding-bottom: 40px;
+            width: 600px;
+            margin: auto;
             h3{
                 color: #a4a4a4;
                 font-size: 13px;
@@ -74,32 +76,16 @@
                 margin-left: -10px;
                 margin-right: -10px;
             }
-            label{
-                font-size: 13px;
-                color:#333;
-                white-space: nowrap;
-                // opacity: 0;
-                transition: opacity 300ms ease-in-out,visibility 1ms ease 301ms;
-            }
-            input[type="text"]{
-                background-color: #eee;
-                height: 50px;
-                border: 0px;
-                box-shadow: 0 0 0 transparent;
-                font-size: 15px;
-                &:focus{
-                    border: 1px solid #056DAE;
-                    &+label{
-                        opacity: 1;
-                    }
-                }
+            .mat-form-field {
+                padding-left: 10px;
+                padding-right: 10px;
             }
         }
     }
     .storeinfofoot{
         overflow: auto;
         padding: 20px 0px;
-        background-color: #333;
+        background-color: rgba($color: #000, $alpha: 0.8);
         a{
             text-decoration: underline;
             margin-left: 30px;

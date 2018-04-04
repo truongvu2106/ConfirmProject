@@ -15,7 +15,7 @@
     <div class="actionprofile">
       <a href="javascript:;"(click)="openDialog()" >Change password</a>
     </div>
-    <div class="clearboth"></div>
+    <div class="clearfix"></div>
   </div><!-- end bannerprofile -->
   <div class="infoprofile" *ngIf="isProfileViewShow">
     <div class="row">
@@ -48,36 +48,31 @@
   
   <div class="infoprofile" *ngIf="!isProfileViewShow">
     <div class="row">
-      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
-        <label class="text-input-label">first name</label>
-        <input type="text" class="form-control" [(ngModel)]="userProfile.firstName">
-      </div>
-      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
-        <label class="text-input-label">last name</label>
-        <input type="text" class="form-control" [(ngModel)]="userProfile.lastName">
-      </div>
+      <mat-form-field class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <input matInput placeholder="First name" [(ngModel)]="userProfile.firstName">
+      </mat-form-field>
+      <mat-form-field class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <input matInput placeholder="Last name" [(ngModel)]="userProfile.lastName">
+      </mat-form-field>
     </div>
     <div class="row">
-      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
-        <label class="text-input-label">Designation</label>
-        <input type="text" class="form-control" [(ngModel)]="userProfile.designation">
-      </div>
+      <mat-form-field class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <input matInput placeholder="Designation" type="text" [(ngModel)]="userProfile.designation">
+      </mat-form-field>
     </div>
     <div class="row">
-      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
-        <label class="text-input-label">email</label>
-        <input type="text" class="form-control" [(ngModel)]="userProfile.email">
-      </div>
-      <div class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
-        <label class="text-input-label">Mobile no.</label>
-        <input type="text" class="form-control" [(ngModel)]="userProfile.mobileNo">
-      </div>
+      <mat-form-field class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <input type="text" matInput placeholder="Email" [(ngModel)]="userProfile.email">
+      </mat-form-field>
+      <mat-form-field class="itemeditinfo col-md-4 col-sm-6 col-xs-12">
+        <input type="text" matInput placeholder="Mobile no." [(ngModel)]="userProfile.mobileNo">
+      </mat-form-field>
     </div>
   </div><!-- edit info -->
   <div class="formtool">
-    <button class="circlebtn editbtn btn btn-primary" (click)="changeViewUpdateProfile()" *ngIf="isProfileViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-    <a href="javascript:;" *ngIf="!isProfileViewShow" (click)="changeViewUpdateProfile()">Cancel</a>
-    <button class="circlebtn finishbtn " (click)="updateProfile()" *ngIf="!isProfileViewShow">
+    <button mat-fab class="btn btn-primary" (click)="changeViewUpdateProfile()" *ngIf="isProfileViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <a mat-button class="btn btn-link" href="javascript:;" *ngIf="!isProfileViewShow" (click)="changeViewUpdateProfile()">Cancel</a>
+    <button mat-fab class="finishbtn " (click)="updateProfile()" *ngIf="!isProfileViewShow">
     </button>
   </div>
 </div>

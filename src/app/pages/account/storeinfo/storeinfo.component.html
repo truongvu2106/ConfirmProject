@@ -20,71 +20,57 @@
         </div>
       </div>
     </div>
-    <div class="row storedetail">
-      <div class="col-md-offset-3 col-md-6">
-        <div class="form-group">
-            <label>Store Name</label>
-            <input type="text" placeholder="Store Name" class="form-control" [(ngModel)]="store.storeName">
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-6">
-              <label>Country</label>
-              <select [ngModel]="store.country" class="form-control" >
-                  <option disabled>Country</option>
-                <option [value]="country.countryName" *ngFor="let country of listCountry"> {{ country.countryName }}</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-                <label>City</label>
-                <select [ngModel]="store.city" class="form-control">
-                  <option disabled>City</option>
-                  <option [value]="city" *ngFor="let city of listCity"> {{ city }}</option>
-                </select>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-            <label>Area</label>
-            <input type="text" [ngModel]="store.area" class="form-control" placeholder="Area" >
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-6">
-              <label>Address Line 1</label>
-              <input type="text" class="form-control" [(ngModel)]="store.addrressLine1" placeholder="Address Line 1">
-            </div>
-            <div class="col-md-6">
-                <label>Address Line 2</label>
-                <input type="text" class="form-control" [(ngModel)]="store.addrressLine2" placeholder="Address Line 2">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-4">
-              <label>Zip code</label>
-              <input type="text" class="form-control" [(ngModel)]="store.zipCode" placeholder="Zip code">
-            </div>
-          </div>
-        </div>
-        <h3>option information</h3>
-        <div class="form-group">
-            <div class="row">
-              <div class="col-md-2">
-                <label>Country Code</label>
-                <input type="text" class="form-control" [(ngModel)]="store.countryCode">
-              </div>
-              <div class="col-md-2 fix-margin">
-                <label>Area Code</label>
-                <input type="text" class="form-control" [(ngModel)]="store.areaCode">
-              </div>
-              <div class="col-md-8">
-                <label>Merchant Contact No.</label>
-                <input type="text" placeholder="Merchant Contact No." class="form-control" [(ngModel)]="store.contactNo" >
-              </div>
-            </div>
-          </div>
+    <div class="storedetail">
+      <div class="row">
+        <mat-form-field class="col-xs-12">
+          <input matInput placeholder="Store Name" [(ngModel)]="store.storeName">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-6">
+          <mat-select placeholder="Country" [(ngModel)]="store.country">
+            <mat-option *ngFor="let country of listCountry" [value]="country.countryName">
+              {{ country.countryName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="col-sm-6">
+          <mat-select placeholder="City" [(ngModel)]="store.country">
+            <mat-option *ngFor="let city of listCity" [value]="city">
+              {{ city }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-12">
+          <input matInput placeholder="Area" [(ngModel)]="store.area">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-6">
+          <input matInput placeholder="Address Line 1" [(ngModel)]="store.addrressLine1">
+        </mat-form-field>
+        <mat-form-field class="col-sm-6">
+          <input matInput placeholder="Address Line 2" [(ngModel)]="store.addrressLine2">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col-sm-4">
+          <input matInput placeholder="Zip code" [(ngModel)]="store.zipCode">
+        </mat-form-field>
+      </div>
+      <h3>option information</h3>
+      <div class="row">
+        <mat-form-field class="col-sm-2">
+          <input matInput placeholder="Country Code" [(ngModel)]="store.countryCode">
+        </mat-form-field>
+        <mat-form-field class="col-sm-3 fix-margin">
+          <input matInput placeholder="Area Code" [(ngModel)]="store.areaCode">
+        </mat-form-field>
+        <mat-form-field class="col-sm-7">
+          <input matInput placeholder="Merchant Contact No." [(ngModel)]="store.contactNo">
+        </mat-form-field>
       </div>
     </div>
 

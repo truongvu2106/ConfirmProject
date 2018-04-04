@@ -1,46 +1,29 @@
+
 .toolmodal{
     overflow: auto;
-    button{
-        background-color: transparent;
-        border:none;
+    button.mat-icon-button{
         float: right;
         width: 20px;
         height: 20px;
         overflow: hidden;
-        padding: 0;
         .mat-icon{
             width: 20px;
             height: 20px;
             font-size: 20px;
             color: #666;
             font-weight: bold;
+            vertical-align: top;
         }
     }
 }
-h3{
-    font-size: 24px;
-    line-height: 60px;
-}
-.modalcontent{
-    label{
-        font-size: 12px;
-        line-height: 25px;
-    }
-    input{
-        background-color: #eee;
-        height: 55px;
-        border: 0px;
-        box-shadow: 0 0 0 transparent;
-        &.ng-invalid.ng-touched, &.ng-touched.inputerr{
-            border:1px solid red;
-        }
-    }
-    p.ng-star-inserted{
-        color: red;
-    }
-    button.btn{
-        width: 100%;
-        margin-top: 30px;
-        height: 55px;
+button.btn.btn-primary{
+    width: 100%;
+    margin-top: 30px;
+    height: 55px;
+    background-color: #337ab7;
+    color:#fff;
+    border-radius: 6px;
+    &:hover{
+        background-color: #286090;
     }
 }
