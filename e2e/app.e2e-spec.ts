@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
+import { ReactiveAuthenticationExamplePage } from './app.po';
 
-describe('quartz-app App', () => {
-  let page: AppPage;
+describe('reactive-authentication-example App', () => {
+  let page: ReactiveAuthenticationExamplePage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new ReactiveAuthenticationExamplePage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

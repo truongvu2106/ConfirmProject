@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// guards
+import { AuthenticatedGuard } from "./shared/authenticated.guard";
 
 import {
   MatAutocompleteModule,
@@ -39,6 +41,8 @@ import {
     MatToolbarModule,
     MatTooltipModule
 } from '@angular/material';
+// components
+import { NotFoundComponent } from "./not-found/not-found.component";
 
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -52,35 +56,27 @@ import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
 import { ResetComponent } from './pages/login/reset.component';
 import { StoreInfoComponent } from './pages/account/storeinfo/storeinfo.component';
-
-// import { HomeComponent } from './page/home/home.component';
-
-const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'manage-merchant', component: ManageMerchantComponent },
-  { path: 'forgot-user', component: ForgotUserComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'reset-password', component: ResetComponent },
-  { path: '**', redirectTo: 'home' },
+export const routes: Routes = [
   {
-    path: 'account', component: AccountComponent,
-    children: [{
-        path: '',
-        redirectTo: 'myprofile',
-        pathMatch: 'full'
-      },
-      { path: 'myprofile', component: MyProfileComponent },
-      { path: 'merchantdetails', component: MerchantDetailsComponent },
-      { path: 'stores', component: StoresComponent }
-    ]
+    path: "users",
+    loadChildren: "./users/users.module#UsersModule"
   },
-  { path: 'store-detail', component: StoreInfoComponent },
-  { path: 'store-detail/:idStore', component: StoreInfoComponent },
-  { path: '**', redirectTo: 'account' }
+  {
+    path: "",
+    pathMatch: "full",
+    redirectTo: "/users/my-account"
+  },
+  {
+    path: "404",
+    component: NotFoundComponent
+  },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
+  exports: [
+    RouterModule
+  ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -117,12 +113,13 @@ const routes: Routes = [
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+    RouterModule.forRoot(routes)
+  ],
   declarations: [
     MerchantDetailsComponent,
     StoresComponent,
     MyProfileComponent
   ]
+
 })
 export class AppRoutingModule { }
