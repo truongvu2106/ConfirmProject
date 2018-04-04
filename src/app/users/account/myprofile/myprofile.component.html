@@ -71,7 +71,7 @@
   </div><!-- edit info -->
   <div class="formtool">
     <button mat-fab class="btn btn-primary" (click)="changeViewUpdateProfile()" *ngIf="isProfileViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-    <a mat-button class="btn btn-link" href="javascript:;" *ngIf="!isProfileViewShow" (click)="changeViewUpdateProfile()">Cancel</a>
+    <a class="btn btn-link" href="javascript:;" *ngIf="!isProfileViewShow" (click)="changeViewUpdateProfile()">Cancel</a>
     <button mat-fab class="finishbtn " (click)="updateProfile()" *ngIf="!isProfileViewShow">
     </button>
   </div>

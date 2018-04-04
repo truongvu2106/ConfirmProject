@@ -6,7 +6,7 @@
     </div>
     <div class="itembannermerchantdetail">
       <label class="mc-label">Merchant Name</label>
-      {{machant.name}}
+      {{merchant.name}}
     </div>
     <div class="clearboth"></div>
   </div><!-- end bannerprofile -->
@@ -105,9 +105,9 @@
   </ng-container>
   <!-- end Edit Merchant -->
   <div class="formtool">
-    <button class="circlebtn editbtn btn btn-primary" (click)="changeViewUpdateMerchant()" *ngIf="isMerchantdetailsViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-    <a href="javascript:;" *ngIf="!isMerchantdetailsViewShow" (click)="changeViewUpdateMerchant()">Cancel</a>
-    <button class="circlebtn finishbtn " (click)="updateMerchant()" *ngIf="!isMerchantdetailsViewShow">
+    <button mat-fab class="btn btn-primary" (click)="changeViewUpdateMerchant()" *ngIf="isMerchantdetailsViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <a class="btn btn-link" href="javascript:;" *ngIf="!isMerchantdetailsViewShow" (click)="changeViewUpdateMerchant()">Cancel</a>
+    <button mat-fab class="finishbtn" (click)="updateMerchant()" *ngIf="!isMerchantdetailsViewShow">
     </button>
   </div>
 </div>

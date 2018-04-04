@@ -80,9 +80,8 @@
 }
 
 .formtool{
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
+    margin: 45px;
+    text-align: right;
     button.btn{
         font-size: 20px;
         &.btn-primary{

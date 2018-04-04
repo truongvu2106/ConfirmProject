@@ -54,7 +54,7 @@
     }
     .merchantcat{
         margin: 45px; 
-        margin-bottom: 0;      
+        margin-bottom: 0;
         padding: 30px 45px;
         .ico{
             float: right;
@@ -118,29 +118,29 @@
 }
 
 .formtool{
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    overflow: auto;
+    margin: 45px;
+    text-align: right;
+    button.btn{
+        font-size: 20px;
+        &.btn-primary{
+            background-color: #337ab7;
+            color:#fff;
+            &:hover{
+                background-color: #286090;
+            }
+        }
+    }
     a{
         text-decoration: underline;
-        margin-right: 25px;
-        display: block;
-        float: left;
-        transform: translateY(60%);
-    }
-    button.circlebtn{
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        min-width:55px;
-        font-size: 20px;
+        font-size: 18px;
+        color: #337ab7;
+        &:hover{
+            color: #286090;
+        }
     }
     button.finishbtn{
-        box-shadow: 1px 2px 5px #ccc;
         background-color: #fff;
-        border: 0;
-        margin-right: 10px;
+        position: relative;
         &:before{
             content:"";
             width: 10px;
@@ -148,9 +148,9 @@
             background-color: #056DAE;
             display: block;
             transform: rotate(45deg);
-            position: relative;
-            top: 18px;
-            left: 7px; 
+            position: absolute;
+            top: 57%;
+            left: calc(25% + 3px);
         }
         &:after{
             content:"";
@@ -161,12 +161,12 @@
             -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
             transform: rotate(45deg);
             display: block;
-            position: relative;
-            bottom: 0px;
-            left: 50%;
+            position: absolute;
+            top: calc(25% + 2px);
+            left: 55%;
         }
         &:hover{
-            background-color: #002A54;
+            background-color: #286090;
             &:before{
                 background-color:#fff;
             }

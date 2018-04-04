@@ -28,7 +28,7 @@
         "categories": ["Restaurants", "Travel"],
         "country": "Singapore",
         "city": "Singapore",
-        "Description": "Singapore",
+        "description": "",
         "addressLine1": "8 Marina View",
         "addressLine2": "Tower 1, Asia Square, Level 1",
         "zipCode": "018960",
