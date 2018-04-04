@@ -1,0 +1,36 @@
+<div class="mc-containter-login">
+  <!-- forgot user -->
+  <form *ngIf="!(loading | async)" (ngSubmit)="submit()" [formGroup]="form" novalidate>
+  <div class="mc-box-forgot">
+        <div class="mc-box-item mc-title">
+            <span><a  routerLink="/users/sign-in"><i class="fa fa-angle-left"></i></a></span>
+            <span>Forgot User ID</span>
+        </div>
+        <div class="mc-box-item mc-user" *ngIf="!submitted">
+            <mat-form-field class="mc-full-width">
+                <input matInput placeholder="Enter your email address" formControlName="emailUser">
+                <mat-error >
+                    Please enter a valid email address                    
+                </mat-error>
+            </mat-form-field>               
+        </div>        
+        <div class="mc-box-item mc-button" *ngIf="!submitted">
+        <input type="submit" class="btn btn-primary" value="Submit"/>
+        </div>
+        <div class="mc-box-item mc-cancel" *ngIf="!submitted">
+            <a routerLink="/users/sign-in">Cancel</a>
+        </div>            
+        <div class="mc-box-item" *ngIf="submitted">
+            <div class="mc-icon-success">
+                <span><i class="fa fa-check"></i></span>
+            </div>
+            <div class="mc-title-success">
+                <span>Your user ID has been sent to <br/> <b>{{emailUser.value}}</b></span>
+            </div>
+        </div>
+        <div class="mc-box-item mc-back-pw" *ngIf="submitted">
+                <a  routerLink="/users/sign-in">Back to Sign On</a>
+        </div>
+    </div>
+    </form>
+</div>

@@ -10,7 +10,6 @@ import {
 
   // reselect
   import { compose } from "@ngrx/core/compose";
-  // import { storeFreeze } from "ngrx-store-freeze";
   import { RouterReducerState, routerReducer } from "@ngrx/router-store";
   import { RouterStateUrl } from "../shared/utils";
 
@@ -27,8 +26,7 @@ import {
    * our top level state interface is just a map of keys to inner state types.
    */
   export interface State {
-    // routerReducer: RouterReducerState<RouterStateUrl>;
-    router: fromRouter.RouterReducerState;
+    routerReducer: RouterReducerState<RouterStateUrl>;
     users: users.State;
   }
   
@@ -38,41 +36,20 @@ import {
    * and the current or initial state and return a new immutable state.
    */
   export const reducers: ActionReducerMap<State> = {
-    router: fromRouter.routerReducer,
-
-    // router: fromRouter.routerReducer,
+    routerReducer: routerReducer,
     users: users.reducer
-  };
-
-
-  // development reducer includes storeFreeze to prevent state from being mutated
-// const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
-
-// production reducer
-// const productionReducer: ActionReducer<State> = combineReducers(reducers);
-  
+  };  
   
   // log all actions
   export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
     return function(state: State, action: any): State {
       console.log("state", state);
       console.log("action", action);
+      
       return reducer(state, action);
     };
   }
-
-
-  // export function reducer(state: any, action: any) {
-  //   // if (environment.production) {
   
-  //     return productionReducer(state, action);
-  //   // } else {
-  //     // return developmentReducer(state, action);
-  //   // }
-  // }
-  
-
-
   /**
    * By default, @ngrx/store uses combineReducers with the reducer map to compose
    * the root meta-reducer. To add more meta-reducers, provide an array of meta-reducers

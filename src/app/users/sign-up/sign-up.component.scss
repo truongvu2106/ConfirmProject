@@ -1,81 +1,334 @@
 @import "~@angular/material/theming";
 @import "~@angular/material/theming";
-@import "../../../sass/mixins";
-
-:host {
-  .flex-container {
-    background-color: mat-color($mat-grey, 100);
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    min-height: 100vh;
-
-    &::after {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 200px;
-      left: 0;
+.mc-containter-register{    
+  text-align: center;
+  height:136vh;
+  .mc-sidenav-content{             
+      .mc-box-register-left{
+          background: url(../../../assets/img/hotair_balloons.jpg) no-repeat;
+          background-size: cover;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          .mc-description{
+              width: 70%;
+              margin: 206px 137px;
+              h3{
+                  color: #fff;
+                  text-align: left;
+                  font-size: 17px;              
+              }
+              h1{
+                  color: #ddd;
+                  font-size: 45px;
+                  text-align: left;
+                  margin-top: 28px;
+              }
+          }
+      }
+  }
+  .mc-sidenav{
       right: 0;
-      background-color: mat-color($mat-indigo, 500);
-      content: "";
-      box-shadow: 0 2px 4px 1px rgba(0,0,0,.14);
-      z-index: 0;
-    }
-
-    .logo-container, .card-container {
-      z-index: 1;
-    }
-
-    button.logo-container {
-      background: transparent;
-      padding: 0 16px;
-      box-sizing: border-box;
-      cursor: pointer;
-      user-select: none;
-      outline: 0;
-      border: none;
-      display: inline-block;
-      white-space: nowrap;
-      text-decoration: none;
-      vertical-align: baseline;
-
-      .logo {
-        height: 64px;
-        width: 64px;
-        margin: 48px auto;
-        background: url("http://placehold.it/64x64");
-        background-size: contain;
-        @include retina {
-          background: url("http://placehold.it/128x128") 64px/64px;
-        }
-      }
-    }
-
-    .card-container {
-      mat-card {
-        background-color: #fff;
-        margin-bottom: 16px;
-
-        mat-card-title {
-          text-transform: uppercase;
-          text-align: center;
-          margin-bottom: 48px;
-        }
-
-        mat-card-content {
-          margin-bottom: 16px;
-
-          mat-form-field {
-            margin-bottom: 16px;
+      width: 550px;
+      .mc-box-register-right{
+          background: #FFF;
+          height: 100%;
+          width: 100%;
+          text-align: center;  
+          padding-top: 20px;        
+          .mc-box-item{
+              display: inline-block;
+              width: 335px;
+              &.mc-title{
+                  margin-top:150px;
+                  span{                    
+                      float: left;
+                      color: #000;
+                      font-size: 25px;              
+                  }
+              }
+              &.mc-user{
+                  padding-top: 35px;
+                  label{                    
+                      float: left;
+                      color: #333;   
+                      font-size: 16px;
+                      width: 100%;
+                      text-align: left;
+                      font-size:12px;
+                      margin-bottom: 5px;
+                  }
+                  input{
+                      background: #eee;
+                      height: 50px;
+                      width: 100%;                    
+                      float: left;
+                      border-color: #fff;
+                      box-shadow: none;
+                      font-size: 16px;
+                      padding: 0px 20px;
+                      &:focus{
+                          box-shadow: none;
+                          border-color: #056DAE;
+                      }                    
+                  }
+              }
+              &.mc-password{
+                  label{                    
+                      float: left;
+                      color: #333;   
+                      font-size: 16px;                    
+                      width: 100%;
+                      text-align: left;
+                      font-size:12px;
+                      margin-bottom: 5px;
+                  }
+                  input{
+                      background: #eee;
+                      height: 50px;
+                      width: 100%;                    
+                      float: left;
+                      border-color: #fff;
+                      box-shadow: none;
+                      font-size: 16px;
+                      padding: 0px 20px;
+                      &:focus{
+                          box-shadow: none;
+                          border-color: #056DAE;
+                      }                    
+                  }
+              }
+              &.mc-agree{
+                  .chk {                    
+                      position: relative;
+                      cursor: pointer;
+                      padding-top: 4px;
+                      margin-top: 2px;
+                      margin-left: 1px;
+                      float: left;
+                      span{                        
+                          margin: -1px 10px;
+                          float: left;
+                      }                    
+                      .chkctrl {
+                          position: absolute;
+                          width: 0;
+                          height: 0;
+                          left: 0;
+                          top: 0;
+                          opacity: 0;
+                          margin: 0;
+                      }
+                      i {
+                          
+                          background: #FFFFFF;
+                          border: 1px solid #056DAE;
+                          border-radius: 6px;
+                          width: 20px;
+                          height: 20px;
+                          cursor: pointer;
+                          float: left;                        
+                      }
+                      .chkctrl:checked + i {
+                          border: 1px solid #056DAE;
+                      }
+                      .chkctrl:checked + i:after {
+                          content: "";
+                          background: #2980b9;
+                          background-image: url(../../../assets/img/tick.svg);
+                          background-position: center;
+                          background-repeat: no-repeat;
+                          position: absolute;
+                          top: 4px;
+                          left: 0px;
+                          border-radius: 6px;
+                          width: 20px;
+                          height: 20px;
+                      }                    
+                  }
+              }
+              &.mc-button{
+                  margin-top: 20px;
+                  input{                    
+                      height: 50px;
+                      width: 100%;
+                      float: left;
+                      font-weight: bold;
+                      background:#545b62;
+                      color: #ddd;
+                  }
+              }
+              &.mc-forget{
+                  a{
+                      width: 100%;
+                      text-align: left;
+                      margin-bottom: 5px;
+                      float: left;
+                      text-decoration: underline;
+                      color: #337ab7;
+                  }
+              }
+              .mc-error{
+                  text-align: left;
+                  color:#d80d0c;
+                  float: left;
+                  font-size: 11px;
+                  font-weight: bold;
+                  width: 100%;
+                  height: 20px;
+              }
           }
-
-          button, a {
-            margin-top: 16px;
-          }
-        }
       }
-    }
   }
 }
+@media only screen and (max-width: 480px){
+  .mc-containter-register{    
+      text-align: center;
+      height:100vh;
+      .mc-box-left-register{
+          display: none;
+          background: url(../../../assets/img/hotair_balloons.jpg);
+          background-size: 100% 100%;
+          float: left;
+          width: 0%;
+          height: 100%;
+          .mc-description{
+              width: 400px;
+              margin: 170px 150px;
+              h3{
+                  color: #ddd;
+                  text-align: left;
+                  opacity: 0.8;
+                  
+              }
+              h1{
+                  color: #ddd;
+                  font-size: 40px;
+                  text-align: left;
+                  margin-top: 20px;
+              }
+          }
+      }
+      .mc-box-register{
+          background: #FFF;
+          width: 100%;
+          height: 100%;
+          float: right;
+          text-align: center;  
+          padding-top: 20px;        
+          .mc-box-item{
+              display: inline-block;
+              width: 80%;           
+              padding: 15px 0;
+              &.mc-title{
+                  span{                    
+                      float: left;
+                      color: #000;
+                      font-size: 20px;                    
+                  }
+              }
+              &.mc-user{
+                  label{                    
+                      float: left;
+                      color: #333;   
+                      font-size: 16px;
+                      width: 100%;
+                      text-align: left;
+                  }
+                  input{
+                      background: #eee;
+                      height: 50px;
+                      width: 100%;                    
+                      float: left;
+                      border-color: #fff;
+                      box-shadow: none;
+                      &:focus{
+                          box-shadow: none;
+                          border-color: #056DAE;
+                      }                    
+                  }
+              }
+              &.mc-password{
+                  label{                    
+                      float: left;
+                      color: #333;   
+                      font-size: 16px;                    
+                      width: 100%;
+                      text-align: left;
+                  }
+                  input{
+                      background: #eee;
+                      height: 50px;
+                      width: 100%;                    
+                      float: left;
+                      border-color: #fff;
+                      box-shadow: none;
+                      &:focus{
+                          box-shadow: none;
+                          border-color: #056DAE;
+                      }                    
+                  }
+              }
+              &.mc-agree{
+                  .chk {
+                      display: inline-block;
+                      position: relative;
+                      cursor: pointer;
+                      padding-top: 4px;
+                      margin-top: 2px;
+                      margin-left: 1px;                      
+                      span{                        
+                          margin: -1px 10px;
+                          float: left;
+                      }                    
+                      .chkctrl {
+                          position: absolute;
+                          width: 0;
+                          height: 0;
+                          left: 0;
+                          top: 0;
+                          opacity: 0;
+                          margin: 0;
+                      }
+                      i {
+                          display: inline-block;
+                          background: #FFFFFF;
+                          border: 1px solid #056DAE;
+                          border-radius: 6px;
+                          width: 20px;
+                          height: 20px;
+                          cursor: pointer;                                            
+                      }
+                      .chkctrl:checked + i {
+                          border: 1px solid #056DAE;
+                      }
+                      .chkctrl:checked + i:after {
+                          content: "";
+                          background: #2980b9;
+                          background-image: url(../../../assets/img/tick.svg);
+                          background-position: center;
+                          background-repeat: no-repeat;
+                          position: absolute;
+                          top: 4px;
+                          left: 0px;                        
+                          border-radius: 6px;
+                          width: 20px;
+                          height: 20px;
+                      }                    
+                  }
+              }
+              &.mc-button{                
+                  input{                    
+                      height: 50px;
+                      width: 100%;
+                      float: left;
+                      font-weight: bold;
+                      background:#545b62;
+                      color: #ddd;
+                  }
+              }                
+          }
+      }
+  }
+}
+

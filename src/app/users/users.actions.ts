@@ -7,6 +7,11 @@ import { type } from "../core/util";
 // import models
 import { User } from "../core/models/user";
 
+export enum LayoutActionTypes {
+  OpenSidenav = '[Layout] Open Sidenav',
+  CloseSidenav = '[authLayout] Close Sidenav',
+}
+
 export const ActionTypes = {
   AUTHENTICATE: type("[users] Authenticate"),
   AUTHENTICATE_ERROR: type("[users] Authentication error"),

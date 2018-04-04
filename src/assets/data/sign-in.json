@@ -1,0 +1,45 @@
+{
+  "signin": {
+    "type": "container",
+    "title": "Sign in",
+    "description": "Sign in page",
+    "elements": {
+      "pageTitle": {
+        "type": "text",
+        "title": "Sign On"
+      },
+      "username": {
+        "type": "input",
+        "hint": "User ID",
+        "messages": {
+          "required": "Please enter your User ID."
+        }
+      },
+      "password": {
+        "type": "input",
+        "hint": "Password",
+        "messages": {
+          "required": "Please enter your password."
+        }
+      },
+      "submit": {
+        "type": "button",
+        "title": "Sign On"
+      },
+      "remember": {
+        "type": "checkbox",
+        "options": {
+          "on": "Remember my User ID"
+        }
+      },
+      "forgotUsername": {
+        "type": "text",
+        "description": "<div class=\"subdiv_allinline\"><span id=\"forgotUsername1_root\">Forgot your </span></div>
+<div class=\"subdiv_allinline\"><div id=\"forgotUsername_root\" class=\"\"><a id=\"forgotUsername_body\" href=\"javascript:void(0)\" class=\"\">User ID</a></div></div>
+<div class=\"subdiv_allinline\"><span id=\"or_root\">or</span></div>
+<div class=\"subdiv_allinline\"><div id=\"forgotPassword_root\" class=\"\"><a id=\"forgotPassword_body\" href=\"javascript:void(0)\" class=\"\">Password</a></div></div>
+<div class=\"subdiv_allinline\"><span id=\"questionmark_root\">?</span></div>"
+      }
+    }
+  }
+}

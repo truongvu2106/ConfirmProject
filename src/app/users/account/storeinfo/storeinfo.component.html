@@ -1,7 +1,7 @@
 <div class="storeinfo">
   <div class="bannerstoreinfo" *ngIf="!isCreate">
       <label>{{store.city}}</label>
-      <span class="glyphicon glyphicon-menu-left" routerLink="/account/stores"></span>{{store.storeName}}
+      <span class="glyphicon glyphicon-menu-left" routerLink="/users/my-account/stores"></span>{{store.storeName}}
   </div><!-- end bannerprofile -->
   <div class="banneraddstoreinfo" *ngIf="isCreate">
       Add New Store
@@ -78,7 +78,7 @@
   <!-- contentstoreinfo -->
   
   <div class="storeinfofoot">
-      <a routerLink="/account/stores" >Cancel</a>
+      <a routerLink="/users/my-account/stores" >Cancel</a>
       <button class="finishbtn btn btn-lg" *ngIf="!isCreate">
         Update
       </button>

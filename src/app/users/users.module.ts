@@ -48,9 +48,13 @@ import { AccountComponent } from "./account/account.component";
 import { MyProfileComponent } from "./account/myprofile/myprofile.component";
 import { MerchantDetailsComponent } from "./account/merchantdetails/merchantdetails.component";
 import { StoresComponent } from "./account/stores/stores.component";
+import { StoreInfoComponent } from "./account/storeinfo/storeinfo.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignOutComponent } from "./sign-out/sign-out.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
+import { ForgotUserComponent } from './forgot-user/forgot-user.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetComponent } from './reset/reset.component';
 
 // routing
 import { UsersRoutingModule } from "./users-routing.module";
@@ -61,9 +65,13 @@ const components = [
   MyProfileComponent,
   MerchantDetailsComponent,
   StoresComponent,
+  StoreInfoComponent,
   SignInComponent,
   SignUpComponent,
-  SignOutComponent
+  SignOutComponent,
+  ForgotUserComponent,
+  ForgotPasswordComponent,
+  ResetComponent
 ];
 
 @NgModule({

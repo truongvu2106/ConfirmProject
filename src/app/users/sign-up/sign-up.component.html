@@ -1,35 +1,50 @@
-<div class="flex-container" fxLayout="column">
-  <button (click)="home()" fxFlexAlign="center" class="logo-container">
-    <div class="logo"></div>
-  </button>
-  <div fxLayout="row" fxLayoutAlign="center" class="card-container">
-    <div fxFlex="90%" fxFlex.md="50%" fxFlex.lg="40%">
-      <mat-card>
-        <mat-card-title>Sign Up</mat-card-title>
-        <mat-card-content>
-          <div *ngIf="error | async" color="error">{{ error | async }}</div>
-          <form *ngIf="!(loading | async)" (ngSubmit)="submit()" [formGroup]="signupForm" novalidate>
-            <div fxLayout="column">
-              <mat-form-field>
-                <input matInput required placeholder="First Name" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="firstName">
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput required placeholder="Last Name" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="lastName">
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput required placeholder="Email Address" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="email">
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput required type="password" placeholder="Password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="password">
-              </mat-form-field>
-              <button mat-raised-button [disabled]="signupForm.invalid" type="submit" color="accent">Sign Up</button>
-            </div>
-          </form>
-          <div fxLayout="row" fxLayoutAlign="center">
-            <mat-spinner *ngIf="loading | async"></mat-spinner>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </div>
-</div>
+<mat-sidenav-container class="mc-containter-register">
+  <mat-sidenav-content class="mc-sidenav-content">
+      <div class="mc-box-register-left">
+      <div class="mc-description">
+          <h3>Good moning, [user's name] from [merchant name]</h3>
+          <h1>Welcome to Company Merchant Portal</h1>
+      </div>
+      </div>
+  </mat-sidenav-content>
+  <mat-sidenav #sidenav [mode]="mode.value" [disableClose]="true" [opened]="true" class="mc-sidenav">
+      <form (ngSubmit)="submit()" [formGroup]="form" novalidate>
+      <div class="mc-box-register-right">        
+      <div class="mc-box-item mc-title">
+          <span>Registration</span>
+      </div>
+      <div class="mc-box-item mc-user">
+          <mat-form-field class="mc-full-width">
+              <input matInput placeholder="User ID" formControlName="userId">                
+              <mat-error >
+                User ID is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+      </div>
+      <div class="mc-box-item mc-password">
+          <mat-form-field class="mc-full-width">
+              <input matInput placeholder="Set your password" type="password" formControlName="password">
+              <mat-error >
+                  Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>  
+      </div>
+      <div class="mc-box-item mc-password">
+          <mat-form-field class="mc-full-width">
+              <input matInput placeholder="Confirm password" type="password" formControlName="passwordconfirm"
+              >
+              <mat-error>
+                  Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>  
+      </div>
+      <div class="mc-box-item mc-agree">
+              <mat-checkbox>I agree to the <a href="">Terms &amp; Conditions</a></mat-checkbox>                    
+      </div>
+      <div class="mc-box-item mc-button">
+         <input type="button" class="btn btn-dark" value="Register"/>
+      </div>
+      </div>
+      </form>     
+  </mat-sidenav>
+</mat-sidenav-container>

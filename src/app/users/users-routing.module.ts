@@ -9,9 +9,13 @@ import { AccountComponent } from "./account/account.component";
 import { MyProfileComponent } from "./account/myprofile/myprofile.component";
 import { MerchantDetailsComponent } from "./account/merchantdetails/merchantdetails.component";
 import { StoresComponent } from "./account/stores/stores.component";
+import { StoreInfoComponent } from "./account/storeinfo/storeinfo.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignOutComponent } from "./sign-out/sign-out.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
+import { ForgotUserComponent } from './forgot-user/forgot-user.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetComponent } from './reset/reset.component';
 
 // routes
 const routes: Routes = [
@@ -29,6 +33,8 @@ const routes: Routes = [
     { path: 'stores', component: StoresComponent }
   ]
   },
+  { path: 'store-detail', component: StoreInfoComponent },
+  { path: 'store-detail/:idStore', component: StoreInfoComponent },
   {
     path: "sign-in",
     component: SignInComponent
@@ -40,6 +46,18 @@ const routes: Routes = [
   {
     path: "sign-up",
     component: SignUpComponent
+  },
+  {
+    path: "forgot-user",
+    component: ForgotUserComponent
+  },
+  {
+    path: "forgot-password",
+    component: ForgotPasswordComponent
+  },
+  {
+    path: "reset",
+    component: ResetComponent
   },
   {
     path: "**",
