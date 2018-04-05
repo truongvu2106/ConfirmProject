@@ -1,0 +1,203 @@
+.fix-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.invitemerchant-container{
+    overflow: auto;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 15px 25px;
+}
+.invitemerchant{
+    background-color: #fff;
+    min-height: 100vh;
+    .invitemerchant-header{
+        box-shadow: 0 4px 2px -2px #ccc;
+        .invitemerchant-container{
+            h3{
+                padding: 95px 0 55px;
+                font-size: 30px;
+                font-weight: normal;
+                margin: 0;
+                color: #333;
+            }
+            .mat-form-field{
+                input.mat-input-element{
+                    height: 55px;
+                }
+                ::ng-deep .mat-form-field-label{
+                    font-size: 16px;
+                }
+                .mat-icon{
+                    position: absolute;
+                    top: 30px;
+                    right: 20px;
+                    font-size: 23px;
+                    color:#056cae;
+                }
+                .mat-autocomplete{
+
+                }
+            }
+            .resultsearchinvite{
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-top: 20px;
+                .mc-label{
+                    text-transform: uppercase;
+                    color:#333;
+                    letter-spacing: 2px;
+                    border-bottom: 1px solid #c1c1c1;
+                    display: block;
+                    padding-bottom: 25px;
+                }
+                .listresult{
+                    margin-top: 20px;
+                    padding-bottom: 70px;
+                    .itemresult{
+                        padding-right: 50px;
+                        border-bottom: 1px solid #c1c1c1;
+                        padding: 10px 0;
+                        a{
+                            font-size: 16px;
+                            line-height: 50px;
+                        }
+                    }
+                }
+            }
+        }    
+    }// end .invitemerchant-header
+    .invitemerchant-content{
+        min-height: 100vh;
+        padding-bottom: 200px;
+        p.disabled{
+            max-width: 1220px;
+            font-size: 25px;
+            cursor: default;
+            margin: auto;
+            padding: 50px 15px;
+            opacity: 0.5;
+        }
+        .addusertbl{
+            
+            p{
+                padding-top: 50px;
+                padding-bottom: 50px;
+                font-size: 20px;
+                color:#333;
+                strong{
+
+                }
+            }
+            table{
+                width: 100%;
+                thead{
+                    tr{
+                        th{
+                            font-weight: bold;
+                            color: #333333;
+                            font-size: 16px;
+                            padding-bottom: 20px;
+                            border-bottom: 2px solid #c9c9c9;
+                            padding-left: 20px;
+                            &:first-child{
+                                padding-left: 0;
+                            }
+                            &:last-child{
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            padding: 0;
+                            .mat-form-field{
+                                width: 100%;
+                                padding-left: 20px;
+                                input.mat-input{
+
+                                }
+                            }
+                            &:first-child{
+                                .mat-form-field{
+                                    padding: 0;
+                                }
+                            }
+                            button.mat-icon-button{
+                                margin-left: 10px;
+                                .mat-icon{
+                                    color: #056cae;
+                                    &.remove{
+                                        transform: rotate(45deg)
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .storeinfofoot{
+        overflow: auto;
+        padding: 20px 0px;
+        background-color: rgba($color: #000, $alpha: 0.8);
+        a{
+            text-decoration: underline;
+            margin-left: 30px;
+            display: block;
+            float: left;
+            color: #fff;
+            transform: translateY(60%);
+        }
+        button{
+            height: 50px;
+            background-color: #056cae;
+            color: #fff;
+            box-shadow: 0 0 0 transparent;
+            font-size: 16px;
+            float: right;
+            margin-right: 30px;
+            width: 240px;
+            box-sizing: border-box;
+            font-weight: bold;
+            &.disabled{
+                background-color: #666;
+                color: #969696;
+            }
+        }
+    }
+}
+// style option autocomplete
+.mat-option{
+    height: 70px;
+    line-height: 70px;
+    box-sizing: border-box;
+    background-color: #eeeeee;
+    &.mat-active{
+        color:#056cae;
+        
+        .mat-icon{
+            opacity: 1;
+        }
+    }
+    .mat-icon{
+        position: absolute;
+        right: 0;
+        line-height: 70px;
+        height: 70px;
+        top: 0;
+        opacity: 0;
+    }
+    &::ng-deep .mat-option-text{
+        border-bottom:  2px solid #c1c1c1;
+    }
+    &:last-child ::ng-deep .mat-option-text{
+        border: none;
+    }
+}

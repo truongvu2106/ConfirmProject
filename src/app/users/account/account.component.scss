@@ -1,5 +1,5 @@
 .mc-sidenav {
-    width: 260px;
+    width: 244px;
     box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
     .profile-card {
         padding: 50px 20px;
@@ -28,8 +28,11 @@
         .list-group-item {
             border: none;
             border-radius: 0;
-            label {
+            a {
                 margin-right: 5px;
+                &.active {
+                    color: #535353;
+                }
             }
             .badge {
                 background: #d60100;
@@ -47,6 +50,7 @@
     min-height: 600px;
     .nav-justified {
         border-bottom: 1px solid #bbb;
+        height: 80px;
         li {
             &:last-child a span {
                 border-right: none;
@@ -57,7 +61,7 @@
                 letter-spacing: 2px;
                 font-size: 14px;
                 line-height: 40px;
-                padding: 15px 0;
+                padding: 18px 0;
                 span {
                     border-right: 1px solid #888888;
                     display: block;

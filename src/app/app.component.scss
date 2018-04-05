@@ -1,3 +1,12 @@
 body{
     margin: 0 auto;
 }
+:host ::ng-deep .mat-focused  ::ng-deep .mat-form-field-label{
+    color: currentColor;
+}
+// style option autocomplete
+:host ~ ::ng-deep div.cdk-overlay-container ::ng-deep .mat-autocomplete-panel{
+    background-color: #eee;
+    border-radius: 6px;
+    
+}

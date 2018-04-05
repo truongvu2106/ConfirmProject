@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChangepassmodalviewComponent } from './changepassmodalview.component';
+import { ChangePassModalViewComponent } from './changepassmodalview.component';
 
-describe('ChangepassmodalviewComponent', () => {
-  let component: ChangepassmodalviewComponent;
-  let fixture: ComponentFixture<ChangepassmodalviewComponent>;
+describe('ChangePassModalViewComponent', () => {
+  let component: ChangePassModalViewComponent;
+  let fixture: ComponentFixture<ChangePassModalViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChangepassmodalviewComponent ]
+      declarations: [ ChangePassModalViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChangepassmodalviewComponent);
+    fixture = TestBed.createComponent(ChangePassModalViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

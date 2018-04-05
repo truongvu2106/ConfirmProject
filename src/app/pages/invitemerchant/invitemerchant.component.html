@@ -1,0 +1,114 @@
+<div class="invitemerchant">
+  <div class="invitemerchant-header">
+    <div class="invitemerchant-container">
+      <h3>Select Merchants</h3>
+      <div class="row">
+        <mat-form-field class="col-md-7">
+          <input type="text" placeholder="Merchant Name" (keyup)="searchMerchantName(searchFrmControl)" matInput [formControl]="searchFrmControl" [matAutocomplete]="auto">
+          <mat-icon matSuffix class="fa fa-search"></mat-icon>
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let merchantName of merchantNameList" [value]="merchantName">
+              {{ merchantName }}
+              <mat-icon>add</mat-icon>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="resultsearchinvite">
+          <label class="mc-label">6 results found for "bmerchantname"</label>
+          <div class="listresult">
+            <div class="row">
+              <div class="col-md-4 col-sm-2">
+                <div class="itemresult">
+                  <a href="javascript:;">bMerchantname1</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-2">
+                <div class="itemresult">
+                    <a href="javascript:;">bMerchantname1</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-2">
+                <div class="itemresult">
+                    <a href="javascript:;">bMerchantname1</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-2">
+                  <div class="itemresult">
+                    <a href="javascript:;">bMerchantname1</a>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-2">
+                  <div class="itemresult">
+                      <a href="javascript:;">bMerchantname1</a>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-2">
+                  <div class="itemresult">
+                      <a href="javascript:;">bMerchantname1</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div><!-- invitemerchant-header -->
+  <div class="invitemerchant-content invitemerchant-container">
+    <p class="disabled" *ngIf="false">No merchants selected</p>
+    <div class="addusertbl">
+      <p>Add users you want to invite to <strong>bMerchantname1</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:19%">First Name</th>
+            <th style="width:19%">Last Name</th>
+            <th style="width:38%">Email</th>
+            <th style="width:19%">Mobile No.</th>
+            <th style="width:5%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <mat-form-field>
+                <input type="text" matInput>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <input type="text" matInput>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <input type="text" matInput>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <input type="text" matInput>
+              </mat-form-field>
+            </td>
+            <td>
+              <button mat-icon-button *ngIf="a" (click)="a=!a">
+                <mat-icon class="add">add</mat-icon>
+              </button>
+              <button mat-icon-button *ngIf="!a" (click)="a=!a">
+                <mat-icon class="remove">add_circle</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="storeinfofoot fix-footer">
+    <a routerLink="/account/stores" >Cancel</a>
+    <button class="finishbtn btn btn-lg disabled" >
+      Send invite
+    </button>
+  </div>
+  <!-- storeinfofoot -->
+</div>

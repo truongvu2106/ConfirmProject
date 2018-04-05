@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class AccountComponent implements OnInit {
   mode = new FormControl('side');
-
+  @ViewChild ('linkActive') linkActive = '';
   constructor() { }
 
   ngOnInit() {

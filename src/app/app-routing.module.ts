@@ -9,37 +9,37 @@ import { AuthenticatedGuard } from "./shared/authenticated.guard";
 
 import {
   MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 // components
 import { NotFoundComponent } from "./not-found/not-found.component";
@@ -51,6 +51,8 @@ import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant
 import { ForgotUserComponent } from './pages/login/forgot-user.component';
 import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
 import { ResetComponent } from './pages/login/reset.component';
+import { InviteMerchantComponent } from './pages/invitemerchant/invitemerchant.component';
+
 export const routes: Routes = [
   {
     path: "users",
@@ -61,6 +63,7 @@ export const routes: Routes = [
     pathMatch: "full",
     redirectTo: "/users/my-account"
   },
+  { path:'invitemerchant',component: InviteMerchantComponent},  
   {
     path: "404",
     component: NotFoundComponent
@@ -108,7 +111,11 @@ export const routes: Routes = [
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
+  ],
+  declarations: [
+    InviteMerchantComponent
   ]
 
 })
