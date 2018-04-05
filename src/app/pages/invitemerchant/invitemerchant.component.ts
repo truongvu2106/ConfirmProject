@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import { DataService } from '../../services/data.service';
-
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-invitemerchant',
@@ -23,7 +23,7 @@ export class InviteMerchantComponent implements OnInit {
   merchantNameList: any = [];
 
   merchantSelected: any = {};
-
+  userInviting: any = {};
   // changedName: any =[];
 
   constructor(private dataService: DataService) {
@@ -71,15 +71,18 @@ export class InviteMerchantComponent implements OnInit {
   }
   selectMerchant(item) {
     this.merchantSelected = item;
-    this.addUser();
+    this.merchantFinded = [];
   }
   addUser() {
-    let user = {
+    this.merchantSelected.userInvite.push(_.clone(this.userInviting));
+    this.userInviting = {
       "firstName":"",
       "lastName":"",
       "Email":"",
       "MobileNo":""
-    }
-    this.merchantSelected.userInvite.push(user);
+    };
+  }
+  removeUser(user) {
+    _.remove(this.merchantSelected.userInvite, user);
   }
 }

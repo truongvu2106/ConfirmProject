@@ -45,7 +45,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of merchantSelected.userInvite; let isLast = last">
+          <tr *ngFor="let user of merchantSelected.userInvite;">
             <td>
               <mat-form-field>
                 <input type="text" matInput [(ngModel)]="user.firstName">
@@ -67,14 +67,38 @@
               </mat-form-field>
             </td>
             <td>
-              <button mat-icon-button *ngIf="isLast" (click)="addUser()">
-                <mat-icon class="add">add</mat-icon>
-              </button>
-              <button mat-icon-button *ngIf="!isLast" (click)="removeUser()">
+              <button mat-icon-button (click)="removeUser(user)">
                 <mat-icon class="remove">add_circle</mat-icon>
               </button>
             </td>
           </tr>
+          <tr>
+              <td>
+                <mat-form-field>
+                  <input type="text" matInput [(ngModel)]="userInviting.firstName">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field>
+                    <input type="text" matInput [(ngModel)]="userInviting.lastName">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field>
+                  <input type="text" matInput [(ngModel)]="userInviting.email">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field>
+                  <input type="text" matInput [(ngModel)]="userInviting.mobileNo">
+                </mat-form-field>
+              </td>
+              <td>
+                <button mat-icon-button (click)="addUser()">
+                  <mat-icon class="add">add</mat-icon>
+                </button>
+              </td>
+            </tr>
         </tbody>
       </table>
     </div>
