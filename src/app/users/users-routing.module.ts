@@ -33,8 +33,16 @@ const routes: Routes = [
     { path: 'stores', component: StoresComponent }
   ]
   },
-  { path: 'store-detail', component: StoreInfoComponent },
-  { path: 'store-detail/:idStore', component: StoreInfoComponent },
+  {
+    canActivate: [AuthenticatedGuard],
+    path: 'store-detail',
+    component: StoreInfoComponent
+  },
+  {
+    canActivate: [AuthenticatedGuard],
+    path: 'store-detail/:idStore',
+    component: StoreInfoComponent
+  },
   {
     path: "sign-in",
     component: SignInComponent
