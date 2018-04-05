@@ -55,6 +55,7 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
 import { ForgotUserComponent } from './forgot-user/forgot-user.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetComponent } from './reset/reset.component';
+import { ChangePassModalViewComponent } from './changepassmodalview/changepassmodalview.component';
 
 // routing
 import { UsersRoutingModule } from "./users-routing.module";
@@ -71,7 +72,8 @@ const components = [
   SignOutComponent,
   ForgotUserComponent,
   ForgotPasswordComponent,
-  ResetComponent
+  ResetComponent,
+  ChangePassModalViewComponent
 ];
 
 @NgModule({
@@ -118,5 +120,8 @@ const components = [
   ],
   declarations: components,
   exports: components,
+  entryComponents:[
+    ChangePassModalViewComponent
+  ],
 })
 export class UsersModule { }

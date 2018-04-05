@@ -16,12 +16,13 @@
         padding: 30px 40px;
         height: 144px;
         font-weight: 300;
+        white-space: nowrap;
         .itembannerprofile{
             font-size: 28px;
             color: #fff;
-            float: left;
             border-left: 1px solid #888;
-            padding: 8px 85px;
+            padding: 8px 80px;
+            display: inline-block;
             &:first-child{
                 border-left: none;
                 padding-left: 0;
@@ -53,7 +54,7 @@
         background-color: #fff;
         border: 1px solid #f0f0f0;
         padding: 30px 45px;
-        color: #333;
+        color: #555;
         .iteminfo{
             margin-bottom: 30px;
             .h3{

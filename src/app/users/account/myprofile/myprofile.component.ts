@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { MatDialog } from '@angular/material';
 
-import { ChangePassModalViewComponent } from '../../../components/changepassmodalview/changepassmodalview.component';
+import { ChangePassModalViewComponent } from '../../changepassmodalview/changepassmodalview.component';
 
 @Component({
   selector: 'app-myprofile',

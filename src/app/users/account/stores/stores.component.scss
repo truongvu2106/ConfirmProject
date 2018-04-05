@@ -6,7 +6,7 @@
         background-color: #f8f8f8;
         caption {
             background: #ffffff;
-            padding: 40px 40px 20px 40px;
+            padding: 40px 40px 0px 40px;
             p {
                 font-size: 26px;
                 border-bottom: 1px solid #ccc;
@@ -17,7 +17,7 @@
         thead {
             background-color: #fff;
             th {
-                padding: 30px;
+                padding: 20px 30px;
                 font-weight: 600;
                 &:first-child {
                     padding-left: 50px;
