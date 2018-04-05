@@ -1,0 +1,44 @@
+{
+  "signup": {
+    "type": "container",
+    "title": "Sign up",
+    "description": "Sign up page",
+    "welcome":"Welcome to Company Merchant Portal",
+    "elements": {
+      "pageTitle": {
+        "type": "text",
+        "title": "Registration"
+      },
+      "username": {
+        "type": "input",
+        "hint": "User ID",
+        "messages": {
+          "required": "Please enter your User ID."
+        }
+      },
+      "password": {
+        "type": "input",
+        "hint": "Set your password",
+        "messages": {
+          "required": "Please enter your password."
+        }
+      },
+      "passwordconfirm": {
+        "type": "input",
+        "hint": "Confirm password",
+        "messages": {
+          "required": "Please enter your password."
+        }
+      },
+      "submit": {
+        "type": "submit",
+        "title": "Register"
+      },
+      "remember": {
+        "type": "checkbox",
+        "text":"Terms & Conditions",
+        "on": "I agree to the"
+      }
+    }
+  }
+}

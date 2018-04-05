@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "quartz-app"
+    "name": "emarket"
   },
   "apps": [
     {
@@ -19,8 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",        
-        "assets/sass/styles.scss"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "assets/sass/styles.scss",
+        "assets/sass/_fix-material.scss"        
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
@@ -41,16 +42,13 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**"
+      "project": "src/tsconfig.app.json"
     },
     {
-      "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**"
+      "project": "src/tsconfig.spec.json"
     },
     {
-      "project": "e2e/tsconfig.e2e.json",
-      "exclude": "**/node_modules/**"
+      "project": "e2e/tsconfig.e2e.json"
     }
   ],
   "test": {
@@ -61,6 +59,8 @@
   "defaults": {
     "styleExt": "scss",
     "component": {
+      "inlineStyle": false,
+      "inlineTemplate": false
     }
   }
 }

@@ -1,8 +1,52 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+import { RouterModule } from '@angular/router';
+
+
+// @ngrx
+import { EffectsModule } from "@ngrx/effects";
+import { StoreRouterConnectingModule, RouterStateSerializer } from "@ngrx/router-store";
+import { StoreModule } from "@ngrx/store";
+
+import { RouterEffects } from "./effects/router";
+import { CustomRouterStateSerializer } from './shared/utils';
+
+
+// routing
+import { AppRoutingModule } from "./app-routing.module";
+
+// components
+import { AppComponent } from "./app.component";
+import { NotFoundComponent } from "./shared/not-found/not-found.component";
+
+// effects
+import { UserEffects } from "./users/users.effects";
+
+// guards
+import { AuthenticatedGuard} from "./shared/authenticated.guard";
+
+// reducers
+import { metaReducers, reducers } from "./reducers";
+
+// services
+import { UserService } from "./core/services/user.service";
+import { DataService } from './core/services/data.service';
+
+import { routes } from './app-routing.module';
+
+import 'hammerjs';
+
+
+import { HeaderComponent } from './shared/header/header.component';
+import { MyProfileComponent } from "./users/my-account/my-profile/my-profile.component";
+import { MerchantDetailComponent } from "./users/my-account/merchant-detail/merchant-detail.component";
+import { StoresComponent } from "./users/my-account/stores/stores.component";
+import { ChangePassModalViewComponent } from './shared/changepassmodalview/changepassmodalview.component';
 
 import {
   MatAutocompleteModule,
@@ -39,58 +83,14 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
-import { RouterModule } from '@angular/router';
 
-import 'hammerjs';
-
-// @ngrx
-import { EffectsModule } from "@ngrx/effects";
-import { StoreRouterConnectingModule, RouterStateSerializer } from "@ngrx/router-store";
-import { StoreModule } from "@ngrx/store";
-
-import { RouterEffects } from "./effects/router";
-import { CustomRouterStateSerializer } from './shared/utils';
-
-import { HeaderComponent } from './components/header/header.component';
-import { LoginComponent } from './pages/login/login.component'
-import { RegisterComponent } from './pages/register/register.component'
-import { ManageMerchantComponent } from './pages/manage-merchant/manage-merchant.component'
-import { FooterComponent } from './components/footer/footer.component';
-import { ForgotUserComponent } from './pages/login/forgot-user.component';
-import { ForgotPasswordComponent } from './pages/login/forgot-password.component';
-import { ResetComponent } from './pages/login/reset.component';
-
-// routing
-import { AppRoutingModule, routes } from "./app-routing.module";
-
-// components
-import { AppComponent } from "./app.component";
-import { NotFoundComponent } from "./not-found/not-found.component";
-
-// effects
-import { UserEffects } from "./users/users.effects";
-
-// guards
-import { AuthenticatedGuard } from "./shared/authenticated.guard";
-
-// reducers
-import { metaReducers, reducers } from "./reducers";
-
-// services
-import { UserService } from "./core/services/user.service";
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
     HeaderComponent,
-    FooterComponent,
-    LoginComponent,
-    RegisterComponent,
-    ManageMerchantComponent,
-    ForgotUserComponent,
-    ForgotPasswordComponent,
-    ResetComponent,
-    NotFoundComponent
+    ChangePassModalViewComponent,    
   ],
   imports: [
     BrowserAnimationsModule,
@@ -136,11 +136,6 @@ import { UserService } from "./core/services/user.service";
       RouterEffects,
       UserEffects
     ]),
-
-    // StoreModule.forRoot(reducers, {
-    //   metaReducers: [storeFreeze]
-    // }),
-    // RouterModule.forRoot(routes, { useHash: true }),
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot({
       /*
@@ -148,14 +143,13 @@ import { UserService } from "./core/services/user.service";
         This matches the key defined in the map of reducers
       */
       stateKey: 'router',
-    })
-
-    
-  ],
-  providers: [
-    AuthenticatedGuard,
-    UserService,
-    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }
+    }),
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatTabsModule,    
   ],
   exports: [
     MatAutocompleteModule,
@@ -191,6 +185,15 @@ import { UserService } from "./core/services/user.service";
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule
+  ],
+  providers: [
+    DataService,
+    AuthenticatedGuard,
+    UserService,
+    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }
+  ],
+  entryComponents:[
+    ChangePassModalViewComponent
   ],
   bootstrap: [AppComponent]
 })

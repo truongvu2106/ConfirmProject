@@ -24,10 +24,6 @@ export interface State {
 
   // the authenticated user
   user?: User;
-  // the authenticated user
-  email?: string;
-  // the authenticated user
-  password?: string;
 }
 
 /**
@@ -45,6 +41,8 @@ const initialState: State = {
  * @param {State} state Current state
  * @param {Actions} action Incoming action
  */
+
+
 export function reducer(state: State = initialState, action: Actions): State {
 
   switch (action.type) {

@@ -1,0 +1,114 @@
+<div class="merchantdetail">
+    <div class="bannermerchantdetail" >
+      <div class="itembannermerchantdetail">
+        <label class="mc-label">Merchant group</label>
+        {{merchant.group}}
+      </div>
+      <div class="itembannermerchantdetail">
+        <label class="mc-label">Merchant Name</label>
+        {{merchant.name}}
+      </div>
+      <div class="clearboth"></div>
+    </div><!-- end bannerprofile -->
+    <!-- start View Merchant -->  
+    <ng-container *ngIf="isMerchantdetailsViewShow">
+      <div class="merchantcat merchantsection">
+        <div class="ico">
+          <span class="catico restaurantico"></span>
+          <span class="catico travelico"></span>
+        </div>
+        <label class="mc-label">Merchant category</label>
+        <span>{{merchant.categories}}</span>
+      </div>
+      <div class="infoopt merchantsection">
+        <h3>option information</h3>
+        <div class="row">
+          <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+            <label class="mc-label">Country</label>
+            {{merchant.country}}
+          </div>
+          <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+            <label class="mc-label">City</label>
+            {{merchant.city}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+            <label class="mc-label">Merchant description</label>
+            {{merchant.description || '-'}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+            <label class="mc-label">Address</label>
+            {{merchant.addressLine1}}<br>
+            {{merchant.addressLine2}}
+          </div>
+          <div class="iteminfo col-md-4 col-sm-6 col-xs-12">
+            <label class="mc-label">Zip code</label>
+            {{merchant.zipCode}}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <!-- end View Merchant -->    
+    <!-- start Edit Merchant -->
+    <ng-container *ngIf="!isMerchantdetailsViewShow">
+      <div class="merchantcat merchantsection">
+        <label class="mc-label">Merchant category</label>
+        <div class="row list-categories">
+          <div class="col-sm-4 col-item" *ngFor="let category of categories;">
+            <div class="item">
+              <span class="pull-right fa-lg"><i class="catico" [ngClass]="category.icon"></i></span>
+              <mat-checkbox value="{{category.value}}" id="{{'category' + category.value }}" [checked]="category.isChecked">
+                {{ category.name }}
+              </mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="infoopt merchantsection">
+        <h3>option information</h3>
+        <div class="row">
+          <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+            <mat-select placeholder="Country" [(ngModel)]="merchant.country">
+              <mat-option *ngFor="let country of countries" [value]="country.countryName">
+                {{ country.countryName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+            <mat-select placeholder="City" [(ngModel)]="merchant.country">
+              <mat-option *ngFor="let city of cities" [value]="city">
+                {{ city }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="col-sm-8 col-xs-12">
+            <textarea matInput [(ngModel)]="merchant.description" placeholder="Merchant Description" rows="3"></textarea>
+          </mat-form-field >
+        </div>
+        <div class="row">
+          <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+            <input matInput placeholder="Address Line 1" [(ngModel)]="merchant.addressLine1">
+          </mat-form-field>
+          <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+            <input matInput placeholder="Address Line 2" [(ngModel)]="merchant.addressLine2">
+          </mat-form-field>
+          <mat-form-field class="col-md-4 col-sm-6 col-xs-12">
+            <input matInput placeholder="Zip code" [(ngModel)]="merchant.zipCode">
+          </mat-form-field>
+        </div>
+      </div>
+    </ng-container>
+    <!-- end Edit Merchant -->
+    <div class="formtool">
+      <button mat-fab class="btn btn-primary" (click)="changeViewUpdateMerchant()" *ngIf="isMerchantdetailsViewShow"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+      <a class="btn btn-link" href="javascript:;" *ngIf="!isMerchantdetailsViewShow" (click)="changeViewUpdateMerchant()">Cancel</a>
+      <button mat-fab class="finishbtn" (click)="updateMerchant()" *ngIf="!isMerchantdetailsViewShow">
+      </button>
+    </div>
+  </div>
+  

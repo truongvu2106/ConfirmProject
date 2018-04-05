@@ -72,6 +72,11 @@ import {
 export const getUsersState = (state: State) => state.users;
 
 
+// export const getUsersState = createFeatureSelector<State>('abc');
+
+console.log(getUsersState)
+
+
 /**
  * Returns the authenticated user
  * @function getAuthenticatedUser

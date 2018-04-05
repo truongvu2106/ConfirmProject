@@ -58,7 +58,7 @@ export class UserEffects {
     .debounceTime(500)
     .map(toPayload)
     .switchMap(payload => {
-      return this.userService.authenticate(payload.email, payload.password)
+      return this.userService.authenticate(payload.userId, payload.password)
         .map(user => new AuthenticationSuccessAction({user: user}))
         .catch(error => Observable.of(new AuthenticationErrorAction({error: error})));
     });
@@ -79,7 +79,7 @@ export class UserEffects {
     .debounceTime(500)
     .map(toPayload)
     .switchMap(payload => {
-      return this.userService.create(payload.user)
+      return this.userService.create(payload.user, payload.userId, payload.password, payload.passwordconfirm)
         .map(user => new SignUpSuccessAction({user: user}))
         .catch(error => Observable.of(new SignUpErrorAction({error: error})));
     });

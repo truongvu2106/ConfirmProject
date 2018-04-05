@@ -23,22 +23,16 @@
         }
       },
       "submit": {
-        "type": "button",
+        "type": "submit",
         "title": "Sign On"
       },
       "remember": {
         "type": "checkbox",
-        "options": {
-          "on": "Remember my User ID"
-        }
+        "on": "Remember my User ID"
       },
       "forgotUsername": {
         "type": "text",
-        "description": "<div class=\"subdiv_allinline\"><span id=\"forgotUsername1_root\">Forgot your </span></div>
-<div class=\"subdiv_allinline\"><div id=\"forgotUsername_root\" class=\"\"><a id=\"forgotUsername_body\" href=\"javascript:void(0)\" class=\"\">User ID</a></div></div>
-<div class=\"subdiv_allinline\"><span id=\"or_root\">or</span></div>
-<div class=\"subdiv_allinline\"><div id=\"forgotPassword_root\" class=\"\"><a id=\"forgotPassword_body\" href=\"javascript:void(0)\" class=\"\">Password</a></div></div>
-<div class=\"subdiv_allinline\"><span id=\"questionmark_root\">?</span></div>"
+        "description": "<div class=\"mc-box-item mc-forget\"><a href=\"javascript:;\" routerLink=\"/users/forgot-user\">Forgot User ID?</a><a href=\"javascript:;\" routerLink=\"/users/forgot-password\">Forgot Password?</a></div>"
       }
     }
   }

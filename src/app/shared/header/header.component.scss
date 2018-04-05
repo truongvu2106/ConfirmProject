@@ -1,0 +1,91 @@
+@import '~assets/sass/styles';
+.mc-navbar {
+    margin-bottom: 0;
+    background-color: $color-bg-header;
+    border:none;
+    letter-spacing: 0.4px;
+    .navbar-brand {
+        color: #fff;        
+        display: table-cell;
+        height: 70px;       
+        font-size: 26px;
+        line-height: 26px;
+        font-weight: 300;
+        span{            
+            display: inline-block;
+            padding: 0 32px 0 16px;
+            height: 70px;
+            img{
+                width: 60px;
+            }           
+        }
+    }
+    .mc-navbar-header{
+        height: 70px;
+        background-image: linear-gradient(to bottom, #00bdf2, #00b3f0 18%, #0066b3 77%, #004985);
+        width:100%;
+        .mc-logo-header{
+            float: left;
+            .navbar-right {
+                float: right;
+                li {
+                    a {
+                        color: #85C2FF;
+                        padding: 0 15px;                        
+                    }
+                    &:last-child{
+                        a{
+                            padding-right: 2px;
+                        }
+                    }                
+                }
+            }           
+        }
+        .navbar-collapse{
+            float: right;
+            .navbar-right {                
+                li {
+                    a {
+                        color: #FFF;                        
+                        height: 70px;
+                        display: table-cell;
+                        line-height: 70px;
+                    }                    
+                    &:last-child{
+                        a{
+                            padding-right: 20px;
+                            padding-top: 6px;
+                            font-size: 11px;
+                        }
+                    }                
+                }
+            }
+        }
+    }
+    .mc-navbar-header-top{
+        background: #333333;
+        height: 25px;
+        width:100%;
+        .navbar-right {
+            float: right;
+            li {
+                float: left;
+                a {
+                    color: #FFF;
+                    padding: 0 42px;
+                    display: table-cell;
+                    height: 25px;
+                    vertical-align: middle;  
+                    font-size: 11px; 
+                    font-weight: bold;        
+                }
+                &:last-child{
+                    a{
+                        padding-right: 19px;
+                        font-size: 11px;
+                    }
+                }            
+            }
+        }
+    }
+}

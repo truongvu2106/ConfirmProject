@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 // @ngrx
 import { Store } from "@ngrx/store";
 
+import { DataService } from '../../core/services/data.service';
+
 
 import { Go } from "../../actions/router";
 
@@ -25,13 +27,24 @@ import {
 
 /**
  * /users/sign-in
- * @class SignInComponent
- */
+ * @class SignInComponent */
+
 @Component({
   templateUrl: "./sign-in.component.html",
   styleUrls: ["./sign-in.component.scss"]
 })
+
 export class SignInComponent implements OnDestroy, OnInit {
+
+
+
+  jsonTitle: string;
+  jsonUserName: string;
+  jsonPassword: string;
+  jsonRemember: string;
+  jsonSubmit: string;
+
+  errorMessage: string;
 
   /**
    * The error if authentication fails.
@@ -57,12 +70,19 @@ export class SignInComponent implements OnDestroy, OnInit {
    */
   private alive = true;
 
+    /**
+   * Component state.
+   * @type {boolean}
+   */
+  public isBox = 1;
+
   /**
    * @constructor
    * @param {FormBuilder} formBuilder
    * @param {Store<State>} store
    */
   constructor(
+    private dataService: DataService,
     private formBuilder: FormBuilder,
     private store: Store<State>
   ) { }
@@ -72,28 +92,48 @@ export class SignInComponent implements OnDestroy, OnInit {
    * @method ngOnInit
    */
   public ngOnInit() {
+
+    this.onload();
+    
     // set formGroup
     this.form = this.formBuilder.group({
-      email: ["", Validators.required],
+      userId: ["", Validators.required],
       password: ["", Validators.required]
     });
-
+    this.form.valueChanges
+    .filter(data => this.form.valid)
+      .subscribe( data => console.log(JSON.stringify(data)));
     // set error
     this.error = this.store.select(getAuthenticationError);
 
     // set loading
     this.loading = this.store.select(isAuthenticationLoading);
 
-    // subscribe to success
+
+    // subscribe to success    
     this.store.select(isAuthenticated)
       .takeWhile(() => this.alive)
       .filter(authenticated => authenticated)
       .subscribe(value => {
+        
         this.store.dispatch(new Go({
           path: ["/users/my-account"]
         }));
 
       });
+  }
+
+  onload = (): void => {
+    this.dataService.getData('assets/data/sign-in.json').subscribe(
+      data => {
+        this.jsonTitle = data.signin.elements.pageTitle.title;
+        this.jsonUserName = data.signin.elements.username.hint;
+        this.jsonPassword = data.signin.elements.password.hint;
+        this.jsonRemember = data.signin.elements.remember.on;
+        this.jsonSubmit = data.signin.elements.submit.title;
+      },
+      error => this.errorMessage = <any>error
+    );
   }
 
   /**
@@ -102,16 +142,6 @@ export class SignInComponent implements OnDestroy, OnInit {
    */
   public ngOnDestroy() {
     this.alive = false;
-  }
-
-  /**
-   * Go to the home page.
-   * @method home
-   */
-  public home() {
-    this.store.dispatch(new Go({
-      path: ["/"]
-    }));
   }
 
   /**
@@ -130,16 +160,16 @@ export class SignInComponent implements OnDestroy, OnInit {
    */
   public submit() {
     // get email and password values
-    const email: string = this.form.get("email").value;
+    const userId: string = this.form.get("userId").value;
     const password: string = this.form.get("password").value;
 
     // trim values
-    email.trim();
+    userId.trim();
     password.trim();
 
     // set payload
     const payload = {
-      email: email,
+      userId: userId,
       password: password
     };
 

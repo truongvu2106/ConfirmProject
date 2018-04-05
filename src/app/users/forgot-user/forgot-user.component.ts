@@ -1,29 +1,17 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+
+import {FormControl, Validators} from '@angular/forms';
 
 // @ngrx
 import { Store } from "@ngrx/store";
 
-
-import { Go } from "../../actions/router";
-
-// rxjs
-import { Observable } from "rxjs/Observable";
-import "rxjs/add/operator/filter";
-import "rxjs/add/operator/takeWhile";
-
-// actions
-import { AuthenticateAction } from "../users.actions";
-
 // reducers
 import {
-  getAuthenticationError,
-  isAuthenticated,
-  isAuthenticationLoading,
   State
 } from "../../reducers";
 
+
+import { Go } from "../../actions/router";
 
 /**
  * /users/forgot-user
@@ -33,30 +21,7 @@ import {
   templateUrl: './forgot-user.component.html',
   styleUrls: ['./forgot-user.component.scss']
 })
-export class ForgotUserComponent implements OnDestroy,OnInit {
-/**
-   * The error if authentication fails.
-   * @type {Observable<string>}
-   */
-  public error: Observable<string>;
-
-  /**
-   * True if the authentication is loading.
-   * @type {boolean}
-   */
-  public loading: Observable<boolean>;
-
-  /**
-   * The authentication form.
-   * @type {FormGroup}
-   */
-  public form: FormGroup;
-
-  /**
-   * Component state.
-   * @type {boolean}
-   */
-  private alive = true;
+export class ForgotUserComponent {
 
     /**
    * Component state.
@@ -66,53 +31,19 @@ export class ForgotUserComponent implements OnDestroy,OnInit {
 
   /**
    * @constructor
-   * @param {FormBuilder} formBuilder
-   * @param {Store<State>} store
    */
   constructor(
-    private formBuilder: FormBuilder,
     private store: Store<State>
   ) { }
 
-  /**
-   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
-   * @method ngOnInit
-   */
-  public ngOnInit() {
-    
-    // set formGroup
-    this.form = this.formBuilder.group({
-      emailUser: ["", Validators.required]
-    });
-    this.form.valueChanges
-    .filter(data => this.form.valid)
-      .subscribe( data => console.log(JSON.stringify(data)));
-    // set error
-    this.error = this.store.select(getAuthenticationError);
 
-    // set loading
-    this.loading = this.store.select(isAuthenticationLoading);
+  email = new FormControl('', [Validators.required, Validators.email]);
 
-   // subscribe to success    
-   this.store.select(isAuthenticated)
-   .takeWhile(() => this.alive)
-   .filter(authenticated => authenticated)
-   .subscribe(value => {
-     this.store.dispatch(new Go({
-       path: ["/users/my-account"]
-     }));
-
-   });
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
   }
-
-  /**
-   *  Lifecycle hook that is called when a directive, pipe or service is destroyed.
-   * @method ngOnDestroy
-   */
-  public ngOnDestroy() {
-    this.alive = false;
-  }
-  
 
   /**
    * Submit the authentication form.
@@ -120,10 +51,13 @@ export class ForgotUserComponent implements OnDestroy,OnInit {
    */
   public submit() {
     // get email
-    const emailUser: string = this.form.get("emailUser").value;
     this.submitted=true;
 
-    // trim values
-    emailUser.trim();
+    setTimeout(() => {
+      this.store.dispatch(new Go({
+        path: ["/users/reset"]
+      }));
+
+    }, 3000);
   }
 }

@@ -117,18 +117,14 @@ export class ResetComponent implements OnInit {
   }  
 
   /**
-   * Submit the authentication form.
+   * Submit the reset pass form.
    * @method submit
    */
   public submit() {
-    // get password
-    const passwordnew: string = this.form.get("passwordnew").value;
-    const passwordconfirm: string = this.form.get("passwordconfirm").value;
-    this.submitted=true;
-
-    // trim values
-    passwordnew.trim();
-    passwordconfirm.trim();
+    
+    this.store.dispatch(new Go({
+      path: ["/users/sign-in"]
+    }));
   }
 
 }

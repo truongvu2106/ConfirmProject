@@ -9,7 +9,7 @@
         </div>
         <div class="mc-box-item mc-password-new">
             <mat-form-field class="mc-full-width">
-                <input matInput placeholder="Set you new password" type="password" [formControl]="passwordnew">
+                <input matInput placeholder="Set you new password" type="password" formControlName="passwordnew">
                 <mat-error *ngIf="form.get('passwordnew').invalid">
                     Password is <strong>required</strong>
                 </mat-error>
@@ -17,14 +17,14 @@
         </div>
         <div class="mc-box-item mc-password">
             <mat-form-field class="mc-full-width">
-                <input matInput placeholder="Confirm password" type="password" [formControl]="passwordconfirm">
+                <input matInput placeholder="Confirm password" type="password" formControlName="passwordconfirm">
                 <mat-error *ngIf="form.get('passwordconfirm').invalid">
                     Password is <strong>required</strong>
                 </mat-error>
             </mat-form-field>            
         </div>
         <div class="mc-box-item mc-button">
-            <input type="submit"  class="btn btn-primary" value="Submit"/>
+            <input type="submit"  class="btn btn-primary" value="Submit" [disabled]="form.invalid"/>
         </div>
         <div class="mc-box-item mc-cancel">
             <a routerLink="/users/sign-in">Cancel</a>

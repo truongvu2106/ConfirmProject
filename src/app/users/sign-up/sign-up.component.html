@@ -1,50 +1,50 @@
-<mat-sidenav-container class="mc-containter-register">
-  <mat-sidenav-content class="mc-sidenav-content">
+<div class="mc-containter-register">
+    <div class="mc-sidenav-content">
       <div class="mc-box-register-left">
       <div class="mc-description">
           <h3>Good moning, [user's name] from [merchant name]</h3>
-          <h1>Welcome to Company Merchant Portal</h1>
+          <h1>{{ jsonWelcome }}</h1>
       </div>
       </div>
-  </mat-sidenav-content>
-  <mat-sidenav #sidenav [mode]="mode.value" [disableClose]="true" [opened]="true" class="mc-sidenav">
-      <form (ngSubmit)="submit()" [formGroup]="form" novalidate>
-      <div class="mc-box-register-right">        
-      <div class="mc-box-item mc-title">
-          <span>Registration</span>
-      </div>
-      <div class="mc-box-item mc-user">
-          <mat-form-field class="mc-full-width">
-              <input matInput placeholder="User ID" formControlName="userId">                
-              <mat-error >
-                User ID is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-      </div>
-      <div class="mc-box-item mc-password">
-          <mat-form-field class="mc-full-width">
-              <input matInput placeholder="Set your password" type="password" formControlName="password">
-              <mat-error >
-                  Password is <strong>required</strong>
+    </div>
+    <div class="mc-sidenav">
+      <form (ngSubmit)="submit()" [formGroup]="signupForm" novalidate>
+        <div class="mc-box-register-right">        
+        <div class="mc-box-item mc-title">
+            <span>{{jsonTitle}}</span>
+        </div>
+        <div class="mc-box-item mc-user">
+            <mat-form-field class="mc-full-width">
+                <input matInput placeholder="{{jsonUserName}}" formControlName="userId">                
+                <mat-error >
+                    User ID is <strong>required</strong>
+                </mat-error>
+                </mat-form-field>
+        </div>
+        <div class="mc-box-item mc-password">
+            <mat-form-field class="mc-full-width">
+                <input matInput placeholder="{{jsonPassword}}" type="password" formControlName="password">
+                <mat-error >
+                    Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>  
+        </div>
+        <div class="mc-box-item mc-password">
+            <mat-form-field class="mc-full-width">
+                <input matInput placeholder="{{jsonPasswordConfirm}}" type="password" formControlName="passwordconfirm"
+                >
+                <mat-error>
+                    Password is <strong>required</strong>
                 </mat-error>
             </mat-form-field>  
-      </div>
-      <div class="mc-box-item mc-password">
-          <mat-form-field class="mc-full-width">
-              <input matInput placeholder="Confirm password" type="password" formControlName="passwordconfirm"
-              >
-              <mat-error>
-                  Password is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>  
-      </div>
-      <div class="mc-box-item mc-agree">
-              <mat-checkbox>I agree to the <a href="">Terms &amp; Conditions</a></mat-checkbox>                    
-      </div>
-      <div class="mc-box-item mc-button">
-         <input type="button" class="btn btn-dark" value="Register"/>
-      </div>
-      </div>
+        </div>
+        <div class="mc-box-item mc-agree">
+            <mat-checkbox>{{jsonRemember}} <a href="javascript:;">{{jsonRememberText}}</a></mat-checkbox>                    
+        </div>
+        <div class="mc-box-item mc-button">
+            <input type="submit" class="btn btn-dark" [disabled]="signupForm.invalid" value="{{jsonSubmit}}"/>
+        </div>
+        </div>
       </form>     
-  </mat-sidenav>
-</mat-sidenav-container>
+    </div>
+</div>

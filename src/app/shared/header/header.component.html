@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default mc-navbar">    
+    <div class="container-fix">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header mc-navbar-header-top">       
+          <div class="navbar-collapse" id="bs-quartz-navbar-collapse">
+              <ul class="navbar-right">
+                <li><a href="javascript:;"> Contact Us </a></li>
+                <li><a href="javascript:;"> English </a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="navbar-header mc-navbar-header">
+        <div class="mc-logo-header">
+          <a class="navbar-brand" href="/"><span><img src="../../../assets/img/logo.png" /></span> Merchant portal</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->        
+        <div class="navbar-collapse" id="bs-quartz-navbar-collapse">
+            <ul class="navbar-right">              
+              <li *ngIf="!(isAuthenticated | async)"><a routerLink="/users/sign-in"> Login </a></li>
+              <li *ngIf="isAuthenticated | async"><a href="javascript:;" (click)="signOut()" > Logout </a></li>
+              </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>      
+    </div><!-- /.container-fluid -->
+  </nav>
+  

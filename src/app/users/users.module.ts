@@ -43,37 +43,48 @@ import {
   MatTooltipModule
 } from '@angular/material';
 
-// components
-import { AccountComponent } from "./account/account.component";
-import { MyProfileComponent } from "./account/myprofile/myprofile.component";
-import { MerchantDetailsComponent } from "./account/merchantdetails/merchantdetails.component";
-import { StoresComponent } from "./account/stores/stores.component";
-import { StoreInfoComponent } from "./account/storeinfo/storeinfo.component";
+
+// components Authenticated
 import { SignInComponent } from "./sign-in/sign-in.component";
-import { SignOutComponent } from "./sign-out/sign-out.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { ForgotUserComponent } from './forgot-user/forgot-user.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetComponent } from './reset/reset.component';
-import { ChangePassModalViewComponent } from './changepassmodalview/changepassmodalview.component';
+
+// components user view
+import { MyAccountComponent } from "./my-account/my-account.component";
+import { MyProfileComponent } from "./my-account/my-profile/my-profile.component";
+import { MerchantDetailComponent } from "./my-account/merchant-detail/merchant-detail.component";
+import { StoresComponent } from "./my-account/stores/stores.component";
+import { StoreInfoComponent } from "./my-account/store-info/store-info.component";
+
+// components admin view
+import { ManageMerchantComponent } from './manage-merchant/manage-merchant.component';
+import { DetailMerchantComponent } from './manage-merchant/detail-merchant/detail-merchant.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { InviteMerchantComponent } from './invite-merchant/invite-merchant.component';
+
 
 // routing
 import { UsersRoutingModule } from "./users-routing.module";
 
+
 // components constant
 const components = [
-  AccountComponent,
+  MyAccountComponent,
   MyProfileComponent,
-  MerchantDetailsComponent,
+  MerchantDetailComponent,
   StoresComponent,
   StoreInfoComponent,
   SignInComponent,
   SignUpComponent,
-  SignOutComponent,
   ForgotUserComponent,
   ForgotPasswordComponent,
   ResetComponent,
-  ChangePassModalViewComponent
+  ManageMerchantComponent,
+  DetailMerchantComponent,
+  ManageUsersComponent,
+  InviteMerchantComponent
 ];
 
 @NgModule({
@@ -120,8 +131,5 @@ const components = [
   ],
   declarations: components,
   exports: components,
-  entryComponents:[
-    ChangePassModalViewComponent
-  ],
 })
 export class UsersModule { }

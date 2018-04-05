@@ -7,6 +7,9 @@ import { Store } from "@ngrx/store";
 
 import { Go } from "../../actions/router";
 
+
+import { DataService } from '../../core/services/data.service';
+
 // rxjs
 import { Observable } from "rxjs/Observable";
 
@@ -24,6 +27,7 @@ import {
 // models
 import { User } from "../../core/models/user";
 
+
 /**
  * /users/sign-up
  * @class SignUpComponent
@@ -33,6 +37,18 @@ import { User } from "../../core/models/user";
   styleUrls: ["./sign-up.component.scss"]
 })
 export class SignUpComponent implements OnDestroy, OnInit {
+  
+  
+  jsonWelcome: string;
+  jsonTitle: string;
+  jsonUserName: string;
+  jsonPassword: string;
+  jsonPasswordConfirm: string;
+  jsonRemember: string;
+  jsonRememberText: string;
+  jsonSubmit: string;
+
+  errorMessage: string;
 
   /**
    * The error if authentication fails.
@@ -64,6 +80,7 @@ export class SignUpComponent implements OnDestroy, OnInit {
    * @param {Store<State>} store
    */
   constructor(
+    private dataService: DataService,
     private formBuilder: FormBuilder,
     private store: Store<State>
   ) {}
@@ -73,12 +90,14 @@ export class SignUpComponent implements OnDestroy, OnInit {
    * @method ngOnInit
    */
   public ngOnInit() {
+
+    this.onload();
+
     // set FormGroup
     this.signupForm = this.formBuilder.group({
-      firstName: ["", Validators.required],
-      lastName: ["", Validators.required],
-      email: ["", Validators.required],
-      password: ["", Validators.required]
+      userId: ["", Validators.required],
+      password: ["", Validators.required],
+      passwordconfirm: ["", Validators.required]
     });
 
     // set error
@@ -98,6 +117,22 @@ export class SignUpComponent implements OnDestroy, OnInit {
       });
   }
 
+  onload = (): void => {
+    this.dataService.getData('assets/data/sign-up.json').subscribe(
+      data => {
+        this.jsonWelcome = data.signup.welcome;
+        this.jsonTitle = data.signup.elements.pageTitle.title;
+        this.jsonUserName = data.signup.elements.username.hint;
+        this.jsonPassword = data.signup.elements.password.hint;
+        this.jsonPasswordConfirm = data.signup.elements.passwordconfirm.hint;
+        this.jsonRemember = data.signup.elements.remember.on;
+        this.jsonRememberText = data.signup.elements.remember.text;
+        this.jsonSubmit = data.signup.elements.submit.title;
+      },
+      error => this.errorMessage = <any>error
+    );
+  }
+
   /**
    *  Lifecycle hook that is called when a directive, pipe or service is destroyed.
    * @method ngOnDestroy
@@ -107,32 +142,21 @@ export class SignUpComponent implements OnDestroy, OnInit {
   }
 
   /**
-   * Go to the home page.
-   * @method home
-   */
-  public home() {
-    this.store.dispatch(new Go({
-      path: ["/"]
-    }));
-  }
-
-  /**
    * Submit the sign up form.
    * @method submit
    */
   public submit() {
+
     // create a new User object
     const user: User = new User();
-    user.email = this.signupForm.get("email").value;
-    user.firstName = this.signupForm.get("firstName").value;
-    user.lastName = this.signupForm.get("lastName").value;
+    user.userId = this.signupForm.get("userId").value;
     user.password = this.signupForm.get("password").value;
+    user.passwordconfirm = this.signupForm.get("passwordconfirm").value;
 
     // trim values
-    user.email.trim();
-    user.firstName.trim();
-    user.lastName.trim();
+    user.userId.trim();
     user.password.trim();
+    user.passwordconfirm.trim();
 
     // set payload
     const payload = {

@@ -2,13 +2,16 @@
 @import "~@angular/material/theming";
 .mc-containter-register{    
   text-align: center;
-  height:136vh;
-  .mc-sidenav-content{             
+  .mc-sidenav-content{
+      padding-right: 550px;
+      position: absolute;
+        
       .mc-box-register-left{
           background: url(../../../assets/img/hotair_balloons.jpg) no-repeat;
           background-size: cover;
           height: 100%;
           width: 100%;
+          min-height: 879px;
           display: flex;
           .mc-description{
               width: 70%;
@@ -16,11 +19,11 @@
               h3{
                   color: #fff;
                   text-align: left;
-                  font-size: 17px;              
+                  font-size: 16px;              
               }
               h1{
-                  color: #ddd;
-                  font-size: 45px;
+                  color: #fff;
+                  font-size: 42px;
                   text-align: left;
                   margin-top: 28px;
               }
@@ -28,17 +31,20 @@
       }
   }
   .mc-sidenav{
-      right: 0;
+      float: right;
       width: 550px;
+      position: relative;
+      z-index: 2;
       .mc-box-register-right{
           background: #FFF;
           height: 100%;
           width: 100%;
+          min-height: 879px;
           text-align: center;  
           padding-top: 20px;        
           .mc-box-item{
               display: inline-block;
-              width: 335px;
+              width: 316px;
               &.mc-title{
                   margin-top:150px;
                   span{                    
@@ -63,6 +69,7 @@
                       height: 50px;
                       width: 100%;                    
                       float: left;
+                      border-radius: 6px;
                       border-color: #fff;
                       box-shadow: none;
                       font-size: 16px;
@@ -92,6 +99,7 @@
                       box-shadow: none;
                       font-size: 16px;
                       padding: 0px 20px;
+                      border-radius: 6px;
                       &:focus{
                           box-shadow: none;
                           border-color: #056DAE;
@@ -154,8 +162,13 @@
                       width: 100%;
                       float: left;
                       font-weight: bold;
-                      background:#545b62;
-                      color: #ddd;
+                      background-color: #056dae;
+                      color: #fff;
+                      &[disabled]{
+                        background-color:#666666;
+                        color: #999;
+                        opacity: 1;
+                      }
                   }
               }
               &.mc-forget{
