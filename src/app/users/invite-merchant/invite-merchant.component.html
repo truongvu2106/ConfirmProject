@@ -105,7 +105,7 @@
   </div>
   <div class="storeinfofoot fix-footer">
     <a routerLink="/account/stores" >Cancel</a>
-    <button class="finishbtn btn btn-lg disabled" >
+    <button class="finishbtn btn btn-lg" [class.disabled]=" !merchantSelected || !merchantSelected.userInvite || merchantSelected.userInvite.length==0" >
       Send invite
     </button>
   </div>
