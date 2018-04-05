@@ -4,51 +4,26 @@
       <h3>Select Merchants</h3>
       <div class="row">
         <mat-form-field class="col-md-7">
-          <input type="text" placeholder="Merchant Name" (keyup)="searchMerchantName(searchFrmControl)" matInput [formControl]="searchFrmControl" [matAutocomplete]="auto">
-          <mat-icon matSuffix class="fa fa-search"></mat-icon>
-          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let merchantName of merchantNameList" [value]="merchantName">
-              {{ merchantName }}
+          <input type="text" placeholder="Merchant Name" (keyup)="searchMerchantName(searchFrmControl, $event)" matInput [formControl]="searchFrmControl" [matAutocomplete]="autocompalete">
+          <mat-icon matSuffix class="fa fa-search" (click)="searchMerchantName(searchFrmControl, $event)"></mat-icon>
+          <mat-autocomplete autoActiveFirstOption #autocompalete="matAutocomplete">
+            <mat-option *ngFor="let merchantNameItem of merchantNameList" [value]="merchantNameItem.merchantName">
+              <ng-container *ngFor="let item of merchantNameItem.merchantNameChange; let isLast = last">{{item}}<b *ngIf="!isLast">{{searchFrmControl.value}}</b></ng-container>
               <mat-icon>add</mat-icon>
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
       </div>
       <div class="row">
-        <div class="resultsearchinvite">
-          <label class="mc-label">6 results found for "bmerchantname"</label>
+        <div class="resultsearchinvite" *ngIf="merchantFinded.length">
+          <label class="mc-label">{{merchantFinded.length}} results found for "{{searchFrmControl.value}}"</label>
           <div class="listresult">
             <div class="row">
-              <div class="col-md-4 col-sm-2">
+              <div class="col-md-4 col-sm-2" *ngFor="let item of merchantFinded">
                 <div class="itemresult">
-                  <a href="javascript:;">bMerchantname1</a>
+                  <a href="javascript:;" (click)="selectMerchant(item)">{{item.merchantName}}</a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-2">
-                <div class="itemresult">
-                    <a href="javascript:;">bMerchantname1</a>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-2">
-                <div class="itemresult">
-                    <a href="javascript:;">bMerchantname1</a>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-2">
-                  <div class="itemresult">
-                    <a href="javascript:;">bMerchantname1</a>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-2">
-                  <div class="itemresult">
-                      <a href="javascript:;">bMerchantname1</a>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-2">
-                  <div class="itemresult">
-                      <a href="javascript:;">bMerchantname1</a>
-                  </div>
-                </div>
             </div>
           </div>
         </div>  
@@ -56,9 +31,9 @@
     </div>
   </div><!-- invitemerchant-header -->
   <div class="invitemerchant-content invitemerchant-container">
-    <p class="disabled" *ngIf="false">No merchants selected</p>
-    <div class="addusertbl">
-      <p>Add users you want to invite to <strong>bMerchantname1</strong></p>
+    <p class="disabled" *ngIf="!(merchantSelected && merchantSelected.merchantName)">No merchants selected</p>
+    <div class="addusertbl" *ngIf="merchantSelected && merchantSelected.merchantName">
+      <p>Add users you want to invite to <strong>{{merchantSelected.merchantName}}</strong></p>
       <table>
         <thead>
           <tr>
@@ -70,32 +45,32 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let user of merchantSelected.userInvite; let isLast = last">
             <td>
               <mat-form-field>
-                <input type="text" matInput>
+                <input type="text" matInput [(ngModel)]="user.firstName">
               </mat-form-field>
             </td>
             <td>
               <mat-form-field>
-                <input type="text" matInput>
+                  <input type="text" matInput [(ngModel)]="user.lastName">
               </mat-form-field>
             </td>
             <td>
               <mat-form-field>
-                <input type="text" matInput>
+                <input type="text" matInput [(ngModel)]="user.email">
               </mat-form-field>
             </td>
             <td>
               <mat-form-field>
-                <input type="text" matInput>
+                <input type="text" matInput [(ngModel)]="user.mobileNo">
               </mat-form-field>
             </td>
             <td>
-              <button mat-icon-button *ngIf="a" (click)="a=!a">
+              <button mat-icon-button *ngIf="isLast" (click)="addUser()">
                 <mat-icon class="add">add</mat-icon>
               </button>
-              <button mat-icon-button *ngIf="!a" (click)="a=!a">
+              <button mat-icon-button *ngIf="!isLast" (click)="removeUser()">
                 <mat-icon class="remove">add_circle</mat-icon>
               </button>
             </td>
