@@ -5,8 +5,10 @@
       <div class="row">
         <mat-form-field class="col-md-7">
           <input type="text" placeholder="Merchant Name" (keyup)="searchMerchantName(searchFrmControl, $event)" matInput [formControl]="searchFrmControl" [matAutocomplete]="autocompalete">
-          <mat-icon matSuffix class="fa fa-search" (click)="searchMerchantName(searchFrmControl, $event)"></mat-icon>
-          <mat-autocomplete autoActiveFirstOption #autocompalete="matAutocomplete">
+          <button mat-icon-button (click)="showResult(searchFrmControl)">
+            <mat-icon matSuffix class="fa fa-search"></mat-icon>
+          </button>
+          <mat-autocomplete autoActiveFirstOption #autocompalete="matAutocomplete" (optionSelected)="showResult(searchFrmControl)">
             <mat-option *ngFor="let merchantNameItem of merchantNameList" [value]="merchantNameItem.merchantName">
               <ng-container *ngFor="let item of merchantNameItem.merchantNameChange; let isLast = last">{{item}}<b *ngIf="!isLast">{{searchFrmControl.value}}</b></ng-container>
               <mat-icon>add</mat-icon>
@@ -15,7 +17,8 @@
         </mat-form-field>
       </div>
       <div class="row">
-        <div class="resultsearchinvite" *ngIf="merchantFinded.length">
+        <div class="row">
+        <div class="resultsearchinvite" *ngIf="isShowResult">
           <label class="mc-label">{{merchantFinded.length}} results found for "{{searchFrmControl.value}}"</label>
           <div class="listresult">
             <div class="row">
@@ -104,8 +107,9 @@
     </div>
   </div>
   <div class="storeinfofoot fix-footer">
-    <a routerLink="/account/stores" >Cancel</a>
-    <button class="finishbtn btn btn-lg" [class.disabled]=" !merchantSelected || !merchantSelected.userInvite || merchantSelected.userInvite.length==0" >
+    <a routerLink="/users/manage-merchant" >Cancel</a>
+    <button class="finishbtn btn btn-lg" [class.disabled]=" !merchantSelected || !merchantSelected.userInvite || merchantSelected.userInvite.length==0"
+      (click)="sendInvite()">
       Send invite
     </button>
   </div>

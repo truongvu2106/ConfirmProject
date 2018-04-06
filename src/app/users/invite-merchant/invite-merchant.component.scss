@@ -30,13 +30,18 @@
                 ::ng-deep .mat-form-field-label{
                     font-size: 16px;
                 }
-                .mat-icon{
+                .mat-icon-button{
                     position: absolute;
-                    top: 30px;
-                    right: 20px;
+                    top: 3px;
+                    right: 0;
                     font-size: 23px;
-                    color:#056cae;
+                    width: 55px;
+                    height: 55px;
+                    .mat-icon{
+                        color:#056cae;
+                    }
                 }
+                
                 .mat-autocomplete{
 
                 }
